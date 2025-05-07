@@ -6,10 +6,6 @@
           "moduleId": "[project]/.next-internal/server/app/(frontend)/[slug]/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@sanity/next-loader/dist/server-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/next-sanity/dist/visual-editing/server-actions.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false
         },
-        "app/(frontend)/job/[slug]/page": {
-          "moduleId": "[project]/.next-internal/server/app/(frontend)/job/[slug]/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@sanity/next-loader/dist/server-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/next-sanity/dist/visual-editing/server-actions.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
-          "async": false
-        },
         "app/(frontend)/page": {
           "moduleId": "[project]/.next-internal/server/app/(frontend)/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@sanity/next-loader/dist/server-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/next-sanity/dist/visual-editing/server-actions.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false
@@ -17,7 +13,6 @@
       },
       "layer": {
         "app/(frontend)/[slug]/page": "action-browser",
-        "app/(frontend)/job/[slug]/page": "action-browser",
         "app/(frontend)/page": "action-browser"
       }
     },
@@ -27,10 +22,6 @@
           "moduleId": "[project]/.next-internal/server/app/(frontend)/[slug]/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@sanity/next-loader/dist/server-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/next-sanity/dist/visual-editing/server-actions.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false
         },
-        "app/(frontend)/job/[slug]/page": {
-          "moduleId": "[project]/.next-internal/server/app/(frontend)/job/[slug]/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@sanity/next-loader/dist/server-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/next-sanity/dist/visual-editing/server-actions.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
-          "async": false
-        },
         "app/(frontend)/page": {
           "moduleId": "[project]/.next-internal/server/app/(frontend)/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@sanity/next-loader/dist/server-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/next-sanity/dist/visual-editing/server-actions.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false
@@ -38,7 +29,6 @@
       },
       "layer": {
         "app/(frontend)/[slug]/page": "action-browser",
-        "app/(frontend)/job/[slug]/page": "action-browser",
         "app/(frontend)/page": "action-browser"
       }
     },
@@ -48,10 +38,6 @@
           "moduleId": "[project]/.next-internal/server/app/(frontend)/[slug]/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@sanity/next-loader/dist/server-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/next-sanity/dist/visual-editing/server-actions.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false
         },
-        "app/(frontend)/job/[slug]/page": {
-          "moduleId": "[project]/.next-internal/server/app/(frontend)/job/[slug]/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@sanity/next-loader/dist/server-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/next-sanity/dist/visual-editing/server-actions.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
-          "async": false
-        },
         "app/(frontend)/page": {
           "moduleId": "[project]/.next-internal/server/app/(frontend)/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@sanity/next-loader/dist/server-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/next-sanity/dist/visual-editing/server-actions.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false
@@ -59,7 +45,6 @@
       },
       "layer": {
         "app/(frontend)/[slug]/page": "action-browser",
-        "app/(frontend)/job/[slug]/page": "action-browser",
         "app/(frontend)/page": "action-browser"
       }
     }
