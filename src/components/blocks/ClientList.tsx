@@ -9,7 +9,7 @@ type ClientListProps = Extract<
     { _type: "clientList" }
 >;
 
-export function ClientList({ title, text, logos, itemsPerRow, backgroundColor }: ClientListProps) {
+export function ClientList({ title, text, logos, backgroundColor }: ClientListProps) {
     return (
 
         <div className="wp-block-multidots-multipurpose-block is-block-center mdcareer-about-featured mdinc-section-bottom-margin"
