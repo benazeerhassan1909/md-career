@@ -1,20 +1,7 @@
 import { useState, useEffect } from "react";
 import { PAGE_QUERYResult } from "@/sanity/types";
 import { PortableText } from "next-sanity";
-import { FAQPage, WithContext } from "schema-dts";
 
-const generateFaqData = (faqs: FAQsProps["faqs"]): WithContext<FAQPage> => ({
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqs?.map((faq) => ({
-        "@type": "Question",
-        name: faq.title!,
-        acceptedAnswer: {
-            "@type": "Answer",
-            text: faq.text!,
-        },
-    })),
-});
 
 type FAQsProps = Extract<
     NonNullable<NonNullable<PAGE_QUERYResult>["content"]>[number],

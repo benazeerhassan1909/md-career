@@ -7,7 +7,7 @@ type BannerProps = Extract<
     { _type: "banner" }
 >;
 
-export function Banner({ title, icon, btntext, btnurl, text, image }: BannerProps) {
+export function Banner({ title, icon, btntext, btnurl, text }: BannerProps) {
     return (
 
 

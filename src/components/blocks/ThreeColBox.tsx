@@ -1,7 +1,5 @@
 import { PAGE_QUERYResult } from "@/sanity/types";
 
-import { PortableText } from "next-sanity";
-
 type ThreeColBoxProps = Extract<
     NonNullable<NonNullable<PAGE_QUERYResult>["content"]>[number],
     { _type: "threeColBox" }
@@ -27,7 +25,7 @@ export function ThreeColBox({ title, text, boxes }: ThreeColBoxProps) {
 
                     <div className="wp-block-columns evaluation-boxes is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
 
-                        {boxes.map((box, index) => (
+                        {boxes.map((box) => (
 
                             <div className="wp-block-column is-vertically-aligned-top is-layout-flow wp-block-column-is-layout-flow" key={box._key}
                             >

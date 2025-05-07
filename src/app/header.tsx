@@ -13,7 +13,7 @@ export default async function Header() {
 
     const { data: siteSettings } = await sanityFetch({ query: HEADER_QUERY });
 
-    const { siteTitle, logo, header }: {
+    const {  logo, header }: {
         siteTitle?: string;
         logo?: { asset?: { _ref: string }; url?: string; alt?: string; width?: number; height?: number };
         header?: { menuItems?: { title: string; url: string; subMenu?: { title: string; link: string }[] }[] };

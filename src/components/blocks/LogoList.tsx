@@ -1,7 +1,6 @@
 import { PAGE_QUERYResult } from "@/sanity/types";
 import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
-import clsx from 'clsx';
 import { PortableText } from "next-sanity";
 
 
@@ -10,7 +9,7 @@ type LogoListProps = Extract<
     { _type: "logoList" }
 >;
 
-export function LogoList({ title, text, logos, itemsPerRow, backgroundColor }: LogoListProps) {
+export function LogoList({ title, text, logos, backgroundColor }: LogoListProps) {
     return (
         <div className="wp-block-multidots-multipurpose-block is-block-center mdcareer-about-featured mdinc-section-bottom-margin">
             {title ? (

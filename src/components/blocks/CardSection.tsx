@@ -7,7 +7,7 @@ type FeaturesProps = Extract<
     { _type: "cardSection" }
 >;
 
-export function CardSection({ title, icon, btntext, btnurl, title2, text, btntext2, icon2, btnurl2, bgimage, text1 }: FeaturesProps) {
+export function CardSection({ title, icon, btntext, btnurl, title2, text, btntext2, icon2, btnurl2, text1 }: FeaturesProps) {
     return (
         <div className="wp-block-multidots-multipurpose-block is-block-center mdcaeer-councelling-section-main mdinc-section-bottom-margin two-columns md-career-home-post-section">
             <div className="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">

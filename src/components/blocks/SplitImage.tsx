@@ -1,10 +1,7 @@
 import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
 import { PAGE_QUERYResult } from "@/sanity/types";
-import { stegaClean } from "next-sanity";
 import { PortableText } from "next-sanity";
-import { useState } from 'react';
-
 
 type SplitImageProps = Extract<
     NonNullable<NonNullable<PAGE_QUERYResult>["content"]>[number],
@@ -13,7 +10,6 @@ type SplitImageProps = Extract<
 
 export function SplitImage({ title, image, orientation, description, authorimage, authorname, authordesignation, video, backgroundColor
 }: SplitImageProps) {
-    const [showVideo, setShowVideo] = useState(false);
 
     const videoUrl = video?.url || null;
     const components = {

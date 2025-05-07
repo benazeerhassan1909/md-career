@@ -1,4 +1,6 @@
 // lib/submitCareerForm.ts
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { createClient } from '@sanity/client'
 
 const client = createClient({

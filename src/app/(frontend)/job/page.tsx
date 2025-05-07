@@ -202,7 +202,7 @@ export default async function Jobs() {
                                     </h3>
 
                                     <p className="has-white-color has-text-color has-link-color wp-elements-e707f5c0e66edce4e5feb1b9a42a83b6">
-                                        Check out our CEO, Anil Gupta's, latest article on Career Growth!
+                                        Check out our CEO, Anil Guptas, latest article on Career Growth!
                                     </p>
 
                                     <div className="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex">

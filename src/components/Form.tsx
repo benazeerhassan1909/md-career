@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 'use client';
 import React, { useState, useEffect } from 'react';
 import { client } from '../sanity/lib/client';
@@ -176,7 +178,6 @@ const JobApplicationForm = ({ jobId, jobSlug, formId }: { jobId: string; jobSlug
             });
             if (e.target.files && e.target.files[0]) {
                 const file = e.target.files[0];
-                const fileExtension = file.name.split('.').pop()?.toLowerCase();
 
                 // ...
 

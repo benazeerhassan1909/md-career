@@ -300,14 +300,11 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/image.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$sanity$2f$lib$2f$image$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/sanity/lib/image.ts [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$portabletext$2f$react$2f$dist$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/node_modules/@portabletext/react/dist/index.js [app-ssr] (ecmascript) <locals>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
-;
 ;
 ;
 ;
 ;
 function SplitImage({ title, image, orientation, description, authorimage, authorname, authordesignation, video, backgroundColor }) {
-    const [showVideo, setShowVideo] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const videoUrl = video?.url || null;
     const components = {
         block: {
@@ -316,7 +313,7 @@ function SplitImage({ title, image, orientation, description, authorimage, autho
                     children: children
                 }, void 0, false, {
                     fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                    lineNumber: 21,
+                    lineNumber: 17,
                     columnNumber: 39
                 }, this)
         }
@@ -342,7 +339,7 @@ function SplitImage({ title, image, orientation, description, authorimage, autho
                                 children: title
                             }, void 0, false, {
                                 fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                lineNumber: 39,
+                                lineNumber: 35,
                                 columnNumber: 29
                             }, this) : null,
                             description ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$portabletext$2f$react$2f$dist$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["PortableText"], {
@@ -350,7 +347,7 @@ function SplitImage({ title, image, orientation, description, authorimage, autho
                                 components: components
                             }, void 0, false, {
                                 fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                lineNumber: 44,
+                                lineNumber: 40,
                                 columnNumber: 40
                             }, this) : null,
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -375,17 +372,17 @@ function SplitImage({ title, image, orientation, description, authorimage, autho
                                                 sizes: "auto, (max-width: 160px) 100vw, 160px"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                                lineNumber: 53,
+                                                lineNumber: 49,
                                                 columnNumber: 41
                                             }, this) : null
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                            lineNumber: 49,
+                                            lineNumber: 45,
                                             columnNumber: 33
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                        lineNumber: 48,
+                                        lineNumber: 44,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -397,20 +394,20 @@ function SplitImage({ title, image, orientation, description, authorimage, autho
                                                 children: authorname
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                                lineNumber: 71,
+                                                lineNumber: 67,
                                                 columnNumber: 37
                                             }, this) : null,
                                             authordesignation ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                 children: authordesignation
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                                lineNumber: 77,
+                                                lineNumber: 73,
                                                 columnNumber: 37
                                             }, this) : null
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                        lineNumber: 68,
+                                        lineNumber: 64,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -425,7 +422,7 @@ function SplitImage({ title, image, orientation, description, authorimage, autho
                                                         href: videoUrl
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                                        lineNumber: 86,
+                                                        lineNumber: 82,
                                                         columnNumber: 41
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -434,40 +431,40 @@ function SplitImage({ title, image, orientation, description, authorimage, autho
                                                             className: "mdinc-video-play-button-box-inner"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                                            lineNumber: 91,
+                                                            lineNumber: 87,
                                                             columnNumber: 45
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                                        lineNumber: 90,
+                                                        lineNumber: 86,
                                                         columnNumber: 41
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                                lineNumber: 85,
+                                                lineNumber: 81,
                                                 columnNumber: 37
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                            lineNumber: 84,
+                                            lineNumber: 80,
                                             columnNumber: 33
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                        lineNumber: 83,
+                                        lineNumber: 79,
                                         columnNumber: 29
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                lineNumber: 47,
+                                lineNumber: 43,
                                 columnNumber: 25
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                        lineNumber: 33,
+                        lineNumber: 29,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -481,7 +478,7 @@ function SplitImage({ title, image, orientation, description, authorimage, autho
                                 className: "wp-block-image aligncenter size-full is-resized animated-md-logo"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                lineNumber: 104,
+                                lineNumber: 100,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("figure", {
@@ -496,29 +493,29 @@ function SplitImage({ title, image, orientation, description, authorimage, autho
                                     className: "wp-image-45951 perfmatters-lazy loaded"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                    lineNumber: 120,
+                                    lineNumber: 116,
                                     columnNumber: 33
                                 }, this) : null
                             }, void 0, false, {
                                 fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                lineNumber: 117,
+                                lineNumber: 113,
                                 columnNumber: 25
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                        lineNumber: 99,
+                        lineNumber: 95,
                         columnNumber: 21
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                lineNumber: 30,
+                lineNumber: 26,
                 columnNumber: 17
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/components/blocks/SplitImage.tsx",
-            lineNumber: 29,
+            lineNumber: 25,
             columnNumber: 13
         }, this)
     }, void 0, false);
@@ -795,7 +792,7 @@ function TitleDescription({ title, description }) {
                     children: children
                 }, void 0, false, {
                     fileName: "[project]/src/components/blocks/titleDescription.tsx",
-                    lineNumber: 22,
+                    lineNumber: 14,
                     columnNumber: 37
                 }, this),
             center: ({ children })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -803,7 +800,7 @@ function TitleDescription({ title, description }) {
                     children: children
                 }, void 0, false, {
                     fileName: "[project]/src/components/blocks/titleDescription.tsx",
-                    lineNumber: 23,
+                    lineNumber: 15,
                     columnNumber: 39
                 }, this),
             right: ({ children })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -811,7 +808,7 @@ function TitleDescription({ title, description }) {
                     children: children
                 }, void 0, false, {
                     fileName: "[project]/src/components/blocks/titleDescription.tsx",
-                    lineNumber: 24,
+                    lineNumber: 16,
                     columnNumber: 38
                 }, this),
             normal: ({ children })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -819,7 +816,7 @@ function TitleDescription({ title, description }) {
                     children: children
                 }, void 0, false, {
                     fileName: "[project]/src/components/blocks/titleDescription.tsx",
-                    lineNumber: 25,
+                    lineNumber: 17,
                     columnNumber: 39
                 }, this)
         },
@@ -836,17 +833,17 @@ function TitleDescription({ title, description }) {
                                             children: cell
                                         }, index, false, {
                                             fileName: "[project]/src/components/blocks/titleDescription.tsx",
-                                            lineNumber: 37,
+                                            lineNumber: 29,
                                             columnNumber: 45
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/blocks/titleDescription.tsx",
-                                    lineNumber: 35,
+                                    lineNumber: 27,
                                     columnNumber: 37
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/blocks/titleDescription.tsx",
-                                lineNumber: 34,
+                                lineNumber: 26,
                                 columnNumber: 33
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
@@ -857,28 +854,28 @@ function TitleDescription({ title, description }) {
                                                 children: cell
                                             }, cellIndex, false, {
                                                 fileName: "[project]/src/components/blocks/titleDescription.tsx",
-                                                lineNumber: 50,
+                                                lineNumber: 42,
                                                 columnNumber: 49
                                             }, this) : null)
                                     }, rowIndex, false, {
                                         fileName: "[project]/src/components/blocks/titleDescription.tsx",
-                                        lineNumber: 47,
+                                        lineNumber: 39,
                                         columnNumber: 37
                                     }, this)))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/blocks/titleDescription.tsx",
-                                lineNumber: 44,
+                                lineNumber: 36,
                                 columnNumber: 29
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/blocks/titleDescription.tsx",
-                        lineNumber: 32,
+                        lineNumber: 24,
                         columnNumber: 25
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/components/blocks/titleDescription.tsx",
-                    lineNumber: 31,
+                    lineNumber: 23,
                     columnNumber: 21
                 }, this);
             }
@@ -899,7 +896,7 @@ function TitleDescription({ title, description }) {
                 children: title
             }, void 0, false, {
                 fileName: "[project]/src/components/blocks/titleDescription.tsx",
-                lineNumber: 82,
+                lineNumber: 74,
                 columnNumber: 17
             }, this),
             description && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$portabletext$2f$react$2f$dist$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["PortableText"], {
@@ -911,13 +908,13 @@ function TitleDescription({ title, description }) {
                 }
             }, void 0, false, {
                 fileName: "[project]/src/components/blocks/titleDescription.tsx",
-                lineNumber: 87,
+                lineNumber: 79,
                 columnNumber: 17
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/blocks/titleDescription.tsx",
-        lineNumber: 80,
+        lineNumber: 72,
         columnNumber: 9
     }, this);
 }
@@ -938,7 +935,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$portablete
 ;
 ;
 ;
-function LogoList({ title, text, logos, itemsPerRow, backgroundColor }) {
+function LogoList({ title, text, logos, backgroundColor }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "wp-block-multidots-multipurpose-block is-block-center mdcareer-about-featured mdinc-section-bottom-margin",
         children: [
@@ -947,7 +944,7 @@ function LogoList({ title, text, logos, itemsPerRow, backgroundColor }) {
                 children: title
             }, void 0, false, {
                 fileName: "[project]/src/components/blocks/LogoList.tsx",
-                lineNumber: 17,
+                lineNumber: 16,
                 columnNumber: 17
             }, this) : null,
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -961,7 +958,7 @@ function LogoList({ title, text, logos, itemsPerRow, backgroundColor }) {
                                     children: children
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/blocks/LogoList.tsx",
-                                    lineNumber: 26,
+                                    lineNumber: 25,
                                     columnNumber: 53
                                 }, void 0),
                             center: ({ children })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -969,7 +966,7 @@ function LogoList({ title, text, logos, itemsPerRow, backgroundColor }) {
                                     children: children
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/blocks/LogoList.tsx",
-                                    lineNumber: 27,
+                                    lineNumber: 26,
                                     columnNumber: 55
                                 }, void 0),
                             right: ({ children })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -977,25 +974,25 @@ function LogoList({ title, text, logos, itemsPerRow, backgroundColor }) {
                                     children: children
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/blocks/LogoList.tsx",
-                                    lineNumber: 28,
+                                    lineNumber: 27,
                                     columnNumber: 54
                                 }, void 0)
                         }
                     }
                 }, void 0, false, {
                     fileName: "[project]/src/components/blocks/LogoList.tsx",
-                    lineNumber: 23,
+                    lineNumber: 22,
                     columnNumber: 21
                 }, this) : text ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                     children: text
                 }, void 0, false, {
                     fileName: "[project]/src/components/blocks/LogoList.tsx",
-                    lineNumber: 32,
+                    lineNumber: 31,
                     columnNumber: 21
                 }, this) : null
             }, void 0, false, {
                 fileName: "[project]/src/components/blocks/LogoList.tsx",
-                lineNumber: 21,
+                lineNumber: 20,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1021,28 +1018,28 @@ function LogoList({ title, text, logos, itemsPerRow, backgroundColor }) {
                                 }
                             }, void 0, false, {
                                 fileName: "[project]/src/components/blocks/LogoList.tsx",
-                                lineNumber: 45,
+                                lineNumber: 44,
                                 columnNumber: 29
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/components/blocks/LogoList.tsx",
-                            lineNumber: 43,
+                            lineNumber: 42,
                             columnNumber: 25
                         }, this)
                     }, logo._key, false, {
                         fileName: "[project]/src/components/blocks/LogoList.tsx",
-                        lineNumber: 39,
+                        lineNumber: 38,
                         columnNumber: 21
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/src/components/blocks/LogoList.tsx",
-                lineNumber: 35,
+                lineNumber: 34,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/blocks/LogoList.tsx",
-        lineNumber: 15,
+        lineNumber: 14,
         columnNumber: 9
     }, this);
 }
@@ -1087,7 +1084,7 @@ function ClientList({ title, text, logos, itemsPerRow, backgroundColor }) {
                     children: title
                 }, void 0, false, {
                     fileName: "[project]/src/components/blocks/ClientList.tsx",
-                    lineNumber: 31,
+                    lineNumber: 30,
                     columnNumber: 17
                 }, this),
                 Array.isArray(text) ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$portabletext$2f$react$2f$dist$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["PortableText"], {
@@ -1099,7 +1096,7 @@ function ClientList({ title, text, logos, itemsPerRow, backgroundColor }) {
                                     children: children
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/blocks/ClientList.tsx",
-                                    lineNumber: 39,
+                                    lineNumber: 38,
                                     columnNumber: 53
                                 }, void 0),
                             center: ({ children })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1107,7 +1104,7 @@ function ClientList({ title, text, logos, itemsPerRow, backgroundColor }) {
                                     children: children
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/blocks/ClientList.tsx",
-                                    lineNumber: 40,
+                                    lineNumber: 39,
                                     columnNumber: 55
                                 }, void 0),
                             right: ({ children })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1115,21 +1112,21 @@ function ClientList({ title, text, logos, itemsPerRow, backgroundColor }) {
                                     children: children
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/blocks/ClientList.tsx",
-                                    lineNumber: 41,
+                                    lineNumber: 40,
                                     columnNumber: 54
                                 }, void 0)
                         }
                     }
                 }, void 0, false, {
                     fileName: "[project]/src/components/blocks/ClientList.tsx",
-                    lineNumber: 36,
+                    lineNumber: 35,
                     columnNumber: 21
                 }, this) : text ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                     className: "has-text-align-center after-h2-cnt",
                     children: text
                 }, void 0, false, {
                     fileName: "[project]/src/components/blocks/ClientList.tsx",
-                    lineNumber: 45,
+                    lineNumber: 44,
                     columnNumber: 21
                 }, this) : null,
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1151,38 +1148,38 @@ function ClientList({ title, text, logos, itemsPerRow, backgroundColor }) {
                                         decoding: "async"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/blocks/ClientList.tsx",
-                                        lineNumber: 55,
+                                        lineNumber: 54,
                                         columnNumber: 37
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/blocks/ClientList.tsx",
-                                    lineNumber: 53,
+                                    lineNumber: 52,
                                     columnNumber: 33
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/blocks/ClientList.tsx",
-                                lineNumber: 52,
+                                lineNumber: 51,
                                 columnNumber: 29
                             }, this)
                         }, index, false, {
                             fileName: "[project]/src/components/blocks/ClientList.tsx",
-                            lineNumber: 51,
+                            lineNumber: 50,
                             columnNumber: 25
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/src/components/blocks/ClientList.tsx",
-                    lineNumber: 49,
+                    lineNumber: 48,
                     columnNumber: 17
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/blocks/ClientList.tsx",
-            lineNumber: 30,
+            lineNumber: 29,
             columnNumber: 13
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/blocks/ClientList.tsx",
-        lineNumber: 16,
+        lineNumber: 15,
         columnNumber: 9
     }, this);
 }
@@ -1439,7 +1436,7 @@ function TestimonialSlider({ title, testimonials, reviews }) {
 
 var { g: global, __dirname } = __turbopack_context__;
 {
-__turbopack_context__.s({
+/* eslint-disable @typescript-eslint/no-explicit-any */ __turbopack_context__.s({
     "TabSection": (()=>TabSection)
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
@@ -1465,7 +1462,7 @@ function TabSection({ title, text, tabs }) {
                 children: title
             }, void 0, false, {
                 fileName: "[project]/src/components/blocks/tabSection.tsx",
-                lineNumber: 24,
+                lineNumber: 25,
                 columnNumber: 17
             }, this) : null,
             Array.isArray(text) ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$portabletext$2f$react$2f$dist$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["PortableText"], {
@@ -1477,7 +1474,7 @@ function TabSection({ title, text, tabs }) {
                                 children: children
                             }, void 0, false, {
                                 fileName: "[project]/src/components/blocks/tabSection.tsx",
-                                lineNumber: 32,
+                                lineNumber: 33,
                                 columnNumber: 49
                             }, void 0),
                         center: ({ children })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1485,7 +1482,7 @@ function TabSection({ title, text, tabs }) {
                                 children: children
                             }, void 0, false, {
                                 fileName: "[project]/src/components/blocks/tabSection.tsx",
-                                lineNumber: 33,
+                                lineNumber: 34,
                                 columnNumber: 51
                             }, void 0),
                         right: ({ children })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1493,20 +1490,20 @@ function TabSection({ title, text, tabs }) {
                                 children: children
                             }, void 0, false, {
                                 fileName: "[project]/src/components/blocks/tabSection.tsx",
-                                lineNumber: 34,
+                                lineNumber: 35,
                                 columnNumber: 50
                             }, void 0)
                     }
                 }
             }, void 0, false, {
                 fileName: "[project]/src/components/blocks/tabSection.tsx",
-                lineNumber: 29,
+                lineNumber: 30,
                 columnNumber: 17
             }, this) : text ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                 children: text
             }, void 0, false, {
                 fileName: "[project]/src/components/blocks/tabSection.tsx",
-                lineNumber: 38,
+                lineNumber: 39,
                 columnNumber: 17
             }, this) : null,
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1543,22 +1540,22 @@ function TabSection({ title, text, tabs }) {
                                     className: "perfmatters-lazy loaded"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/blocks/tabSection.tsx",
-                                    lineNumber: 51,
+                                    lineNumber: 52,
                                     columnNumber: 33
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/blocks/tabSection.tsx",
-                                lineNumber: 44,
+                                lineNumber: 45,
                                 columnNumber: 29
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/components/blocks/tabSection.tsx",
-                            lineNumber: 42,
+                            lineNumber: 43,
                             columnNumber: 21
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/blocks/tabSection.tsx",
-                        lineNumber: 41,
+                        lineNumber: 42,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1580,29 +1577,29 @@ function TabSection({ title, text, tabs }) {
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/blocks/tabSection.tsx",
-                                    lineNumber: 77,
+                                    lineNumber: 78,
                                     columnNumber: 29
                                 }, this)
                             }, tab._key, false, {
                                 fileName: "[project]/src/components/blocks/tabSection.tsx",
-                                lineNumber: 67,
+                                lineNumber: 68,
                                 columnNumber: 25
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/src/components/blocks/tabSection.tsx",
-                        lineNumber: 65,
+                        lineNumber: 66,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/blocks/tabSection.tsx",
-                lineNumber: 40,
+                lineNumber: 41,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/blocks/tabSection.tsx",
-        lineNumber: 22,
+        lineNumber: 23,
         columnNumber: 9
     }, this);
 }
@@ -1755,7 +1752,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$sanity$2f$lib$2f$imag
 ;
 ;
 ;
-function CardSection({ title, icon, btntext, btnurl, title2, text, btntext2, icon2, btnurl2, bgimage, text1 }) {
+function CardSection({ title, icon, btntext, btnurl, title2, text, btntext2, icon2, btnurl2, text1 }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "wp-block-multidots-multipurpose-block is-block-center mdcaeer-councelling-section-main mdinc-section-bottom-margin two-columns md-career-home-post-section",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1999,7 +1996,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$sanity$2f$lib$2f$imag
 ;
 ;
 ;
-function Banner({ title, icon, btntext, btnurl, text, image }) {
+function Banner({ title, icon, btntext, btnurl, text }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "entry-content wp-block-post-content has-global-padding is-layout-constrained wp-block-post-content-is-layout-constrained",
         children: [
@@ -2227,18 +2224,6 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$portablete
 ;
 ;
 ;
-const generateFaqData = (faqs)=>({
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        mainEntity: faqs?.map((faq)=>({
-                "@type": "Question",
-                name: faq.title,
-                acceptedAnswer: {
-                    "@type": "Answer",
-                    text: faq.text
-                }
-            }))
-    });
 function FAQs({ title, faqs }) {
     const [activeFaqId, setActiveFaqId] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
     const [copiedLinkId, setCopiedLinkId] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
@@ -2286,7 +2271,7 @@ function FAQs({ title, faqs }) {
                 children: title
             }, void 0, false, {
                 fileName: "[project]/src/components/blocks/FAQs.tsx",
-                lineNumber: 71,
+                lineNumber: 58,
                 columnNumber: 17
             }, this),
             Array.isArray(faqs) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2322,7 +2307,7 @@ function FAQs({ title, faqs }) {
                                                             className: `fa fa-chevron-${activeFaqId === faq._id ? 'up' : 'down'}`
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/blocks/FAQs.tsx",
-                                                            lineNumber: 105,
+                                                            lineNumber: 92,
                                                             columnNumber: 49
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2330,18 +2315,18 @@ function FAQs({ title, faqs }) {
                                                             children: faq.title
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/blocks/FAQs.tsx",
-                                                            lineNumber: 106,
+                                                            lineNumber: 93,
                                                             columnNumber: 49
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/blocks/FAQs.tsx",
-                                                    lineNumber: 97,
+                                                    lineNumber: 84,
                                                     columnNumber: 45
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/blocks/FAQs.tsx",
-                                                lineNumber: 96,
+                                                lineNumber: 83,
                                                 columnNumber: 41
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2353,7 +2338,7 @@ function FAQs({ title, faqs }) {
                                                         className: "fa fa-link"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/blocks/FAQs.tsx",
-                                                        lineNumber: 114,
+                                                        lineNumber: 101,
                                                         columnNumber: 45
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2361,19 +2346,19 @@ function FAQs({ title, faqs }) {
                                                         children: "Link Copied"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/blocks/FAQs.tsx",
-                                                        lineNumber: 115,
+                                                        lineNumber: 102,
                                                         columnNumber: 45
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/blocks/FAQs.tsx",
-                                                lineNumber: 109,
+                                                lineNumber: 96,
                                                 columnNumber: 41
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/blocks/FAQs.tsx",
-                                        lineNumber: 92,
+                                        lineNumber: 79,
                                         columnNumber: 37
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2387,44 +2372,44 @@ function FAQs({ title, faqs }) {
                                                 value: faq.body
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/blocks/FAQs.tsx",
-                                                lineNumber: 126,
+                                                lineNumber: 113,
                                                 columnNumber: 57
                                             }, this) : null
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/blocks/FAQs.tsx",
-                                            lineNumber: 125,
+                                            lineNumber: 112,
                                             columnNumber: 41
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/blocks/FAQs.tsx",
-                                        lineNumber: 119,
+                                        lineNumber: 106,
                                         columnNumber: 37
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/blocks/FAQs.tsx",
-                                lineNumber: 86,
+                                lineNumber: 73,
                                 columnNumber: 33
                             }, this)
                         }, faq._id, false, {
                             fileName: "[project]/src/components/blocks/FAQs.tsx",
-                            lineNumber: 80,
+                            lineNumber: 67,
                             columnNumber: 29
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/src/components/blocks/FAQs.tsx",
-                    lineNumber: 78,
+                    lineNumber: 65,
                     columnNumber: 21
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/blocks/FAQs.tsx",
-                lineNumber: 77,
+                lineNumber: 64,
                 columnNumber: 17
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/blocks/FAQs.tsx",
-        lineNumber: 69,
+        lineNumber: 56,
         columnNumber: 9
     }, this);
 }
@@ -2450,7 +2435,7 @@ function ThreeColBox({ title, text, boxes }) {
                     children: title
                 }, void 0, false, {
                     fileName: "[project]/src/components/blocks/ThreeColBox.tsx",
-                    lineNumber: 17,
+                    lineNumber: 15,
                     columnNumber: 21
                 }, this) : null,
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2458,12 +2443,12 @@ function ThreeColBox({ title, text, boxes }) {
                     children: text
                 }, void 0, false, {
                     fileName: "[project]/src/components/blocks/ThreeColBox.tsx",
-                    lineNumber: 22,
+                    lineNumber: 20,
                     columnNumber: 17
                 }, this),
                 Array.isArray(boxes) ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "wp-block-columns evaluation-boxes is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex",
-                    children: boxes.map((box, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    children: boxes.map((box)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "wp-block-column is-vertically-aligned-top is-layout-flow wp-block-column-is-layout-flow",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: `wp-block-multidots-multipurpose-block is-block-center evaluation-box evaluation-box`,
@@ -2477,7 +2462,7 @@ function ThreeColBox({ title, text, boxes }) {
                                         children: box.title
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/blocks/ThreeColBox.tsx",
-                                        lineNumber: 37,
+                                        lineNumber: 35,
                                         columnNumber: 37
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2485,29 +2470,29 @@ function ThreeColBox({ title, text, boxes }) {
                                         children: box.text
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/blocks/ThreeColBox.tsx",
-                                        lineNumber: 40,
+                                        lineNumber: 38,
                                         columnNumber: 37
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/blocks/ThreeColBox.tsx",
-                                lineNumber: 34,
+                                lineNumber: 32,
                                 columnNumber: 33
                             }, this)
                         }, box._key, false, {
                             fileName: "[project]/src/components/blocks/ThreeColBox.tsx",
-                            lineNumber: 32,
+                            lineNumber: 30,
                             columnNumber: 29
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/src/components/blocks/ThreeColBox.tsx",
-                    lineNumber: 28,
+                    lineNumber: 26,
                     columnNumber: 21
                 }, this) : null
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/blocks/ThreeColBox.tsx",
-            lineNumber: 15,
+            lineNumber: 13,
             columnNumber: 13
         }, this)
     }, void 0, false);
@@ -2622,78 +2607,37 @@ __turbopack_context__.s({
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
 ;
-function List({ title, text, boxes }) {
+function List({ listtitle, lists }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "wp-block-multidots-multipurpose-block is-block-center education-scholarship-notes mdinc-section-bottom-margin",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                 className: "wp-block-heading h4",
                 id: "h-notes",
-                children: "Notes:"
+                children: listtitle
             }, void 0, false, {
                 fileName: "[project]/src/components/blocks/List.tsx",
-                lineNumber: 14,
+                lineNumber: 13,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
                 className: "wp-block-list mdinc-custom-list",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                        children: [
-                            "To Apply – Please fill up the ",
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                href: "/educationscholarshipform/",
-                                children: "Scholarship Program form"
-                            }, void 0, false, {
-                                fileName: "[project]/src/components/blocks/List.tsx",
-                                lineNumber: 17,
-                                columnNumber: 51
-                            }, this),
-                            "."
-                        ]
-                    }, void 0, true, {
+                children: lists?.map((list, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                        children: list
+                    }, index, false, {
                         fileName: "[project]/src/components/blocks/List.tsx",
                         lineNumber: 16,
-                        columnNumber: 17
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                        children: "Applicant must be an Indian citizen and aiming to study in India’s college/university."
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/blocks/List.tsx",
-                        lineNumber: 19,
-                        columnNumber: 17
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                        children: "Applicant must be currently either in 12th grade or 1st Semester of college/university student."
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/blocks/List.tsx",
-                        lineNumber: 22,
-                        columnNumber: 17
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                        children: "Fees will be paid semester-wise."
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/blocks/List.tsx",
-                        lineNumber: 25,
-                        columnNumber: 17
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                        children: "Students should Pass/Clear all the subjects to be eligible for next semester’s fees."
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/blocks/List.tsx",
-                        lineNumber: 28,
-                        columnNumber: 17
-                    }, this)
-                ]
-            }, void 0, true, {
+                        columnNumber: 21
+                    }, this))
+            }, void 0, false, {
                 fileName: "[project]/src/components/blocks/List.tsx",
-                lineNumber: 15,
+                lineNumber: 14,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/blocks/List.tsx",
-        lineNumber: 13,
+        lineNumber: 12,
         columnNumber: 9
     }, this);
 }
@@ -2704,7 +2648,7 @@ function List({ title, text, boxes }) {
 var { g: global, __dirname } = __turbopack_context__;
 {
 // lib/submitCareerForm.ts
-__turbopack_context__.s({
+/* eslint-disable @typescript-eslint/no-explicit-any */ __turbopack_context__.s({
     "submitCareerForm": (()=>submitCareerForm),
     "uploadResume": (()=>uploadResume)
 });
@@ -2769,7 +2713,7 @@ const submitCareerForm = async (formData, formFields, formName)=>{
 
 var { g: global, __dirname } = __turbopack_context__;
 {
-__turbopack_context__.s({
+/* eslint-disable @typescript-eslint/no-explicit-any */ __turbopack_context__.s({
     "default": (()=>__TURBOPACK__default__export__)
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
@@ -2920,7 +2864,6 @@ const JobApplicationForm = ({ jobId, jobSlug, formId })=>{
             });
             if (e.target.files && e.target.files[0]) {
                 const file = e.target.files[0];
-                const fileExtension = file.name.split('.').pop()?.toLowerCase();
                 // ...
                 setFileName(file.name); // Update the file name state
             }
@@ -2974,7 +2917,7 @@ const JobApplicationForm = ({ jobId, jobSlug, formId })=>{
             children: "Loading form..."
         }, void 0, false, {
             fileName: "[project]/src/components/Form.tsx",
-            lineNumber: 237,
+            lineNumber: 238,
             columnNumber: 16
         }, this);
     }
@@ -2983,7 +2926,7 @@ const JobApplicationForm = ({ jobId, jobSlug, formId })=>{
             children: "No form fields configured for this job"
         }, void 0, false, {
             fileName: "[project]/src/components/Form.tsx",
-            lineNumber: 241,
+            lineNumber: 242,
             columnNumber: 16
         }, this);
     }
@@ -3032,7 +2975,7 @@ const JobApplicationForm = ({ jobId, jobSlug, formId })=>{
                 children: form.title || 'Apply Now'
             }, void 0, false, {
                 fileName: "[project]/src/components/Form.tsx",
-                lineNumber: 282,
+                lineNumber: 283,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3057,12 +3000,12 @@ const JobApplicationForm = ({ jobId, jobSlug, formId })=>{
                                 className: "jsx-b567c751c15b16d4"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Form.tsx",
-                                lineNumber: 290,
+                                lineNumber: 291,
                                 columnNumber: 25
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/components/Form.tsx",
-                            lineNumber: 289,
+                            lineNumber: 290,
                             columnNumber: 21
                         }, this),
                         groupedFields.map((fieldPair, pairIndex)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3080,13 +3023,13 @@ const JobApplicationForm = ({ jobId, jobSlug, formId })=>{
                                                         children: "*"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/Form.tsx",
-                                                        lineNumber: 305,
+                                                        lineNumber: 306,
                                                         columnNumber: 66
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/Form.tsx",
-                                                lineNumber: 303,
+                                                lineNumber: 304,
                                                 columnNumber: 41
                                             }, this),
                                             field.type === 'textarea' ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
@@ -3110,12 +3053,12 @@ const JobApplicationForm = ({ jobId, jobSlug, formId })=>{
                                                             className: "jsx-b567c751c15b16d4" + " " + "wpcf7-form-control wpcf7-textarea"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/Form.tsx",
-                                                            lineNumber: 312,
+                                                            lineNumber: 313,
                                                             columnNumber: 49
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/Form.tsx",
-                                                        lineNumber: 311,
+                                                        lineNumber: 312,
                                                         columnNumber: 45
                                                     }, this),
                                                     field.helpText && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3125,12 +3068,12 @@ const JobApplicationForm = ({ jobId, jobSlug, formId })=>{
                                                             children: field.helpText
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/Form.tsx",
-                                                            lineNumber: 331,
+                                                            lineNumber: 332,
                                                             columnNumber: 53
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/Form.tsx",
-                                                        lineNumber: 330,
+                                                        lineNumber: 331,
                                                         columnNumber: 49
                                                     }, this),
                                                     field.note && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3143,12 +3086,12 @@ const JobApplicationForm = ({ jobId, jobSlug, formId })=>{
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/Form.tsx",
-                                                            lineNumber: 336,
+                                                            lineNumber: 337,
                                                             columnNumber: 53
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/Form.tsx",
-                                                        lineNumber: 335,
+                                                        lineNumber: 336,
                                                         columnNumber: 49
                                                     }, this)
                                                 ]
@@ -3171,30 +3114,30 @@ const JobApplicationForm = ({ jobId, jobSlug, formId })=>{
                                                                         className: "jsx-b567c751c15b16d4" + " " + "privcy"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Form.tsx",
-                                                                        lineNumber: 345,
+                                                                        lineNumber: 346,
                                                                         columnNumber: 57
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                         className: "jsx-b567c751c15b16d4" + " " + "wpcf7-list-item-label"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Form.tsx",
-                                                                        lineNumber: 353,
+                                                                        lineNumber: 354,
                                                                         columnNumber: 57
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/Form.tsx",
-                                                                lineNumber: 344,
+                                                                lineNumber: 345,
                                                                 columnNumber: 53
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/Form.tsx",
-                                                            lineNumber: 343,
+                                                            lineNumber: 344,
                                                             columnNumber: 49
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/Form.tsx",
-                                                        lineNumber: 342,
+                                                        lineNumber: 343,
                                                         columnNumber: 45
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3209,18 +3152,18 @@ const JobApplicationForm = ({ jobId, jobSlug, formId })=>{
                                                                     children: "*"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/Form.tsx",
-                                                                    lineNumber: 360,
+                                                                    lineNumber: 361,
                                                                     columnNumber: 74
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/Form.tsx",
-                                                            lineNumber: 358,
+                                                            lineNumber: 359,
                                                             columnNumber: 49
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/Form.tsx",
-                                                        lineNumber: 357,
+                                                        lineNumber: 358,
                                                         columnNumber: 45
                                                     }, this),
                                                     field.helpText && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3230,12 +3173,12 @@ const JobApplicationForm = ({ jobId, jobSlug, formId })=>{
                                                             children: field.helpText
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/Form.tsx",
-                                                            lineNumber: 365,
+                                                            lineNumber: 366,
                                                             columnNumber: 53
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/Form.tsx",
-                                                        lineNumber: 364,
+                                                        lineNumber: 365,
                                                         columnNumber: 49
                                                     }, this),
                                                     field.note && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3245,18 +3188,18 @@ const JobApplicationForm = ({ jobId, jobSlug, formId })=>{
                                                             children: field.note
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/Form.tsx",
-                                                            lineNumber: 370,
+                                                            lineNumber: 371,
                                                             columnNumber: 53
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/Form.tsx",
-                                                        lineNumber: 369,
+                                                        lineNumber: 370,
                                                         columnNumber: 49
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/Form.tsx",
-                                                lineNumber: 341,
+                                                lineNumber: 342,
                                                 columnNumber: 41
                                             }, this) : field.type === 'file' ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3277,12 +3220,12 @@ const JobApplicationForm = ({ jobId, jobSlug, formId })=>{
                                                                     className: "jsx-b567c751c15b16d4" + " " + "wpcf7-form-control wpcf7-file wpcf7-validates-as-required mdinc-contact-form-file"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/Form.tsx",
-                                                                    lineNumber: 379,
+                                                                    lineNumber: 380,
                                                                     columnNumber: 57
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/Form.tsx",
-                                                                lineNumber: 378,
+                                                                lineNumber: 379,
                                                                 columnNumber: 53
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3297,13 +3240,13 @@ const JobApplicationForm = ({ jobId, jobSlug, formId })=>{
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/components/Form.tsx",
-                                                                        lineNumber: 395,
+                                                                        lineNumber: 396,
                                                                         columnNumber: 76
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/Form.tsx",
-                                                                lineNumber: 394,
+                                                                lineNumber: 395,
                                                                 columnNumber: 53
                                                             }, this),
                                                             fileError || formErrors[field.name] || fileName ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3311,14 +3254,14 @@ const JobApplicationForm = ({ jobId, jobSlug, formId })=>{
                                                                 children: fileError || formErrors[field.name] || fileName
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/Form.tsx",
-                                                                lineNumber: 398,
+                                                                lineNumber: 399,
                                                                 columnNumber: 65
                                                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                 className: "jsx-b567c751c15b16d4" + " " + "mdinc-info",
                                                                 children: "No file chosen"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/Form.tsx",
-                                                                lineNumber: 402,
+                                                                lineNumber: 403,
                                                                 columnNumber: 65
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3331,12 +3274,12 @@ const JobApplicationForm = ({ jobId, jobSlug, formId })=>{
                                                                             children: field.helpText
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/Form.tsx",
-                                                                            lineNumber: 408,
+                                                                            lineNumber: 409,
                                                                             columnNumber: 65
                                                                         }, this)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Form.tsx",
-                                                                        lineNumber: 407,
+                                                                        lineNumber: 408,
                                                                         columnNumber: 61
                                                                     }, this),
                                                                     field.note && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3346,29 +3289,29 @@ const JobApplicationForm = ({ jobId, jobSlug, formId })=>{
                                                                             children: field.note
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/Form.tsx",
-                                                                            lineNumber: 413,
+                                                                            lineNumber: 414,
                                                                             columnNumber: 65
                                                                         }, this)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/Form.tsx",
-                                                                        lineNumber: 412,
+                                                                        lineNumber: 413,
                                                                         columnNumber: 61
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/Form.tsx",
-                                                                lineNumber: 405,
+                                                                lineNumber: 406,
                                                                 columnNumber: 53
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/Form.tsx",
-                                                        lineNumber: 377,
+                                                        lineNumber: 378,
                                                         columnNumber: 49
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/Form.tsx",
-                                                    lineNumber: 376,
+                                                    lineNumber: 377,
                                                     columnNumber: 45
                                                 }, this)
                                             }, void 0, false) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
@@ -3392,12 +3335,12 @@ const JobApplicationForm = ({ jobId, jobSlug, formId })=>{
                                                             className: "jsx-b567c751c15b16d4" + " " + `wpcf7-form-control wpcf7-text ${field.isRequired ? 'wpcf7-validates-as-required' : ''}`
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/Form.tsx",
-                                                            lineNumber: 467,
+                                                            lineNumber: 468,
                                                             columnNumber: 49
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/Form.tsx",
-                                                        lineNumber: 466,
+                                                        lineNumber: 467,
                                                         columnNumber: 45
                                                     }, this),
                                                     field.helpText && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3407,12 +3350,12 @@ const JobApplicationForm = ({ jobId, jobSlug, formId })=>{
                                                             children: field.helpText
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/Form.tsx",
-                                                            lineNumber: 487,
+                                                            lineNumber: 488,
                                                             columnNumber: 53
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/Form.tsx",
-                                                        lineNumber: 486,
+                                                        lineNumber: 487,
                                                         columnNumber: 49
                                                     }, this),
                                                     field.note && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3422,12 +3365,12 @@ const JobApplicationForm = ({ jobId, jobSlug, formId })=>{
                                                             children: field.note
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/Form.tsx",
-                                                            lineNumber: 492,
+                                                            lineNumber: 493,
                                                             columnNumber: 53
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/Form.tsx",
-                                                        lineNumber: 491,
+                                                        lineNumber: 492,
                                                         columnNumber: 49
                                                     }, this)
                                                 ]
@@ -3437,18 +3380,18 @@ const JobApplicationForm = ({ jobId, jobSlug, formId })=>{
                                                 children: formErrors[field.name]
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/Form.tsx",
-                                                lineNumber: 498,
+                                                lineNumber: 499,
                                                 columnNumber: 41
                                             }, this)
                                         ]
                                     }, field.name, true, {
                                         fileName: "[project]/src/components/Form.tsx",
-                                        lineNumber: 296,
+                                        lineNumber: 297,
                                         columnNumber: 33
                                     }, this))
                             }, pairIndex, false, {
                                 fileName: "[project]/src/components/Form.tsx",
-                                lineNumber: 294,
+                                lineNumber: 295,
                                 columnNumber: 25
                             }, this)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3461,20 +3404,20 @@ const JobApplicationForm = ({ jobId, jobSlug, formId })=>{
                                     className: "jsx-b567c751c15b16d4" + " " + "wpcf7-form-control wpcf7-submit mdinc-apply-btn"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Form.tsx",
-                                    lineNumber: 508,
+                                    lineNumber: 509,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     className: "jsx-b567c751c15b16d4" + " " + "ajax-loader"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Form.tsx",
-                                    lineNumber: 514,
+                                    lineNumber: 515,
                                     columnNumber: 25
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/Form.tsx",
-                            lineNumber: 507,
+                            lineNumber: 508,
                             columnNumber: 21
                         }, this),
                         submitStatus.message && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3488,29 +3431,29 @@ const JobApplicationForm = ({ jobId, jobSlug, formId })=>{
                                         className: "jsx-b567c751c15b16d4" + " " + "mdinc-loader"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Form.tsx",
-                                        lineNumber: 522,
+                                        lineNumber: 523,
                                         columnNumber: 33
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Form.tsx",
-                                    lineNumber: 521,
+                                    lineNumber: 522,
                                     columnNumber: 29
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/Form.tsx",
-                            lineNumber: 518,
+                            lineNumber: 519,
                             columnNumber: 25
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/Form.tsx",
-                    lineNumber: 284,
+                    lineNumber: 285,
                     columnNumber: 17
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/Form.tsx",
-                lineNumber: 283,
+                lineNumber: 284,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -3520,7 +3463,7 @@ const JobApplicationForm = ({ jobId, jobSlug, formId })=>{
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/Form.tsx",
-        lineNumber: 281,
+        lineNumber: 282,
         columnNumber: 9
     }, this);
 };

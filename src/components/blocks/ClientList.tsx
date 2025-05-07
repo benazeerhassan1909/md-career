@@ -1,7 +1,6 @@
 import { PAGE_QUERYResult } from "@/sanity/types";
 import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
-import clsx from 'clsx';
 import { PortableText } from "next-sanity";
 
 

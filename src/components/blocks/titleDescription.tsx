@@ -1,19 +1,11 @@
 import { PortableText } from "@portabletext/react";
 import { PAGE_QUERYResult } from "@/sanity/types";
-import type { PortableTextBlock } from "@portabletext/types";
+// import type { PortableTextBlock } from "@portabletext/types";
 
 type TitleDescriptionProps = Extract<
     NonNullable<NonNullable<PAGE_QUERYResult>["content"]>[number],
     { _type: "titleDescription" }
 >;
-
-interface TableValue {
-    _type: "table";
-    rows: Array<{
-        _key: string;
-        cells: PortableTextBlock[];
-    }>;
-}
 
 export function TitleDescription({ title, description }: TitleDescriptionProps) {
     // Define custom components for PortableText
