@@ -264,7 +264,6 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$sanity$2f$lib$2f$imag
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$portabletext$2f$react$2f$dist$2f$index$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/node_modules/@portabletext/react/dist/index.js [app-rsc] (ecmascript) <locals>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/image.js [app-rsc] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$sanity$2f$lib$2f$queries$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/sanity/lib/queries.ts [app-rsc] (ecmascript)");
-// import CareerForm from '@/components/CareerForm';
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Form$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/Form.tsx [app-rsc] (ecmascript)");
 ;
 ;
@@ -282,7 +281,6 @@ async function JobDetailPage({ params }) {
             slug
         }
     });
-    // const { data: jobCTASettings } = await sanityFetch({ query: JOB_SETTINGS_QUERY, params: { slug } });
     const { data: jobSettings } = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$sanity$2f$lib$2f$live$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["sanityFetch"])({
         query: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$sanity$2f$lib$2f$queries$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["JOB_SETTINGS_QUERY"]
     });
