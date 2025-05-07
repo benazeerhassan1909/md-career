@@ -4,20 +4,17 @@ import { PortableText, PortableTextComponentProps } from "next-sanity";
 import Image from "next/image";
 import { JOB_QUERY } from "@/sanity/lib/queries";
 import { JOB_SETTINGS_QUERY } from "@/sanity/lib/queries";
-// import CareerForm from '@/components/CareerForm';
 import JobApplicationForm from "@/components/Form";
 
 
 type JobDetailPageProps = {
-    params: {
-        slug: string;
-    };
-}
+    params: { slug: string };
+    searchParams?: Record<string, string>;
+};
 export default async function JobDetailPage({ params }: JobDetailPageProps) {
     const { slug } = params;
 
     const { data: job } = await sanityFetch({ query: JOB_QUERY, params: { slug } });
-    // const { data: jobCTASettings } = await sanityFetch({ query: JOB_SETTINGS_QUERY, params: { slug } });
     const { data: jobSettings } = await sanityFetch({ query: JOB_SETTINGS_QUERY });
     const jobCTASettings = jobSettings?.jobCTASettings;
     if (!job) {
