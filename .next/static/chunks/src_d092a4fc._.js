@@ -326,14 +326,97 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$portablete
 function SplitImage({ title, image, orientation, description, authorimage, authorname, authordesignation, video, backgroundColor }) {
     const videoUrl = video?.url || null;
     const components = {
-        block: {
-            normal: ({ children })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                    className: "mdhome-gallery-details",
+        list: {
+            bullet: ({ children })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
+                    style: {
+                        paddingLeft: '20px',
+                        listStyle: 'disc'
+                    },
                     children: children
                 }, void 0, false, {
                     fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                    lineNumber: 17,
-                    columnNumber: 39
+                    lineNumber: 18,
+                    columnNumber: 17
+                }, this),
+            number: ({ children })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ol", {
+                    style: {
+                        paddingLeft: '20px',
+                        listStyle: 'decimal'
+                    },
+                    children: children
+                }, void 0, false, {
+                    fileName: "[project]/src/components/blocks/SplitImage.tsx",
+                    lineNumber: 21,
+                    columnNumber: 17
+                }, this)
+        },
+        block: {
+            left: ({ children })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                    className: "text-left",
+                    children: children
+                }, void 0, false, {
+                    fileName: "[project]/src/components/blocks/SplitImage.tsx",
+                    lineNumber: 26,
+                    columnNumber: 17
+                }, this),
+            center: ({ children })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                    className: "text-center",
+                    children: children
+                }, void 0, false, {
+                    fileName: "[project]/src/components/blocks/SplitImage.tsx",
+                    lineNumber: 29,
+                    columnNumber: 17
+                }, this),
+            right: ({ children })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                    className: "text-right",
+                    children: children
+                }, void 0, false, {
+                    fileName: "[project]/src/components/blocks/SplitImage.tsx",
+                    lineNumber: 32,
+                    columnNumber: 17
+                }, this),
+            normal: ({ children })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                    children: children
+                }, void 0, false, {
+                    fileName: "[project]/src/components/blocks/SplitImage.tsx",
+                    lineNumber: 34,
+                    columnNumber: 70
+                }, this),
+            h1: ({ children })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                    style: {
+                        fontSize: '32px',
+                        fontWeight: 'bold',
+                        margin: '10px 0'
+                    },
+                    children: children
+                }, void 0, false, {
+                    fileName: "[project]/src/components/blocks/SplitImage.tsx",
+                    lineNumber: 36,
+                    columnNumber: 17
+                }, this),
+            h2: ({ children })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                    style: {
+                        fontSize: '24px',
+                        fontWeight: 'bold',
+                        margin: '10px 0'
+                    },
+                    children: children
+                }, void 0, false, {
+                    fileName: "[project]/src/components/blocks/SplitImage.tsx",
+                    lineNumber: 41,
+                    columnNumber: 17
+                }, this),
+            h3: ({ children })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                    style: {
+                        fontSize: '20px',
+                        fontWeight: 'bold',
+                        margin: '10px 0'
+                    },
+                    children: children
+                }, void 0, false, {
+                    fileName: "[project]/src/components/blocks/SplitImage.tsx",
+                    lineNumber: 46,
+                    columnNumber: 17
                 }, this)
         }
     };
@@ -358,7 +441,7 @@ function SplitImage({ title, image, orientation, description, authorimage, autho
                                 children: title
                             }, void 0, false, {
                                 fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                lineNumber: 35,
+                                lineNumber: 66,
                                 columnNumber: 29
                             }, this) : null,
                             description ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$portabletext$2f$react$2f$dist$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["PortableText"], {
@@ -366,7 +449,7 @@ function SplitImage({ title, image, orientation, description, authorimage, autho
                                 components: components
                             }, void 0, false, {
                                 fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                lineNumber: 40,
+                                lineNumber: 71,
                                 columnNumber: 40
                             }, this) : null,
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -391,17 +474,17 @@ function SplitImage({ title, image, orientation, description, authorimage, autho
                                                 sizes: "auto, (max-width: 160px) 100vw, 160px"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                                lineNumber: 49,
+                                                lineNumber: 80,
                                                 columnNumber: 41
                                             }, this) : null
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                            lineNumber: 45,
+                                            lineNumber: 76,
                                             columnNumber: 33
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                        lineNumber: 44,
+                                        lineNumber: 75,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -413,20 +496,20 @@ function SplitImage({ title, image, orientation, description, authorimage, autho
                                                 children: authorname
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                                lineNumber: 67,
+                                                lineNumber: 98,
                                                 columnNumber: 37
                                             }, this) : null,
                                             authordesignation ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                 children: authordesignation
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                                lineNumber: 73,
+                                                lineNumber: 104,
                                                 columnNumber: 37
                                             }, this) : null
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                        lineNumber: 64,
+                                        lineNumber: 95,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -441,7 +524,7 @@ function SplitImage({ title, image, orientation, description, authorimage, autho
                                                         href: videoUrl
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                                        lineNumber: 82,
+                                                        lineNumber: 113,
                                                         columnNumber: 41
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -450,40 +533,40 @@ function SplitImage({ title, image, orientation, description, authorimage, autho
                                                             className: "mdinc-video-play-button-box-inner"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                                            lineNumber: 87,
+                                                            lineNumber: 118,
                                                             columnNumber: 45
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                                        lineNumber: 86,
+                                                        lineNumber: 117,
                                                         columnNumber: 41
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                                lineNumber: 81,
+                                                lineNumber: 112,
                                                 columnNumber: 37
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                            lineNumber: 80,
+                                            lineNumber: 111,
                                             columnNumber: 33
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                        lineNumber: 79,
+                                        lineNumber: 110,
                                         columnNumber: 29
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                lineNumber: 43,
+                                lineNumber: 74,
                                 columnNumber: 25
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                        lineNumber: 29,
+                        lineNumber: 60,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -497,7 +580,7 @@ function SplitImage({ title, image, orientation, description, authorimage, autho
                                 className: "wp-block-image aligncenter size-full is-resized animated-md-logo"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                lineNumber: 100,
+                                lineNumber: 131,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("figure", {
@@ -512,29 +595,29 @@ function SplitImage({ title, image, orientation, description, authorimage, autho
                                     className: "wp-image-45951 perfmatters-lazy loaded"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                    lineNumber: 116,
+                                    lineNumber: 147,
                                     columnNumber: 33
                                 }, this) : null
                             }, void 0, false, {
                                 fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                lineNumber: 113,
+                                lineNumber: 144,
                                 columnNumber: 25
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                        lineNumber: 95,
+                        lineNumber: 126,
                         columnNumber: 21
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                lineNumber: 26,
+                lineNumber: 57,
                 columnNumber: 17
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/components/blocks/SplitImage.tsx",
-            lineNumber: 25,
+            lineNumber: 56,
             columnNumber: 13
         }, this)
     }, void 0, false);
@@ -826,32 +909,67 @@ function TitleDescription({ title, description }) {
                     children: children
                 }, void 0, false, {
                     fileName: "[project]/src/components/blocks/titleDescription.tsx",
-                    lineNumber: 14,
-                    columnNumber: 37
+                    lineNumber: 15,
+                    columnNumber: 17
                 }, this),
             center: ({ children })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                     className: "text-center",
                     children: children
                 }, void 0, false, {
                     fileName: "[project]/src/components/blocks/titleDescription.tsx",
-                    lineNumber: 15,
-                    columnNumber: 39
+                    lineNumber: 18,
+                    columnNumber: 17
                 }, this),
             right: ({ children })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                     className: "text-right",
                     children: children
                 }, void 0, false, {
                     fileName: "[project]/src/components/blocks/titleDescription.tsx",
-                    lineNumber: 16,
-                    columnNumber: 38
+                    lineNumber: 21,
+                    columnNumber: 17
                 }, this),
             normal: ({ children })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                    className: "my-2",
                     children: children
                 }, void 0, false, {
                     fileName: "[project]/src/components/blocks/titleDescription.tsx",
-                    lineNumber: 17,
-                    columnNumber: 39
+                    lineNumber: 23,
+                    columnNumber: 70
+                }, this),
+            h1: ({ children })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                    style: {
+                        fontSize: '32px',
+                        fontWeight: 'bold',
+                        margin: '10px 0'
+                    },
+                    children: children
+                }, void 0, false, {
+                    fileName: "[project]/src/components/blocks/titleDescription.tsx",
+                    lineNumber: 25,
+                    columnNumber: 17
+                }, this),
+            h2: ({ children })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                    style: {
+                        fontSize: '24px',
+                        fontWeight: 'bold',
+                        margin: '10px 0'
+                    },
+                    children: children
+                }, void 0, false, {
+                    fileName: "[project]/src/components/blocks/titleDescription.tsx",
+                    lineNumber: 30,
+                    columnNumber: 17
+                }, this),
+            h3: ({ children })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                    style: {
+                        fontSize: '20px',
+                        fontWeight: 'bold',
+                        margin: '10px 0'
+                    },
+                    children: children
+                }, void 0, false, {
+                    fileName: "[project]/src/components/blocks/titleDescription.tsx",
+                    lineNumber: 35,
+                    columnNumber: 17
                 }, this)
         },
         types: {
@@ -867,17 +985,17 @@ function TitleDescription({ title, description }) {
                                             children: cell
                                         }, index, false, {
                                             fileName: "[project]/src/components/blocks/titleDescription.tsx",
-                                            lineNumber: 29,
+                                            lineNumber: 50,
                                             columnNumber: 45
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/blocks/titleDescription.tsx",
-                                    lineNumber: 27,
+                                    lineNumber: 48,
                                     columnNumber: 37
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/blocks/titleDescription.tsx",
-                                lineNumber: 26,
+                                lineNumber: 47,
                                 columnNumber: 33
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
@@ -888,28 +1006,28 @@ function TitleDescription({ title, description }) {
                                                 children: cell
                                             }, cellIndex, false, {
                                                 fileName: "[project]/src/components/blocks/titleDescription.tsx",
-                                                lineNumber: 42,
+                                                lineNumber: 63,
                                                 columnNumber: 49
                                             }, this) : null)
                                     }, rowIndex, false, {
                                         fileName: "[project]/src/components/blocks/titleDescription.tsx",
-                                        lineNumber: 39,
+                                        lineNumber: 60,
                                         columnNumber: 37
                                     }, this)))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/blocks/titleDescription.tsx",
-                                lineNumber: 36,
+                                lineNumber: 57,
                                 columnNumber: 29
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/blocks/titleDescription.tsx",
-                        lineNumber: 24,
+                        lineNumber: 45,
                         columnNumber: 25
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/components/blocks/titleDescription.tsx",
-                    lineNumber: 23,
+                    lineNumber: 44,
                     columnNumber: 21
                 }, this);
             }
@@ -930,7 +1048,7 @@ function TitleDescription({ title, description }) {
                 children: title
             }, void 0, false, {
                 fileName: "[project]/src/components/blocks/titleDescription.tsx",
-                lineNumber: 74,
+                lineNumber: 95,
                 columnNumber: 17
             }, this),
             description && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$portabletext$2f$react$2f$dist$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["PortableText"], {
@@ -942,13 +1060,13 @@ function TitleDescription({ title, description }) {
                 }
             }, void 0, false, {
                 fileName: "[project]/src/components/blocks/titleDescription.tsx",
-                lineNumber: 79,
+                lineNumber: 100,
                 columnNumber: 17
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/blocks/titleDescription.tsx",
-        lineNumber: 72,
+        lineNumber: 93,
         columnNumber: 9
     }, this);
 }

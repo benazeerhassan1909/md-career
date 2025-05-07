@@ -11,10 +11,31 @@ export function TitleDescription({ title, description }: TitleDescriptionProps) 
     // Define custom components for PortableText
     const components = {
         block: {
-            left: ({ children }) => <p className="text-left">{children}</p>,
-            center: ({ children }) => <p className="text-center">{children}</p>,
-            right: ({ children }) => <p className="text-right">{children}</p>,
-            normal: ({ children }) => <p className="my-2">{children}</p>,
+            left: ({ children }: { children: React.ReactNode }) => (
+                <p className="text-left">{children}</p>
+            ),
+            center: ({ children }: { children: React.ReactNode }) => (
+                <p className="text-center">{children}</p>
+            ),
+            right: ({ children }: { children: React.ReactNode }) => (
+                <p className="text-right">{children}</p>
+            ),
+            normal: ({ children }: { children: React.ReactNode }) => <p>{children}</p>,
+            h1: ({ children }: { children: React.ReactNode }) => (
+                <h1 style={{ fontSize: '32px', fontWeight: 'bold', margin: '10px 0' }}>
+                    {children}
+                </h1>
+            ),
+            h2: ({ children }: { children: React.ReactNode }) => (
+                <h2 style={{ fontSize: '24px', fontWeight: 'bold', margin: '10px 0' }}>
+                    {children}
+                </h2>
+            ),
+            h3: ({ children }: { children: React.ReactNode }) => (
+                <h3 style={{ fontSize: '20px', fontWeight: 'bold', margin: '10px 0' }}>
+                    {children}
+                </h3>
+            ),
         },
         types: {
             table: ({ value }) => {
