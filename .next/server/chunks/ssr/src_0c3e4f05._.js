@@ -305,7 +305,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$portablete
 ;
 ;
 function SplitImage({ title, image, orientation, description, authorimage, authorname, authordesignation, video, backgroundColor }) {
-    const videoUrl = video?.url || null;
+    const videoUrl = video?.url ?? undefined;
     const components = {
         list: {
             bullet: ({ children })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -316,7 +316,7 @@ function SplitImage({ title, image, orientation, description, authorimage, autho
                     children: children
                 }, void 0, false, {
                     fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                    lineNumber: 18,
+                    lineNumber: 17,
                     columnNumber: 17
                 }, this),
             number: ({ children })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ol", {
@@ -327,7 +327,7 @@ function SplitImage({ title, image, orientation, description, authorimage, autho
                     children: children
                 }, void 0, false, {
                     fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                    lineNumber: 21,
+                    lineNumber: 20,
                     columnNumber: 17
                 }, this)
         },
@@ -337,7 +337,7 @@ function SplitImage({ title, image, orientation, description, authorimage, autho
                     children: children
                 }, void 0, false, {
                     fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                    lineNumber: 26,
+                    lineNumber: 25,
                     columnNumber: 17
                 }, this),
             center: ({ children })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -345,7 +345,7 @@ function SplitImage({ title, image, orientation, description, authorimage, autho
                     children: children
                 }, void 0, false, {
                     fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                    lineNumber: 29,
+                    lineNumber: 28,
                     columnNumber: 17
                 }, this),
             right: ({ children })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -353,14 +353,14 @@ function SplitImage({ title, image, orientation, description, authorimage, autho
                     children: children
                 }, void 0, false, {
                     fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                    lineNumber: 32,
+                    lineNumber: 31,
                     columnNumber: 17
                 }, this),
             normal: ({ children })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                     children: children
                 }, void 0, false, {
                     fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                    lineNumber: 34,
+                    lineNumber: 33,
                     columnNumber: 70
                 }, this),
             h1: ({ children })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -372,7 +372,7 @@ function SplitImage({ title, image, orientation, description, authorimage, autho
                     children: children
                 }, void 0, false, {
                     fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                    lineNumber: 36,
+                    lineNumber: 35,
                     columnNumber: 17
                 }, this),
             h2: ({ children })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -384,7 +384,7 @@ function SplitImage({ title, image, orientation, description, authorimage, autho
                     children: children
                 }, void 0, false, {
                     fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                    lineNumber: 41,
+                    lineNumber: 40,
                     columnNumber: 17
                 }, this),
             h3: ({ children })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -396,7 +396,7 @@ function SplitImage({ title, image, orientation, description, authorimage, autho
                     children: children
                 }, void 0, false, {
                     fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                    lineNumber: 46,
+                    lineNumber: 45,
                     columnNumber: 17
                 }, this)
         }
@@ -422,7 +422,7 @@ function SplitImage({ title, image, orientation, description, authorimage, autho
                                 children: title
                             }, void 0, false, {
                                 fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                lineNumber: 66,
+                                lineNumber: 65,
                                 columnNumber: 29
                             }, this) : null,
                             description ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$portabletext$2f$react$2f$dist$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["PortableText"], {
@@ -430,7 +430,7 @@ function SplitImage({ title, image, orientation, description, authorimage, autho
                                 components: components
                             }, void 0, false, {
                                 fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                lineNumber: 71,
+                                lineNumber: 70,
                                 columnNumber: 40
                             }, this) : null,
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -455,17 +455,17 @@ function SplitImage({ title, image, orientation, description, authorimage, autho
                                                 sizes: "auto, (max-width: 160px) 100vw, 160px"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                                lineNumber: 80,
+                                                lineNumber: 79,
                                                 columnNumber: 41
                                             }, this) : null
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                            lineNumber: 76,
+                                            lineNumber: 75,
                                             columnNumber: 33
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                        lineNumber: 75,
+                                        lineNumber: 74,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -477,20 +477,20 @@ function SplitImage({ title, image, orientation, description, authorimage, autho
                                                 children: authorname
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                                lineNumber: 98,
+                                                lineNumber: 97,
                                                 columnNumber: 37
                                             }, this) : null,
                                             authordesignation ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                 children: authordesignation
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                                lineNumber: 104,
+                                                lineNumber: 103,
                                                 columnNumber: 37
                                             }, this) : null
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                        lineNumber: 95,
+                                        lineNumber: 94,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -505,7 +505,7 @@ function SplitImage({ title, image, orientation, description, authorimage, autho
                                                         href: videoUrl
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                                        lineNumber: 113,
+                                                        lineNumber: 112,
                                                         columnNumber: 41
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -514,40 +514,40 @@ function SplitImage({ title, image, orientation, description, authorimage, autho
                                                             className: "mdinc-video-play-button-box-inner"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                                            lineNumber: 118,
+                                                            lineNumber: 117,
                                                             columnNumber: 45
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                                        lineNumber: 117,
+                                                        lineNumber: 116,
                                                         columnNumber: 41
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                                lineNumber: 112,
+                                                lineNumber: 111,
                                                 columnNumber: 37
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                            lineNumber: 111,
+                                            lineNumber: 110,
                                             columnNumber: 33
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                        lineNumber: 110,
+                                        lineNumber: 109,
                                         columnNumber: 29
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                lineNumber: 74,
+                                lineNumber: 73,
                                 columnNumber: 25
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                        lineNumber: 60,
+                        lineNumber: 59,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -561,7 +561,7 @@ function SplitImage({ title, image, orientation, description, authorimage, autho
                                 className: "wp-block-image aligncenter size-full is-resized animated-md-logo"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                lineNumber: 131,
+                                lineNumber: 130,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("figure", {
@@ -576,29 +576,29 @@ function SplitImage({ title, image, orientation, description, authorimage, autho
                                     className: "wp-image-45951 perfmatters-lazy loaded"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                    lineNumber: 147,
+                                    lineNumber: 146,
                                     columnNumber: 33
                                 }, this) : null
                             }, void 0, false, {
                                 fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                                lineNumber: 144,
+                                lineNumber: 143,
                                 columnNumber: 25
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                        lineNumber: 126,
+                        lineNumber: 125,
                         columnNumber: 21
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/blocks/SplitImage.tsx",
-                lineNumber: 57,
+                lineNumber: 56,
                 columnNumber: 17
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/components/blocks/SplitImage.tsx",
-            lineNumber: 56,
+            lineNumber: 55,
             columnNumber: 13
         }, this)
     }, void 0, false);

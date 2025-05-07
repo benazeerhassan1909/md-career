@@ -69,7 +69,7 @@ export default async function JobDetailPage({ params }: JobDetailPageProps) {
                                     <div className="relative h-[400px] w-full">
                                         <Image
                                             src={urlFor(job.heroimage).url()}
-                                            alt={job.title }
+                                            alt={job.title ?? 'Default alt text'}
                                             layout="fill"
                                             objectFit="cover"
                                             className="object-center"

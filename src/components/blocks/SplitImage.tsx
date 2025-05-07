@@ -10,8 +10,7 @@ type SplitImageProps = Extract<
 
 export function SplitImage({ title, image, orientation, description, authorimage, authorname, authordesignation, video, backgroundColor
 }: SplitImageProps) {
-
-    const videoUrl = video?.url || null;
+    const videoUrl = video?.url ?? undefined;
     const components = {
         list: {
             bullet: ({ children }: { children: React.ReactNode }) => (
