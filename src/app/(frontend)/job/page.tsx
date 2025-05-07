@@ -113,7 +113,7 @@ export default async function Jobs() {
                                 <p className="details">
                                     We are looking for people who have a genuine interest in <strong>serving people</strong>,
                                     a passion for <strong>solving problems</strong>, thriving for <strong>productivity</strong>,
-                                    and <strong>love WordPress</strong> — if that's you, we would love to connect with you!
+                                    and <strong>love WordPress</strong> — if thats you, we would love to connect with you!
                                 </p>
 
                                 <div className="open-position-accordion">
@@ -131,7 +131,7 @@ export default async function Jobs() {
                                             <div className="position-details-body">
                                                 <p className="position-detail-description">
                                                     The hiring process for this role is currently paused and will reopen in early 2025.
-                                                    If you'd like us to reconnect when hiring resumes, we encourage you to submit your application.
+                                                    If youd like us to reconnect when hiring resumes, we encourage you to submit your application.
                                                 </p>
                                                 <p className="position-apply-btn">
                                                     <a href="https://careers.multidots.com/careers/sr-wordpress-developer-l4/#list-of-requirements">
