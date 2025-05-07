@@ -1,6 +1,6 @@
 import { sanityFetch } from "@/sanity/lib/live"; // or your fetch method
 import { urlFor } from "@/sanity/lib/image";
-import { PortableText, PortableTextComponentProps } from "next-sanity";
+import { PortableText } from "next-sanity";
 import Image from "next/image";
 import { JOB_QUERY } from "@/sanity/lib/queries";
 import { JOB_SETTINGS_QUERY } from "@/sanity/lib/queries";
