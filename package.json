@@ -1,37 +1,51 @@
 {
-  "name": "md-career",
+  "name": "layer-caker",
+  "version": "0.1.0",
   "private": true,
-  "version": "1.0.0",
-  "main": "package.json",
-  "license": "UNLICENSED",
   "scripts": {
-    "dev": "sanity dev",
-    "start": "sanity start",
-    "build": "sanity build",
-    "deploy": "sanity deploy",
-    "deploy-graphql": "sanity graphql deploy"
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "predev": "npm run typegen",
+    "prebuild": "npm run typegen",
+    "typegen": "sanity schema extract --path=./src/sanity/extract.json && sanity typegen generate"
   },
-  "keywords": [
-    "sanity"
-  ],
   "dependencies": {
-    "@sanity/vision": "^3.85.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "sanity": "^3.85.1",
-    "styled-components": "^6.1.15"
+    "@fontsource/noto-sans": "^5.2.6",
+    "@fortawesome/fontawesome-free": "^6.7.2",
+    "@hatchd/sanity-plugin-form-builder": "^1.1.0",
+    "@sanity/assist": "^4.0.0",
+    "@sanity/color-input": "^4.0.3",
+    "@sanity/dashboard": "^4.1.3",
+    "@sanity/icons": "^3.7.0",
+    "@sanity/image-url": "^1.1.0",
+    "@sanity/table": "^1.1.3",
+    "@sanity/vision": "^3.82.0",
+    "clsx": "^2.1.1",
+    "next": "15.2.4",
+    "next-sanity": "^9.9.9",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-icons": "^5.5.0",
+    "react-slick": "^0.30.3",
+    "sanity": "^3.82.0",
+    "sanity-plugin-media": "^3.0.2",
+    "schema-dts": "^1.1.5",
+    "slick-carousel": "^1.8.1",
+    "styled-components": "^6.1.17",
+    "swiper": "^11.2.6"
   },
   "devDependencies": {
-    "@sanity/eslint-config-studio": "^5.0.2",
-    "@types/react": "^18.0.25",
-    "eslint": "^9.9.0",
-    "prettier": "^3.0.2",
-    "typescript": "^5.1.6"
-  },
-  "prettier": {
-    "semi": false,
-    "printWidth": 100,
-    "bracketSpacing": false,
-    "singleQuote": true
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/react-slick": "^0.23.13",
+    "eslint": "^9",
+    "eslint-config-next": "15.2.4",
+    "tailwindcss": "^4",
+    "typescript": "^5"
   }
 }

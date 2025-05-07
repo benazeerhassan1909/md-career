@@ -1,0 +1,3 @@
+{
+  "/(frontend)/job/[slug]/page": "app/(frontend)/job/[slug]/page.js"
+}

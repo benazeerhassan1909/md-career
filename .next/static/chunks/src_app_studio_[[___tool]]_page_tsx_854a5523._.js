@@ -1,0 +1,42 @@
+(globalThis.TURBOPACK = globalThis.TURBOPACK || []).push([
+    "static/chunks/src_app_studio_[[___tool]]_page_tsx_854a5523._.js",
+    {},
+]);
+(globalThis.TURBOPACK_CHUNK_LISTS = globalThis.TURBOPACK_CHUNK_LISTS || []).push({
+  "path": "static/chunks/src_app_studio_[[___tool]]_page_tsx_854a5523._.js",
+  "chunks": [
+    "static/chunks/node_modules_9c552b72._.js",
+    "static/chunks/node_modules_sanity_lib__chunks-es_pane_mjs_341fdfeb._.js",
+    "static/chunks/node_modules_sanity_lib__chunks-es_cdd6c2e8._.js",
+    "static/chunks/node_modules_sanity_lib_index_mjs_3361d29f._.js",
+    "static/chunks/node_modules_sanity_lib_b85b34a8._.js",
+    "static/chunks/node_modules_rxjs_dist_esm5_internal_ae4899b3._.js",
+    "static/chunks/node_modules_lodash_bcd5ebdf._.js",
+    "static/chunks/node_modules_@sanity_ui_dist_aa0c40eb._.js",
+    "static/chunks/node_modules_201d123e._.js",
+    "static/chunks/node_modules_@sanity_icons_dist_index_068d3b79.js",
+    "static/chunks/node_modules_framer-motion_dist_es_d12c975d._.js",
+    "static/chunks/node_modules_e28eee45._.js",
+    "static/chunks/node_modules_next_dist_acee9d5c._.js",
+    "static/chunks/node_modules_moment_5ca36423._.js",
+    "static/chunks/node_modules_@sanity_schema_lib_57a3c4b2._.js",
+    "static/chunks/node_modules_groq-js_dist_1_mjs_e7241550._.js",
+    "static/chunks/node_modules_@dnd-kit_core_dist_core_esm_deb93fb9.js",
+    "static/chunks/node_modules_slate_dist_index_es_52fdc9dd.js",
+    "static/chunks/node_modules_slate-react_dist_index_es_a2aa2c9d.js",
+    "static/chunks/node_modules_@portabletext_editor_lib_556b141e._.js",
+    "static/chunks/node_modules_@sentry_core_build_esm_4d9c0edb._.js",
+    "static/chunks/node_modules_@sentry_browser_build_npm_esm_bddbce84._.js",
+    "static/chunks/node_modules_polished_dist_polished_esm_5b2c377f.js",
+    "static/chunks/node_modules_@tanstack_table-core_build_lib_index_mjs_dc7bc5d7._.js",
+    "static/chunks/node_modules_react-select_db0c3b43._.js",
+    "static/chunks/node_modules_zod_lib_index_mjs_ee760afb._.js",
+    "static/chunks/node_modules_sanity-plugin-media_dist_index_mjs_797f6ffd._.js",
+    "static/chunks/node_modules_@sanity_dead2da1._.js",
+    "static/chunks/node_modules_@emotion_61f50f95._.js",
+    "static/chunks/node_modules_@floating-ui_9ec1fa39._.js",
+    "static/chunks/node_modules_907c82bf._.js",
+    "static/chunks/_47103913._.js"
+  ],
+  "source": "dynamic"
+});
