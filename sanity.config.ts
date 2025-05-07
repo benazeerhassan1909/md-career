@@ -9,7 +9,6 @@ import { structureTool } from 'sanity/structure'
 import { presentationTool } from 'sanity/presentation'
 import { resolve } from '@/sanity/presentation/resolve'
 import { colorInput } from '@sanity/color-input';
-import { FormBuilderPlugin } from '@hatchd/sanity-plugin-form-builder';
 import { table } from '@sanity/table'
 
 
@@ -101,7 +100,6 @@ export default defineConfig({
     media(),
     table(),
     colorInput(),
-    FormBuilderPlugin(),
     dashboardTool({
       widgets: [
         sanityTutorialsWidget(),
