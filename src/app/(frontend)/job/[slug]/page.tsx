@@ -63,13 +63,13 @@ export default async function JobDetailPage({ params }: JobDetailPageProps) {
                 <section className="singleopening-page-banner static-banner submit_resume_banner mdinc-after-img-space">
                     <div className="md-color-overlay">
                         <div className="banner-content">
-                            <h1 className="mdinc-banner-title mdinc-title">{job.title}</h1>
+                            <h1 className="mdinc-banner-title mdinc-title">{job?.title}</h1>
                             <div className="banner-content-inner mdinc-banner mdinc-has-full">
-                                {job.heroimage && (
+                                {job?.heroimage && (
                                     <div className="relative h-[400px] w-full">
                                         <Image
                                             src={urlFor(job.heroimage).url()}
-                                            alt={job.title}
+                                            alt={job.title }
                                             layout="fill"
                                             objectFit="cover"
                                             className="object-center"
@@ -96,7 +96,7 @@ export default async function JobDetailPage({ params }: JobDetailPageProps) {
                 <section className="jobprofile-short-description-section jobprofile-skills-section">
                     <div className="container-fluid">
                         <div className="row">
-                            {job.body ? <PortableText
+                            {job?.body ? <PortableText
                                 value={job.body} components={components}
 
                             /> : null}
@@ -113,13 +113,13 @@ export default async function JobDetailPage({ params }: JobDetailPageProps) {
                                 <div className="list-of-requirements" id="list-of-requirements">
 
                                     {
-                                        Array.isArray(job.skills) && job.skills.length > 0 && (
-                                            job.skills.map((item, index) => (
+                                        Array.isArray(job?.skills) && job.skills.length > 0 && (
+                                            job?.skills.map((item, index) => (
                                                 <div className="job-post-details" key={index}>
                                                     <h3>{item.title}</h3>
                                                     <ul className="skills-list">
-                                                        {Array.isArray(item.skillitems) && item.skillitems.length > 0 &&
-                                                            item.skillitems.map((skill, index) => (
+                                                        {Array.isArray(item?.skillitems) && item.skillitems.length > 0 &&
+                                                            item?.skillitems.map((skill, index) => (
                                                                 <li key={`skill-${index}`}>{skill}</li>
                                                             ))}
                                                     </ul>
@@ -140,11 +140,11 @@ export default async function JobDetailPage({ params }: JobDetailPageProps) {
                                 }}>
                                     <div className="wp-block-multidots-multipurpose-block is-block-center jobprofile-sidebar">
                                         <h3 className="wp-block-heading has-text-align-center has-text-color" id="mdcareer-perks-and-benifits" style={{ color: '#000000' }}>
-                                            <strong>{job.benefitsheading}</strong>
+                                            <strong>{job?.benefitsheading}</strong>
                                         </h3>
                                         <div className="wp-block-group perks-sidebar-col-wrap has-global-padding is-layout-constrained wp-block-group-is-layout-constrained">
                                             {/* Perks items */}
-                                            {Array.isArray(job.benefits) ? (
+                                            {Array.isArray(job?.benefits) ? (
                                                 job.benefits?.map((item, index) => (
                                                     <div key={index} className="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
                                                         <div className="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
@@ -154,7 +154,7 @@ export default async function JobDetailPage({ params }: JobDetailPageProps) {
                                                 ))
                                             ) : null}
                                             {/* More perk items */}
-                                            {job.btntext && job.btnurl && (
+                                            {job?.btntext && job.btnurl && (
 
                                                 <div className="wp-block-columns perks-btn is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
                                                     <div className="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style={{ flexBasis: '50%' }}>
