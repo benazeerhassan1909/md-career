@@ -6,16 +6,12 @@ import { JOB_QUERY } from "@/sanity/lib/queries";
 import { JOB_SETTINGS_QUERY } from "@/sanity/lib/queries";
 import JobApplicationForm from "@/components/Form";
 
-interface JobPageParams {
-    slug: string;
-}
 
-interface JobPageProps {
-    params: JobPageParams;
-    searchParams?: { [key: string]: string | string[] | undefined };
+type JobDetailPageProps = {
+    params: Promise<{ slug: string }>;
 }
-export default async function JobDetailPage({ params }: JobPageProps) {
-    const { slug } = params;
+export default async function JobDetailPage({ params }: JobDetailPageProps) {
+    const { slug } = await params;
 
     const { data: job } = await sanityFetch({ query: JOB_QUERY, params: { slug } });
     const { data: jobSettings } = await sanityFetch({ query: JOB_SETTINGS_QUERY });

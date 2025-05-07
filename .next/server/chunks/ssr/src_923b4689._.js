@@ -274,7 +274,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Form$2e
 ;
 ;
 async function JobDetailPage({ params }) {
-    const { slug } = params;
+    const { slug } = await params;
     const { data: job } = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$sanity$2f$lib$2f$live$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["sanityFetch"])({
         query: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$sanity$2f$lib$2f$queries$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["JOB_QUERY"],
         params: {
@@ -290,7 +290,7 @@ async function JobDetailPage({ params }) {
             children: "Job not found"
         }, void 0, false, {
             fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-            lineNumber: 24,
+            lineNumber: 20,
             columnNumber: 16
         }, this);
     }
@@ -304,7 +304,7 @@ async function JobDetailPage({ params }) {
                     children: children
                 }, void 0, false, {
                     fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                    lineNumber: 28,
+                    lineNumber: 24,
                     columnNumber: 76
                 }, this),
             number: ({ children })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("ol", {
@@ -315,7 +315,7 @@ async function JobDetailPage({ params }) {
                     children: children
                 }, void 0, false, {
                     fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                    lineNumber: 29,
+                    lineNumber: 25,
                     columnNumber: 76
                 }, this)
         },
@@ -325,7 +325,7 @@ async function JobDetailPage({ params }) {
                     children: children
                 }, void 0, false, {
                     fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                    lineNumber: 33,
+                    lineNumber: 29,
                     columnNumber: 37
                 }, this),
             center: ({ children })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -333,7 +333,7 @@ async function JobDetailPage({ params }) {
                     children: children
                 }, void 0, false, {
                     fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                    lineNumber: 34,
+                    lineNumber: 30,
                     columnNumber: 39
                 }, this),
             right: ({ children })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -341,14 +341,14 @@ async function JobDetailPage({ params }) {
                     children: children
                 }, void 0, false, {
                     fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                    lineNumber: 35,
+                    lineNumber: 31,
                     columnNumber: 38
                 }, this),
             normal: ({ children })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                     children: children
                 }, void 0, false, {
                     fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                    lineNumber: 36,
+                    lineNumber: 32,
                     columnNumber: 76
                 }, this),
             h1: ({ children })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -360,7 +360,7 @@ async function JobDetailPage({ params }) {
                     children: children
                 }, void 0, false, {
                     fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                    lineNumber: 37,
+                    lineNumber: 33,
                     columnNumber: 72
                 }, this),
             h2: ({ children })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -372,7 +372,7 @@ async function JobDetailPage({ params }) {
                     children: children
                 }, void 0, false, {
                     fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                    lineNumber: 38,
+                    lineNumber: 34,
                     columnNumber: 72
                 }, this),
             h3: ({ children })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -384,7 +384,7 @@ async function JobDetailPage({ params }) {
                     children: children
                 }, void 0, false, {
                     fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                    lineNumber: 39,
+                    lineNumber: 35,
                     columnNumber: 72
                 }, this)
         }
@@ -407,7 +407,7 @@ async function JobDetailPage({ params }) {
                                     children: job.title
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                                    lineNumber: 50,
+                                    lineNumber: 46,
                                     columnNumber: 29
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -423,12 +423,12 @@ async function JobDetailPage({ params }) {
                                                 className: "object-center"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                                                lineNumber: 54,
+                                                lineNumber: 50,
                                                 columnNumber: 41
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                                            lineNumber: 53,
+                                            lineNumber: 49,
                                             columnNumber: 37
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
@@ -441,39 +441,39 @@ async function JobDetailPage({ params }) {
                                                     children: `.a{fill:#fff0bd;}.b,.e,.h{fill:none;}.c{mix-blend-mode:darken;}.c,.e,.f,.g,.i{isolation:isolate;}.d{fill:#d1b34d;}.e,.h{stroke:#000;}.e{stroke-width:3px;mix-blend-mode:soft-light;}.f,.g{mix-blend-mode:overlay;}.f{clip-path:url(#a);}.h{stroke-width:4px;}.i{mix-blend-mode:luminosity;}.j{fill:url(#b);}.k{fill:#bdd0fb;}.l{fill:url(#c);}.m{fill:#91b3fa;}.n{opacity:0.304;}.o,.q{opacity:0.6;}.p,.q{fill:#fff;}.r{opacity:0.405;fill:url(#e);}.s{clip-path:url(#f);}.t{fill:#ffeeb4;}.u{fill:url(#g);}.v{fill:url(#h);}.w{fill:url(#i);}.x{fill:url(#j);}.y{fill:url(#k);}.z{fill:url(#l);}.aa{fill:url(#m);}.ab{fill:url(#n);}.ac{fill:url(#o);}.ad{stroke:none;}`
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                                                    lineNumber: 67,
+                                                    lineNumber: 63,
                                                     columnNumber: 41
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                                                lineNumber: 66,
+                                                lineNumber: 62,
                                                 columnNumber: 37
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                                            lineNumber: 64,
+                                            lineNumber: 60,
                                             columnNumber: 33
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                                    lineNumber: 51,
+                                    lineNumber: 47,
                                     columnNumber: 29
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                            lineNumber: 49,
+                            lineNumber: 45,
                             columnNumber: 25
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                        lineNumber: 48,
+                        lineNumber: 44,
                         columnNumber: 21
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                    lineNumber: 47,
+                    lineNumber: 43,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -487,22 +487,22 @@ async function JobDetailPage({ params }) {
                                 components: components
                             }, void 0, false, {
                                 fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                                lineNumber: 83,
+                                lineNumber: 79,
                                 columnNumber: 41
                             }, this) : null
                         }, void 0, false, {
                             fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                            lineNumber: 82,
+                            lineNumber: 78,
                             columnNumber: 25
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                        lineNumber: 81,
+                        lineNumber: 77,
                         columnNumber: 21
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                    lineNumber: 80,
+                    lineNumber: 76,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -524,7 +524,7 @@ async function JobDetailPage({ params }) {
                                                         children: item.title
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                                                        lineNumber: 103,
+                                                        lineNumber: 99,
                                                         columnNumber: 53
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -533,28 +533,28 @@ async function JobDetailPage({ params }) {
                                                                 children: skill
                                                             }, `skill-${index}`, false, {
                                                                 fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                                                                lineNumber: 107,
+                                                                lineNumber: 103,
                                                                 columnNumber: 65
                                                             }, this))
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                                                        lineNumber: 104,
+                                                        lineNumber: 100,
                                                         columnNumber: 53
                                                     }, this)
                                                 ]
                                             }, index, true, {
                                                 fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                                                lineNumber: 102,
+                                                lineNumber: 98,
                                                 columnNumber: 49
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                                        lineNumber: 97,
+                                        lineNumber: 93,
                                         columnNumber: 33
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                                    lineNumber: 96,
+                                    lineNumber: 92,
                                     columnNumber: 29
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -583,12 +583,12 @@ async function JobDetailPage({ params }) {
                                                         children: job.benefitsheading
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                                                        lineNumber: 127,
+                                                        lineNumber: 123,
                                                         columnNumber: 45
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                                                    lineNumber: 126,
+                                                    lineNumber: 122,
                                                     columnNumber: 41
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -602,17 +602,17 @@ async function JobDetailPage({ params }) {
                                                                         children: item
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                                                                        lineNumber: 135,
+                                                                        lineNumber: 131,
                                                                         columnNumber: 61
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                                                                    lineNumber: 134,
+                                                                    lineNumber: 130,
                                                                     columnNumber: 57
                                                                 }, this)
                                                             }, index, false, {
                                                                 fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                                                                lineNumber: 133,
+                                                                lineNumber: 129,
                                                                 columnNumber: 53
                                                             }, this)) : null,
                                                         job.btntext && job.btnurl && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -630,60 +630,60 @@ async function JobDetailPage({ params }) {
                                                                         children: job.btntext
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                                                                        lineNumber: 146,
+                                                                        lineNumber: 142,
                                                                         columnNumber: 61
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                                                                    lineNumber: 145,
+                                                                    lineNumber: 141,
                                                                     columnNumber: 57
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                                                                lineNumber: 144,
+                                                                lineNumber: 140,
                                                                 columnNumber: 53
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                                                            lineNumber: 143,
+                                                            lineNumber: 139,
                                                             columnNumber: 49
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                                                    lineNumber: 129,
+                                                    lineNumber: 125,
                                                     columnNumber: 41
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                                            lineNumber: 125,
+                                            lineNumber: 121,
                                             columnNumber: 37
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                                        lineNumber: 119,
+                                        lineNumber: 115,
                                         columnNumber: 33
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                                    lineNumber: 118,
+                                    lineNumber: 114,
                                     columnNumber: 29
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                            lineNumber: 94,
+                            lineNumber: 90,
                             columnNumber: 25
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                        lineNumber: 93,
+                        lineNumber: 89,
                         columnNumber: 21
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                    lineNumber: 92,
+                    lineNumber: 88,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -692,12 +692,12 @@ async function JobDetailPage({ params }) {
                         jobId: job._id
                     }, void 0, false, {
                         fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                        lineNumber: 163,
+                        lineNumber: 159,
                         columnNumber: 25
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                    lineNumber: 161,
+                    lineNumber: 157,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -713,20 +713,20 @@ async function JobDetailPage({ params }) {
                                         children: jobCTASettings?.title || "Are you interested but do not see a position that fits?"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                                        lineNumber: 172,
+                                        lineNumber: 168,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         children: jobCTASettings?.text || "Get ready to rediscover yourself!"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                                        lineNumber: 175,
+                                        lineNumber: 171,
                                         columnNumber: 29
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                                lineNumber: 171,
+                                lineNumber: 167,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -742,34 +742,34 @@ async function JobDetailPage({ params }) {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                                        lineNumber: 181,
+                                        lineNumber: 177,
                                         columnNumber: 33
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                                    lineNumber: 180,
+                                    lineNumber: 176,
                                     columnNumber: 29
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                                lineNumber: 179,
+                                lineNumber: 175,
                                 columnNumber: 25
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                        lineNumber: 170,
+                        lineNumber: 166,
                         columnNumber: 21
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-                    lineNumber: 169,
+                    lineNumber: 165,
                     columnNumber: 17
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/(frontend)/job/[slug]/page.tsx",
-            lineNumber: 45,
+            lineNumber: 41,
             columnNumber: 13
         }, this)
     }, void 0, false);
