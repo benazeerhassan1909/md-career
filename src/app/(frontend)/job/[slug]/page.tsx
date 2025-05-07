@@ -17,9 +17,7 @@ export default async function JobDetailPage({ params }: JobDetailPageProps) {
     const { data: job } = await sanityFetch({ query: JOB_QUERY, params: { slug } });
     const { data: jobSettings } = await sanityFetch({ query: JOB_SETTINGS_QUERY });
     const jobCTASettings = jobSettings?.jobCTASettings;
-    if (!job) {
-        return <div>Job not found</div>;
-    }
+   
     const components = {
         list: {
             bullet: ({ children }: { children: React.ReactNode }) => (
