@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///Users/benazeer/Local%20Sites/md-career/src/components/DisableDraftMode.tsx"],"sourcesContent":["\"use client\";\n\nimport { useDraftModeEnvironment } from \"next-sanity/hooks\";\n\nexport function DisableDraftMode() {\n    const environment = useDraftModeEnvironment();\n\n    // Only show the disable draft mode button when outside of Presentation Tool\n    if (environment !== \"live\" && environment !== \"unknown\") {\n        return null;\n    }\n\n    return (\n        <a\n            href=\"/api/draft-mode/disable\"\n            className=\"fixed bottom-4 right-4 bg-gray-50 px-4 py-2\"\n        >\n            Disable Draft Mode\n        </a>\n    );\n}"],"names":[],"mappings":";;;;AAEA;;;AAFA;;AAIO,SAAS;;IACZ,MAAM,cAAc,CAAA,GAAA,8JAAA,CAAA,0BAAuB,AAAD;IAE1C,4EAA4E;IAC5E,IAAI,gBAAgB,UAAU,gBAAgB,WAAW;QACrD,OAAO;IACX;IAEA,qBACI,6LAAC;QACG,MAAK;QACL,WAAU;kBACb;;;;;;AAIT;GAhBgB;;QACQ,8JAAA,CAAA,0BAAuB;;;KAD/B","debugId":null}}]
-}
