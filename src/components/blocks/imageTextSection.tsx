@@ -4,7 +4,8 @@ import { PortableText } from '@portabletext/react'
 
 type ImageTextSectionProps = {
     title?: string
-    description?: string
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    description?: any
     mainImage?: never
     backgroundImage?: never
     imagePosition?: 'left' | 'right'

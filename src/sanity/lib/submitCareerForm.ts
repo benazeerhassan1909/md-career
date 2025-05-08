@@ -2,7 +2,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { createClient } from '@sanity/client'
-import type { NextApiRequest, NextApiResponse } from "next";
 
 const client = createClient({
     projectId: 'aiy1j8gs',
@@ -27,18 +26,18 @@ export const uploadResume = async (file: File) => {
     };
 };
 
-export const submitCareerForm = async (formData: Record<string, any>, formFields: any[], formName: string, token: string) => {
+export const submitCareerForm = async (formData: Record<string, any>, formFields: any[], formName: string) => {
 
     // 1. Verify CAPTCHA
-    const captchaResponse = await fetch(
-        `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`,
-        { method: "POST" }
-    );
-    const captchaData = await captchaResponse.json();
-    console.log(captchaData);
-    if (!captchaData.success) {
-        return res.status(400).json({ error: "CAPTCHA verification failed" });
-    }
+    // const captchaResponse = await fetch(
+    //     `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`,
+    //     { method: "POST" }
+    // );
+    // const captchaData = await captchaResponse.json();
+    // console.log(captchaData);
+    // if (!captchaData.success) {
+    //     return res.status(400).json({ error: "CAPTCHA verification failed" });
+    // }
 
 
 
@@ -62,7 +61,20 @@ export const submitCareerForm = async (formData: Record<string, any>, formFields
     });
 
     // Create the Sanity document
-    const doc = {
+    const doc: {
+        _type: string;
+        formName: string;
+        submittedAt: string;
+        submittedDetails: string;
+        rawData: string;
+        resume?: {
+            _type: string;
+            asset: {
+                _type: string;
+                _ref: string;
+            };
+        };
+    } = {
         _type: 'careerSubmission',
         formName: formName, // Store form name in its dedicated field
         submittedAt: new Date().toISOString(),

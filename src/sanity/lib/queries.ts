@@ -169,7 +169,13 @@ export const JOB_QUERY = defineQuery(`
   body,
   location,
   jobdescription,
-  skills,
+  skills[] {
+    _key,
+    _type,
+    title,
+    "text": pt::text(title),
+    skilllist
+  },
   benefits,
   experiences,
   benefitsheading,

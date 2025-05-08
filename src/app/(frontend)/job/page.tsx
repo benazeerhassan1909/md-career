@@ -47,7 +47,6 @@ export default async function Jobs() {
                             {/* Desktop Image */}
                             <figure className="wp-block-image aligncenter size-large img-desktop">
                                 <img
-                                    fetchpriority="high"
                                     decoding="async"
                                     width={3840}
                                     height={1200}
@@ -64,7 +63,6 @@ export default async function Jobs() {
                                 />
                                 <noscript>
                                     <img
-                                        fetchpriority="high"
                                         decoding="async"
                                         width={3840}
                                         height={1200}

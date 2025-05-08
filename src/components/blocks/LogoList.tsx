@@ -34,7 +34,7 @@ export function LogoList({ title, text, logos, backgroundColor }: LogoListProps)
             <div className="wp-block-columns are-vertically-aligned-center mdcareer-about-featured-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex" style={{
                 backgroundColor: backgroundColor?.hex,
             }}>
-                {logos.map((logo) => (
+                {logos?.map((logo) => (
                     <div
                         key={logo._key}
                         className="wp-block-column is-vertically-aligned-center mdcareer-about-featured-column is-layout-flow wp-block-column-is-layout-flow"

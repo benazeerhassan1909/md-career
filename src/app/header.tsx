@@ -79,9 +79,8 @@ export default async function Header() {
                                 data-wp-watch="callbacks.initMenu"
                                 data-wp-on--keydown="actions.handleMenuKeydown"
                                 data-wp-on-async--focusout="actions.handleMenuFocusout"
-                                tabIndex="-1"
                             >
-                                <div className="wp-block-navigation__responsive-close" tabIndex="-1">
+                                <div className="wp-block-navigation__responsive-close">
                                     <div
                                         className="wp-block-navigation__responsive-dialog"
                                         data-wp-bind--aria-modal="state.ariaModal"

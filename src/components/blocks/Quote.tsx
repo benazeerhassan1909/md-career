@@ -1,12 +1,18 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { PAGE_QUERYResult } from "@/sanity/types";
+// import { PAGE_QUERYResult } from "@/sanity/types";
 import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
 
-type QuoteProps = Extract<
-  NonNullable<NonNullable<PAGE_QUERYResult>["content"]>[number],
-  { _type: "quote" }
->;
+type QuoteProps = {
+    quoteText?: string;
+    author?: string;
+    quoteImage?: any;
+    backgroundColor?: {
+        hex?: string;
+    };
+};
+
 
 export function Quote({ quoteText, author, quoteImage, backgroundColor }: QuoteProps) {
   return (

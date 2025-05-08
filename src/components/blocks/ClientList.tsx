@@ -16,11 +16,8 @@ export function ClientList({ title, text, logos, backgroundColor }: ClientListPr
             style={{
                 backgroundColor: backgroundColor?.hex,
                 WebkitBoxAlign: 'center',
-                msFlexAlign: 'center',
                 alignItems: 'center',
                 padding: '35px 40px',
-                WebkitColumnGap: '34px',
-                MozColumnGap: '34px',
                 columnGap: '34px',
                 borderRadius: '20px',
                 marginBottom: 0,
@@ -46,7 +43,7 @@ export function ClientList({ title, text, logos, backgroundColor }: ClientListPr
                 ) : null}
 
                 <div id="client_logo-block_0dd36afc2b5047cf6e75f193aeccffea" className="mdinc-client-logo-grid large_device">
-                    {logos.map((logo, index) => (
+                    {logos?.map((logo, index) => (
                         <div key={index} className="mdinc-logo-outer">
                             <div className="mdinc-logo-wrapper">
                                 <figure className="wp-block-image size-large is-resized">

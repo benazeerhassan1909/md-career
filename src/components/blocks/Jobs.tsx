@@ -65,7 +65,7 @@ export function Jobs({ title, text, jobs, btntext, btnurl }: JobsProps) {
                                             </span>
                                         )}
                                         <p className="position-apply-btn">
-                                            <a href={`/job/${job.slug.current}`}>Learn more</a>
+                                            <a href={`/job/${job.slug?.current}`}>Learn more</a>
                                         </p>
                                     </div>
                                 </details>

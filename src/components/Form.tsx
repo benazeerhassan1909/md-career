@@ -4,7 +4,7 @@
 import React, { useState, useEffect } from 'react';
 import { client } from '../sanity/lib/client';
 import { submitCareerForm } from '../sanity/lib/submitCareerForm';
-import ReCAPTCHA from "react-google-recaptcha";
+// import ReCAPTCHA from "react-google-recaptcha";
 
 
 interface FormField {
@@ -32,7 +32,7 @@ const JobApplicationForm = ({ jobId, jobSlug, formId }: { jobId: string; jobSlug
     const [formErrors, setFormErrors] = useState<Record<string, string>>({});
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [fileName, setFileName] = useState('');
-    const [token, setToken] = useState<string | null>(null);
+    // const [token, setToken] = useState<string | null>(null);
 
 
 
@@ -106,10 +106,10 @@ const JobApplicationForm = ({ jobId, jobSlug, formId }: { jobId: string; jobSlug
                 else if (field.type === 'file' && !formData[field.name]) {
                     errors[field.name] = 'Please upload a file';
                     // Directly apply red color to all .file-error elements
-                    const fileErrorElements = document.querySelectorAll('.mdinc-info');
-                    fileErrorElements.forEach(element => {
-                        element.style.color = 'red';
-                    });
+                   // const fileErrorElements = document.querySelectorAll('.mdinc-info');
+                    // fileErrorElements.forEach(element => {
+                    //     element.style.color = 'red';
+                    // });
                 }
                 else if (field.type === 'file' && fileError) {
                     errors[field.name] = fileError;
@@ -213,14 +213,14 @@ const JobApplicationForm = ({ jobId, jobSlug, formId }: { jobId: string; jobSlug
 
         setIsSubmitting(true);
         setSubmitStatus({});
-        if (!token) {
-            alert("Please complete the CAPTCHA!");
-            return;
-        }
+        // if (!token) {
+        //     alert("Please complete the CAPTCHA!");
+        //     return;
+        // }
         try {
             if (!form || !form.fields) return;
 
-            await submitCareerForm(formData, form.fields, form.title || '', token);
+            await submitCareerForm(formData, form.fields, form.title || '');
             setSubmitStatus({
                 success: true,
                 message: 'Application submitted successfully!',
@@ -251,7 +251,7 @@ const JobApplicationForm = ({ jobId, jobSlug, formId }: { jobId: string; jobSlug
     }
 
     // Group fields into pairs for the two-column layout
-    const groupedFields = [];
+    const groupedFields: FormField[][] = [];
     let currentGroup: FormField[] = [];
 
     form.fields.forEach((field, index) => {
@@ -269,7 +269,7 @@ const JobApplicationForm = ({ jobId, jobSlug, formId }: { jobId: string; jobSlug
             currentGroup.push(field);
 
             // Push group when we have 2 fields or it's the last field
-            if (currentGroup.length === 2 || index === form.fields.length - 1) {
+            if (currentGroup.length === 2 || index === (form.fields?.length ?? 0) - 1) {
                 groupedFields.push([...currentGroup]);
                 currentGroup = [];
             }
@@ -279,7 +279,7 @@ const JobApplicationForm = ({ jobId, jobSlug, formId }: { jobId: string; jobSlug
             currentGroup.push(field);
 
             // Push group when we have 2 fields or it's the last field
-            if (currentGroup.length === 2 || index === form.fields.length - 1) {
+            if (currentGroup.length === 2 || index === (form.fields?.length ?? 0) - 1) {
                 groupedFields.push([...currentGroup]);
                 currentGroup = [];
             }
@@ -393,7 +393,7 @@ const JobApplicationForm = ({ jobId, jobSlug, formId }: { jobId: string; jobSlug
                                                             onChange={(e) => handleFileChange(e, field.name, field.allowedFormats)}
                                                             required={field.isRequired}
                                                             className="wpcf7-form-control wpcf7-file wpcf7-validates-as-required mdinc-contact-form-file"
-                                                            accept={field.allowedFormats}
+                                                            accept={field.allowedFormats?.join(',')}
                                                         />
                                                     </span>
                                                     
@@ -512,10 +512,10 @@ const JobApplicationForm = ({ jobId, jobSlug, formId }: { jobId: string; jobSlug
                             ))}
                         </div>
                     ))}
-                    <ReCAPTCHA
+                    {/* <ReCAPTCHA
                         sitekey={process.env.RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'}
                         onChange={setToken}
-                    />
+                    /> */}
 
                     <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-submit">
                         <input

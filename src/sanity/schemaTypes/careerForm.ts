@@ -57,7 +57,7 @@ export const careerForm = {
                             type: 'string',
                             title: 'Allowed File Formats',
                             description: 'Comma-separated list of allowed file formats (e.g., .jpg, .png)',
-                            hidden: ({ parent }) => parent.type !== 'file',  
+                            hidden: ({ parent }: { parent: { type?: string } }) => parent?.type !== 'file'
                         },
                         {
                             name: 'placeholder',

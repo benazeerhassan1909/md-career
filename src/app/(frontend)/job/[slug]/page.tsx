@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { sanityFetch } from "@/sanity/lib/live"; // or your fetch method
 import { urlFor } from "@/sanity/lib/image";
-import { PortableText } from "next-sanity"; 
+import { PortableText } from "next-sanity";
 import Image from "next/image";
 import { JOB_QUERY } from "@/sanity/lib/queries";
 import { JOB_SETTINGS_QUERY } from "@/sanity/lib/queries";
@@ -10,6 +10,7 @@ import JobApplicationForm from "@/components/Form";
 
 type JobDetailPageProps = {
     params: Promise<{ slug: string }>;
+
 }
 export default async function JobDetailPage({ params }: JobDetailPageProps) {
     const { slug } = await params;
@@ -17,38 +18,38 @@ export default async function JobDetailPage({ params }: JobDetailPageProps) {
     const { data: job } = await sanityFetch({ query: JOB_QUERY, params: { slug } });
     const { data: jobSettings } = await sanityFetch({ query: JOB_SETTINGS_QUERY });
     const jobCTASettings = jobSettings?.jobCTASettings;
-   
+
     const components = {
         list: {
-            bullet: ({ children }: { children: React.ReactNode }) => (
+            bullet: ({ children }: { children?: React.ReactNode }) => (
                 <ul style={{ paddingLeft: '20px', listStyle: 'disc' }}>{children}</ul>
             ),
-            number: ({ children }: { children: React.ReactNode }) => (
+            number: ({ children }: { children?: React.ReactNode }) => (
                 <ol style={{ paddingLeft: '20px', listStyle: 'decimal' }}>{children}</ol>
             ),
         },
         block: {
-            left: ({ children }: { children: React.ReactNode }) => (
-                <p className="text-left">{children}</p>
+            left: ({ children }: { children?: React.ReactNode }) => (
+                <div style={{ textAlign: 'left', marginBottom: '20px' }}>{children}</div>
             ),
-            center: ({ children }: { children: React.ReactNode }) => (
-                <p className="text-center">{children}</p>
+            right: ({ children }: { children?: React.ReactNode }) => (
+                <div style={{ textAlign: 'right', marginBottom: '20px' }}>{children}</div>
             ),
-            right: ({ children }: { children: React.ReactNode }) => (
-                <p className="text-right">{children}</p>
+            center: ({ children }: { children?: React.ReactNode }) => (
+                <div style={{ textAlign: 'center', marginBottom: '20px' }}>{children}</div>
             ),
-            normal: ({ children }: { children: React.ReactNode }) => <p>{children}</p>,
-            h1: ({ children }: { children: React.ReactNode }) => (
+            normal: ({ children }: { children?: React.ReactNode }) => <p>{children}</p>,
+            h1: ({ children }: { children?: React.ReactNode }) => (
                 <h1 style={{ fontSize: '32px', fontWeight: 'bold', margin: '10px 0' }}>
                     {children}
                 </h1>
             ),
-            h2: ({ children }: { children: React.ReactNode }) => (
+            h2: ({ children }: { children?: React.ReactNode }) => (
                 <h2 style={{ fontSize: '24px', fontWeight: 'bold', margin: '10px 0' }}>
                     {children}
                 </h2>
             ),
-            h3: ({ children }: { children: React.ReactNode }) => (
+            h3: ({ children }: { children?: React.ReactNode }) => (
                 <h3 style={{ fontSize: '20px', fontWeight: 'bold', margin: '10px 0' }}>
                     {children}
                 </h3>
@@ -114,19 +115,20 @@ export default async function JobDetailPage({ params }: JobDetailPageProps) {
 
                                     {
                                         Array.isArray(job?.skills) && job.skills.length > 0 && (
-                                            job?.skills.map((item, index) => (
+                                            job.skills.map((item, index) => (
                                                 <div className="job-post-details" key={index}>
                                                     <h3>{item.title}</h3>
                                                     <ul className="skills-list">
-                                                        {Array.isArray(item?.skillitems) && item.skillitems.length > 0 &&
-                                                            item?.skillitems.map((skill, index) => (
-                                                                <li key={`skill-${index}`}>{skill}</li>
+                                                        {Array.isArray(item?.skilllist) && item.skilllist.length > 0 &&
+                                                            item.skilllist.map((skill, skillIndex) => (
+                                                                <li key={`skill-${skillIndex}`}>{skill}</li>
                                                             ))}
                                                     </ul>
                                                 </div>
                                             ))
                                         )
                                     }
+
                                 </div>
                             </div>
 
@@ -175,10 +177,10 @@ export default async function JobDetailPage({ params }: JobDetailPageProps) {
 
                 {/* Application Form Section */}
                 <div className="container">
-                    {job.chooseForm && (
+                    {job?.chooseForm && (
                         <JobApplicationForm jobId={job._id} />
                     )}
-                    
+
 
                 </div>
                 {/* Call to Action Section */}

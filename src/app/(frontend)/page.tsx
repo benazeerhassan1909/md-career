@@ -11,3 +11,6 @@ export default async function Page() {
       documentType={page?.homePage._type} content={page?.homePage.content} />
   ) : null;
 }
+
+
+

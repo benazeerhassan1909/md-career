@@ -1,5 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { PAGE_QUERYResult } from "@/sanity/types";
 import Slider from 'react-slick'
 import Image from 'next/image'
 import { urlFor } from '@/sanity/lib/image' // assuming you have a `urlFor` utility
@@ -7,11 +7,30 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
 
-type TestimonialsProps = Extract<
-    NonNullable<NonNullable<PAGE_QUERYResult>["content"]>[number],
-    { _type: "TestimonialSlider" }
-> & {
-    logos: { _key: string; alt?: string }[]; // Update the type of logos to an array
+type Testimonial = {
+    _key: string;
+    quote: string;
+    author: string;
+    role?: string;
+    image?: any; // Replace with proper type if you use a specific Sanity image schema
+    backgroundColor?: {
+        hex?: string;
+    };
+};
+
+type Review = {
+    _key: string;
+    alt?: string;
+    width?: number;
+    height?: number;
+    asset?: any; // Assuming it's a Sanity image
+};
+
+type TestimonialsProps = {
+    _type: "TestimonialSlider";
+    title?: string;
+    testimonials: Testimonial[];
+    reviews?: Review[];
 };
 export function TestimonialSlider({ title, testimonials, reviews }: TestimonialsProps) {
     const settings = {
@@ -76,7 +95,7 @@ export function TestimonialSlider({ title, testimonials, reviews }: Testimonials
                                     data-slick-index="-1"
                                     aria-hidden="true"
                                     style={{ width: "970px", backgroundColor: t.backgroundColor?.hex  }}
-                                    tabIndex="-1"
+                                    tabIndex={-1}
                                 >
                                     <div className="mdc-peple-say-blk-text">
                                         <p>{t.quote}</p>

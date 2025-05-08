@@ -8,6 +8,8 @@ import { PortableText } from 'next-sanity'
 
 type TabSectionProps = {
     heading?: string
+    title?: string
+    text?: any
     tabs: {
         _key: string
         title: string

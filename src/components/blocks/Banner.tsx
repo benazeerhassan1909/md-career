@@ -29,7 +29,7 @@ export function Banner({ title, icon, btntext, btnurl, text }: BannerProps) {
                                 decoding="async"
                                 width={519}
                                 height={519}
-                                src={urlFor(icon).url()} alt="Anil Gupta"
+                                src={icon ? urlFor(icon).url() : ''} alt="Anil Gupta"
                                 className="wp-image-58038 perfmatters-lazy loaded"
                                 style={{ objectFit: 'cover', width: '280px', height: '280px' }}
 
