@@ -4,6 +4,8 @@
 import React, { useState, useEffect } from 'react';
 import { client } from '../sanity/lib/client';
 import { submitCareerForm } from '../sanity/lib/submitCareerForm';
+import ReCAPTCHA from "react-google-recaptcha";
+
 
 interface FormField {
     name: string;
@@ -30,6 +32,9 @@ const JobApplicationForm = ({ jobId, jobSlug, formId }: { jobId: string; jobSlug
     const [formErrors, setFormErrors] = useState<Record<string, string>>({});
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [fileName, setFileName] = useState('');
+    const [token, setToken] = useState<string | null>(null);
+
+
 
     const [submitStatus, setSubmitStatus] = useState<{
         success?: boolean;
@@ -208,11 +213,14 @@ const JobApplicationForm = ({ jobId, jobSlug, formId }: { jobId: string; jobSlug
 
         setIsSubmitting(true);
         setSubmitStatus({});
-
+        if (!token) {
+            alert("Please complete the CAPTCHA!");
+            return;
+        }
         try {
             if (!form || !form.fields) return;
 
-            await submitCareerForm(formData, form.fields, form.title || '');
+            await submitCareerForm(formData, form.fields, form.title || '', token);
             setSubmitStatus({
                 success: true,
                 message: 'Application submitted successfully!',
@@ -504,6 +512,10 @@ const JobApplicationForm = ({ jobId, jobSlug, formId }: { jobId: string; jobSlug
                             ))}
                         </div>
                     ))}
+                    <ReCAPTCHA
+                        sitekey={process.env.RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'}
+                        onChange={setToken}
+                    />
 
                     <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-submit">
                         <input

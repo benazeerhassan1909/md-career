@@ -595,6 +595,13 @@ export type FormType = {
   };
   enablesidebar?: boolean;
   currentopenings?: boolean;
+  jobs?: Array<{
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    _key: string;
+    [internalGroqTypeReferenceTo]?: "job";
+  }>;
   showquote?: boolean;
   quote?: string;
   quoteauthor?: string;
@@ -929,6 +936,13 @@ export type PageBuilder = Array<{
   };
   enablesidebar?: boolean;
   currentopenings?: boolean;
+  jobs?: Array<{
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    _key: string;
+    [internalGroqTypeReferenceTo]?: "job";
+  }>;
   showquote?: boolean;
   quote?: string;
   quoteauthor?: string;
@@ -1306,7 +1320,7 @@ export type POSTS_QUERYResult = Array<never>;
 // Query: *[_type == "post" && slug.current == $slug][0]{  _id,  title,  body,  mainImage,  publishedAt,  "categories": coalesce(    categories[]->{      _id,      slug,      title    },    []  ),  "seo": {    "title": coalesce(seo.title, title, ""),     "description": coalesce(seo.description,  ""),    "image": seo.image,    "noIndex": seo.noIndex == true  },  author->{    name,    image  },  relatedPosts[]{    _key, // required for drag and drop    ...@->{_id, title, slug} // get fields from the referenced post  }}
 export type POST_QUERYResult = null;
 // Variable: PAGE_QUERY
-// Query: *[_type == "page" && slug.current == $slug][0]{     ...,  "seo": {    "title": coalesce(seo.title, title, ""),     "description": coalesce(seo.description,  ""),    "image": seo.image,    "noIndex": seo.noIndex == true  },  content[] {    ...,        // Handle the 'jobs' content block    _type == "jobs" => {      ...,      jobs[]->{        _id,        title,        body,        location,        slug,        "text": pt::text(body)      }    },    _type == "faqs" => {      ...,      faqs[]->{        _id,        title,        body,        "text": pt::text(body)      }    },    _type == "formType" => {          ...,          formType[]->          {            ...          }        },    // Handle the 'splitImage' content block    _type == "splitImage" => {      ...,      "video": {        "url": video.asset->url,        "assetId": video.asset->_id      }    }  }}
+// Query: *[_type == "page" && slug.current == $slug][0]{     ...,  "seo": {    "title": coalesce(seo.title, title, ""),     "description": coalesce(seo.description,  ""),    "image": seo.image,    "noIndex": seo.noIndex == true  },  content[] {    ...,        // Handle the 'jobs' content block    _type == "jobs" => {      ...,      jobs[]->{        _id,        title,        body,        location,        slug,        "text": pt::text(body)      }    },    _type == "faqs" => {      ...,      faqs[]->{        _id,        title,        body,        "text": pt::text(body)      }    },     _type == "formType" => {      ...,      jobs[]-> {  // Add this arrow to dereference        _id,        title,        slug,        location      }    },    // Handle the 'splitImage' content block    _type == "splitImage" => {      ...,      "video": {        "url": video.asset->url,        "assetId": video.asset->_id      }    }  }}
 export type PAGE_QUERYResult = {
   _id: string;
   _type: "page";
@@ -1514,12 +1528,17 @@ export type PAGE_QUERYResult = {
     };
     enablesidebar?: boolean;
     currentopenings?: boolean;
+    jobs: Array<{
+      _id: string;
+      title: string | null;
+      slug: Slug | null;
+      location: string | null;
+    }> | null;
     showquote?: boolean;
     quote?: string;
     quoteauthor?: string;
     _type: "formType";
     _key: string;
-    formType: null;
   } | {
     _key: string;
     _type: "hero";
@@ -2050,7 +2069,7 @@ export type PAGE_QUERYResult = {
   };
 } | null;
 // Variable: HOME_PAGE_QUERY
-// Query: *[_id == "siteSettings"][0]{    homePage->{      ...,      content[]{        ...,        _type == "jobs" => {          ...,          jobs[]->        },        _type == "faqs" => {          ...,          faqs[]->        },         _type == "formType" => {          ...,          formType[]->        },         // Handle the 'splitImage' content block    _type == "splitImage" => {      ...,      "video": {        "url": video.asset->url,        "assetId": video.asset->_id      }    }      }          }  }
+// Query: *[_id == "siteSettings"][0]{    homePage->{      ...,      content[]{        ...,        _type == "jobs" => {          ...,          jobs[]->        },        _type == "faqs" => {          ...,          faqs[]->        },         _type == "formType" => {      ...,      jobs[]-> {  // Add this arrow to dereference        _id,        title,        slug,        location      }    },         // Handle the 'splitImage' content block    _type == "splitImage" => {      ...,      "video": {        "url": video.asset->url,        "assetId": video.asset->_id      }    }      }          }  }
 export type HOME_PAGE_QUERYResult = {
   homePage: null;
 } | {
@@ -2264,12 +2283,17 @@ export type HOME_PAGE_QUERYResult = {
       };
       enablesidebar?: boolean;
       currentopenings?: boolean;
+      jobs: Array<{
+        _id: string;
+        title: string | null;
+        slug: Slug | null;
+        location: string | null;
+      }> | null;
       showquote?: boolean;
       quote?: string;
       quoteauthor?: string;
       _type: "formType";
       _key: string;
-      formType: null;
     } | {
       _key: string;
       _type: "hero";
@@ -2981,8 +3005,8 @@ declare module "@sanity/client" {
   interface SanityQueries {
     "*[_type == \"post\" && defined(slug.current)][0...12]{\n  _id, title, slug\n}": POSTS_QUERYResult;
     "*[_type == \"post\" && slug.current == $slug][0]{\n  _id,\n  title,\n  body,\n  mainImage,\n  publishedAt,\n  \"categories\": coalesce(\n    categories[]->{\n      _id,\n      slug,\n      title\n    },\n    []\n  ),\n  \"seo\": {\n    \"title\": coalesce(seo.title, title, \"\"),\n     \"description\": coalesce(seo.description,  \"\"),\n    \"image\": seo.image,\n    \"noIndex\": seo.noIndex == true\n  },\n  author->{\n    name,\n    image\n  },\n  relatedPosts[]{\n    _key, // required for drag and drop\n    ...@->{_id, title, slug} // get fields from the referenced post\n  }\n}": POST_QUERYResult;
-    "*[_type == \"page\" && slug.current == $slug][0]{\n     ...,\n  \"seo\": {\n    \"title\": coalesce(seo.title, title, \"\"),\n     \"description\": coalesce(seo.description,  \"\"),\n    \"image\": seo.image,\n    \"noIndex\": seo.noIndex == true\n  },\n  content[] {\n    ...,\n    \n    // Handle the 'jobs' content block\n    _type == \"jobs\" => {\n      ...,\n      jobs[]->{\n        _id,\n        title,\n        body,\n        location,\n        slug,\n        \"text\": pt::text(body)\n      }\n    },\n    _type == \"faqs\" => {\n      ...,\n      faqs[]->{\n        _id,\n        title,\n        body,\n        \"text\": pt::text(body)\n      }\n    },\n    _type == \"formType\" => {\n          ...,\n          formType[]->\n          {\n            ...\n          }\n        },\n    // Handle the 'splitImage' content block\n    _type == \"splitImage\" => {\n      ...,\n      \"video\": {\n        \"url\": video.asset->url,\n        \"assetId\": video.asset->_id\n      }\n    }\n  }\n}\n": PAGE_QUERYResult;
-    "*[_id == \"siteSettings\"][0]{\n    homePage->{\n      ...,\n      content[]{\n        ...,\n        _type == \"jobs\" => {\n          ...,\n          jobs[]->\n        },\n        _type == \"faqs\" => {\n          ...,\n          faqs[]->\n        },\n         _type == \"formType\" => {\n          ...,\n          formType[]->\n        },\n         // Handle the 'splitImage' content block\n    _type == \"splitImage\" => {\n      ...,\n      \"video\": {\n        \"url\": video.asset->url,\n        \"assetId\": video.asset->_id\n      }\n    }\n      }      \n    }\n  }": HOME_PAGE_QUERYResult;
+    "*[_type == \"page\" && slug.current == $slug][0]{\n     ...,\n  \"seo\": {\n    \"title\": coalesce(seo.title, title, \"\"),\n     \"description\": coalesce(seo.description,  \"\"),\n    \"image\": seo.image,\n    \"noIndex\": seo.noIndex == true\n  },\n  content[] {\n    ...,\n    \n    // Handle the 'jobs' content block\n    _type == \"jobs\" => {\n      ...,\n      jobs[]->{\n        _id,\n        title,\n        body,\n        location,\n        slug,\n        \"text\": pt::text(body)\n      }\n    },\n    _type == \"faqs\" => {\n      ...,\n      faqs[]->{\n        _id,\n        title,\n        body,\n        \"text\": pt::text(body)\n      }\n    },\n     _type == \"formType\" => {\n      ...,\n      jobs[]-> {  // Add this arrow to dereference\n        _id,\n        title,\n        slug,\n        location\n      }\n    },\n    // Handle the 'splitImage' content block\n    _type == \"splitImage\" => {\n      ...,\n      \"video\": {\n        \"url\": video.asset->url,\n        \"assetId\": video.asset->_id\n      }\n    }\n  }\n}\n": PAGE_QUERYResult;
+    "*[_id == \"siteSettings\"][0]{\n    homePage->{\n      ...,\n      content[]{\n        ...,\n        _type == \"jobs\" => {\n          ...,\n          jobs[]->\n        },\n        _type == \"faqs\" => {\n          ...,\n          faqs[]->\n        },\n         _type == \"formType\" => {\n      ...,\n      jobs[]-> {  // Add this arrow to dereference\n        _id,\n        title,\n        slug,\n        location\n      }\n    },\n         // Handle the 'splitImage' content block\n    _type == \"splitImage\" => {\n      ...,\n      \"video\": {\n        \"url\": video.asset->url,\n        \"assetId\": video.asset->_id\n      }\n    }\n      }      \n    }\n  }": HOME_PAGE_QUERYResult;
     "\n  *[_type == \"redirect\" && isEnabled == true] {\n      source,\n      destination,\n      permanent\n  }\n": REDIRECTS_QUERYResult;
     "\n  *[_id == $id][0]{\n    title,\n    \"image\": mainImage.asset->{\n      url,\n      metadata {\n        palette\n      }\n    }\n  }    \n": OG_IMAGE_QUERYResult;
     "\n*[_type in [\"page\", \"post\"] && defined(slug.current)] {\n    \"href\": select(\n      _type == \"page\" => \"/\" + slug.current,\n      _type == \"post\" => \"/posts/\" + slug.current,\n      slug.current\n    ),\n    _updatedAt\n}\n": SITEMAP_QUERYResult;

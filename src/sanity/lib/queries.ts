@@ -67,13 +67,15 @@ export const PAGE_QUERY =
         "text": pt::text(body)
       }
     },
-    _type == "formType" => {
-          ...,
-          formType[]->
-          {
-            ...
-          }
-        },
+     _type == "formType" => {
+      ...,
+      jobs[]-> {  // Add this arrow to dereference
+        _id,
+        title,
+        slug,
+        location
+      }
+    },
     // Handle the 'splitImage' content block
     _type == "splitImage" => {
       ...,
@@ -101,9 +103,14 @@ export const HOME_PAGE_QUERY = defineQuery(`*[_id == "siteSettings"][0]{
           faqs[]->
         },
          _type == "formType" => {
-          ...,
-          formType[]->
-        },
+      ...,
+      jobs[]-> {  // Add this arrow to dereference
+        _id,
+        title,
+        slug,
+        location
+      }
+    },
          // Handle the 'splitImage' content block
     _type == "splitImage" => {
       ...,
