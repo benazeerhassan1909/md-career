@@ -178,7 +178,7 @@ export default async function JobDetailPage({ params }: JobDetailPageProps) {
                 {/* Application Form Section */}
                 <div className="container">
                     {job?.chooseForm && (
-                        <JobApplicationForm jobId={job._id} />
+                        <JobApplicationForm jobId={job._id}  formId={job.chooseForm._ref}/>
                     )}
 
 

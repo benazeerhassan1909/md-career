@@ -93,7 +93,7 @@ const JobApplicationForm = ({ jobId, jobSlug, formId }: { jobId: string; jobSlug
         fetchData();
     }, [jobId, jobSlug, formId]);
 
-   
+
 
     const handleFocus = (fieldName: string) => {
         setFocusedFields(prev => ({ ...prev, [fieldName]: true }));
@@ -247,7 +247,7 @@ const JobApplicationForm = ({ jobId, jobSlug, formId }: { jobId: string; jobSlug
             setSubmitStatus({
                 success: true,
                 message: 'Application submitted successfully! A confirmation has been sent to your email.'
-                  
+
             });
 
             // Reset form
@@ -300,7 +300,7 @@ const JobApplicationForm = ({ jobId, jobSlug, formId }: { jobId: string; jobSlug
         });
         setFormData(resetData);
     };
-
+    console.log('form', form);
     if (!form) {
         return <div>Loading form...</div>;
     }
