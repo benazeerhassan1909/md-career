@@ -17,7 +17,7 @@ export default async function Footer() {
         siteTitle?: string;
         footer?: {
             socialLinks?: { url: string; name: string , icon: string}[],
-            footermenuItems?: { title: string; url: string; subMenu?: { title: string; link: string }[] }[]
+            footermenuItems?: { title: string; url: string; subMenu?: { title: string; url: string }[] }[]
         };
         logo?: { asset?: { _ref: string }; url?: string; alt?: string; width?: number; height?: number };
 
@@ -115,7 +115,7 @@ export default async function Footer() {
                         <div className="wp-block-column is-vertically-aligned-top mdFooter-right is-layout-flow wp-block-column-is-layout-flow">
                             <div className="wp-block-columns mdFooter-right-inner is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
 
-                                {footer?.footermenuItems?.map((menuItem: { title: string; url: string; subMenu?: { title: string; link: string }[] }) => (
+                                {footer?.footermenuItems?.map((menuItem: { title: string; url: string; subMenu?: { title: string; url: string }[] }) => (
 
                                     <div key={menuItem.title} >
                                         <div className="wp-block-column mdFooter-menu is-layout-flow wp-block-column-is-layout-flow">
@@ -126,10 +126,10 @@ export default async function Footer() {
                                                 <nav className="is-vertical wp-block-navigation is-layout-flex wp-container-core-navigation-is-layout-5f9f5280 wp-block-navigation-is-layout-flex" aria-label="Navigation 3">
                                                     {menuItem.subMenu && menuItem.subMenu.length > 0 && (
                                                         <ul className="wp-block-navigation__container is-vertical wp-block-navigation">
-                                                            {menuItem.subMenu.map((subMenuItem :{ title: string; link: string}) => (
+                                                            {menuItem.subMenu.map((subMenuItem: { title: string; url: string}) => (
                                                                 <li key={subMenuItem.title} className="wp-block-navigation-item wp-block-navigation-link">
-                                                                    {subMenuItem.link ? (
-                                                                        <a href={subMenuItem.link} className="wp-block-navigation-item__content">
+                                                                    {subMenuItem.url ? (
+                                                                        <a href={subMenuItem.url} className="wp-block-navigation-item__content">
                                                                             {subMenuItem.title}
                                                                         </a>
                                                                     ) : (

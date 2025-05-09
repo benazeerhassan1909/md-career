@@ -1,15 +1,15 @@
 import { PortableText } from "@portabletext/react";
 import { PAGE_QUERYResult } from "@/sanity/types";
-// import type { PortableTextBlock } from "@portabletext/types";
 
 type TitleDescriptionProps = Extract<
     NonNullable<NonNullable<PAGE_QUERYResult>["content"]>[number],
     { _type: "titleDescription" }
 >;
 
-export function TitleDescription({ title, description }: TitleDescriptionProps) {
+export function TitleDescription({ title, description }: TitleDescriptionProps,) {
     // Define custom components for PortableText
     const components = {
+        
         list: {
             bullet: ({ children }: { children?: React.ReactNode }) => (
                 <ul style={{ paddingLeft: '20px', listStyle: 'disc' }}>{children}</ul>
@@ -45,6 +45,48 @@ export function TitleDescription({ title, description }: TitleDescriptionProps) 
                 </h3>
             ),
         },
+        types: {
+            table: ({ value }: { value: { rows: { cells: string[] }[] } }) => {
+                const [headerRow, ...bodyRows] = value.rows || [];
+                return (
+                    <div className="education-scholarship-table">
+                        <table>
+                            {headerRow && (
+                                <thead>
+                                    <tr>
+                                        {headerRow.cells.map((cell, index) => (
+                                            <th key={index}>
+                                                {cell}
+                                            </th>
+                                        ))}
+                                    </tr>
+                                </thead>
+                            )}
+                            <tbody>
+                                {bodyRows.map((row, rowIndex) => (
+                                    console.log(rowIndex),
+                                    <tr key={rowIndex}>
+                                        {row.cells.map((cell, cellIndex) =>
+                                            cell ? (
+                                                <td
+                                                    key={cellIndex}
+                                                    className={`${cellIndex === 2 ? 'no-border-top' : 'border'}`}
+                                                    rowSpan={cellIndex === 3 && rowIndex === 0 ? 2 : undefined}
+                                                >
+                                                    {cell}
+                                                </td>
+                                            ) : null
+                                        )}
+                                    </tr>
+
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                );
+            },
+        },
+
     };
 
     return (

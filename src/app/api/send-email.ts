@@ -3,6 +3,7 @@ import nodemailer from 'nodemailer';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     if (req.method !== 'POST') {
+        console.log('Method not allowed:', req.method);
         return res.status(405).json({ message: 'Method not allowed' });
     }
 
@@ -16,7 +17,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             pass: process.env.EMAIL_PASSWORD,
         },
     });
-
+    console.log('Transporter created:', { user: process.env.EMAIL_USER });
     try {
         // Send mail
         await transporter.sendMail({
@@ -26,7 +27,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             text,
             html,
         });
-
+        console.log('Email sent successfully:', { to, subject, text, html });
         return res.status(200).json({ success: true });
     } catch (error) {
         console.error('Error sending email:', error);

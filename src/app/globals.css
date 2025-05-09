@@ -5564,7 +5564,7 @@ body.admin-bar main.site-main {
 }
 
 .mdinc-title {
-    margin: 70px 0 0;
+    margin: 70px 0 60px 0;
 }
 
 .mdinc-after-img-space {
@@ -8577,7 +8577,7 @@ div.loading .mdinc-loaderOuter {
 }
 
 .mdcareer-homepage-current-opening .open-position h2.title {
-    margin-bottom: 40px
+    margin: 80px 0
 }
 
 .mdcareer-homepage-current-opening .open-position p.details {

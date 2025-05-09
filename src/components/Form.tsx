@@ -93,50 +93,7 @@ const JobApplicationForm = ({ jobId, jobSlug, formId }: { jobId: string; jobSlug
         fetchData();
     }, [jobId, jobSlug, formId]);
 
-    const validateForm = () => {
-        const errors: Record<string, string> = {};
-        if (!form?.fields) return false;
-
-        form.fields.forEach((field) => {
-            if (field.isRequired) {
-                console.log(formData[field.name]);
-                if (field.type === 'checkbox' && !formData[field.name]) {
-                    errors[field.name] = 'Please check the box';
-                }
-                else if (field.type === 'file' && !formData[field.name]) {
-                    errors[field.name] = 'Please upload a file';
-                    // Directly apply red color to all .file-error elements
-                    // const fileErrorElements = document.querySelectorAll('.mdinc-info');
-                    // fileErrorElements.forEach(element => {
-                    //     element.style.color = 'red';
-                    // });
-                }
-                else if (field.type === 'file' && fileError) {
-                    errors[field.name] = fileError;
-                }
-                else {
-                    errors[field.name] = `Please enter your ${field.label?.toLowerCase()}.`;
-
-                }
-            }
-
-            // Add field-specific validations
-            if (formData[field.name]?.toString().trim()) {
-                if (field.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData[field.name])) {
-                    errors[field.name] = 'Please enter a valid email address';
-                }
-                else if (field.type === 'url' && !/^https?:\/\/.+\..+/.test(formData[field.name])) {
-                    errors[field.name] = 'Please enter a valid URL';
-                }
-                else if (field.type === 'tel' && !/^[\d\s\+\-\(\)]{10,}$/.test(formData[field.name])) {
-                    errors[field.name] = 'Please enter a valid phone number';
-                }
-            }
-        });
-
-        setFormErrors(errors);
-        return Object.keys(errors).length === 0;
-    };
+   
 
     const handleFocus = (fieldName: string) => {
         setFocusedFields(prev => ({ ...prev, [fieldName]: true }));
@@ -166,6 +123,9 @@ const JobApplicationForm = ({ jobId, jobSlug, formId }: { jobId: string; jobSlug
     };
 
     const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>, fieldName: string, allowedFormats?: string) => {
+        // Prevent default behavior that might cause refresh
+        e.preventDefault();
+
         if (e.target.files && e.target.files[0]) {
             const file = e.target.files[0];
             const fileExtension = file.name.split('.').pop()?.toLowerCase();
@@ -177,17 +137,12 @@ const JobApplicationForm = ({ jobId, jobSlug, formId }: { jobId: string; jobSlug
             }
 
             setFileError('');
-            setFormData({
-                ...formData,
+            setFormData(prev => ({
+                ...prev,
                 [fieldName]: file,
-            });
-            if (e.target.files && e.target.files[0]) {
-                const file = e.target.files[0];
+            }));
 
-                // ...
-
-                setFileName(file.name); // Update the file name state
-            }
+            setFileName(file.name); // Update the file name state
 
             // Clear file error when file is selected
             if (formErrors[fieldName]) {
@@ -199,71 +154,151 @@ const JobApplicationForm = ({ jobId, jobSlug, formId }: { jobId: string; jobSlug
             }
         }
     };
+    const validateForm = () => {
+        const errors: Record<string, string> = {};
+        if (!form?.fields) return false;
+
+        let isValid = true;
+
+        form.fields.forEach((field) => {
+            const fieldValue = formData[field.name];
+            const isEmpty = fieldValue === undefined || fieldValue === null ||
+                (typeof fieldValue === 'string' && fieldValue.trim() === '') ||
+                (Array.isArray(fieldValue) && fieldValue.length === 0);
+
+            // Required field validation
+            if (field.isRequired) {
+                if (isEmpty) {
+                    errors[field.name] = `Please enter your ${field.label?.toLowerCase()}.`;
+                    isValid = false;
+                }
+
+                // Special case for checkbox
+                if (field.type === 'checkbox' && !fieldValue) {
+                    errors[field.name] = 'Please check the box';
+                    isValid = false;
+                }
+
+                // Special case for file uploads
+                if (field.type === 'file' && isEmpty) {
+                    errors[field.name] = 'Please upload a file';
+                    isValid = false;
+                }
+            }
+
+            // Field-specific format validation (only if field has value)
+            if (!isEmpty && fieldValue) {
+                if (field.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fieldValue.toString())) {
+                    errors[field.name] = 'Please enter a valid email address';
+                    isValid = false;
+                }
+                else if (field.type === 'url' && !/^https?:\/\/.+\..+/.test(fieldValue.toString())) {
+                    errors[field.name] = 'Please enter a valid URL';
+                    isValid = false;
+                }
+                else if (field.type === 'tel' && !/^[\d\s\+\-\(\)]{10,}$/.test(fieldValue.toString())) {
+                    errors[field.name] = 'Please enter a valid phone number';
+                    isValid = false;
+                }
+            }
+
+            // Additional file validation
+            if (field.type === 'file' && fileError) {
+                errors[field.name] = fileError;
+                isValid = false;
+            }
+        });
+
+        setFormErrors(errors);
+        return isValid;
+    };
 
     const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
+        e.preventDefault(); // This should prevent the default form submission behavior
 
-        if (!validateForm()) {
-            setSubmitStatus({
-                success: false,
-                message: 'One or more fields have an error. Please check and try again.',
-            });
-            return;
-        }
-
+        // If the page is still reloading, the issue might be elsewhere
         setIsSubmitting(true);
         setSubmitStatus({});
-        // if (!token) {
-        //     alert("Please complete the CAPTCHA!");
-        //     return;
-        // }
-        try {
-            if (!form || !form.fields) return;
 
+        try {
+            // Validate form
+            const isValid = validateForm();
+            if (!isValid) {
+                throw new Error('Please fill in all required fields correctly.');
+            }
+
+            if (!form?.fields) {
+                throw new Error('Form configuration is missing');
+            }
+
+            // Submit career form - make sure this returns a Promise
             await submitCareerForm(formData, form.fields, form.title || '');
-            // Then send confirmation email
-            const email = 'benazircpra@gmail.com'; // Assuming you have an email field
-            if (email) {
-                await fetch('/api/send-email', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        to: email,
-                        subject: 'Application Received',
-                        html: `
-            <h1>Thank you for your application!</h1>
-            <p>We've received your application for ${form.title || 'the position'}.</p>
-            <p>Our team will review your information and get back to you soon.</p>
-            <p>Best regards,</p>
-            <p>Your Company Team</p>
-          `,
-                        text: `Thank you for your application! We've received your application for ${form.title || 'the position'}. Our team will review your information and get back to you soon.`,
-                    }),
+
+            // Only send confirmation if email field exists and has value
+            const hasEmailField = form.fields.some(f => f.name === 'email');
+            if (hasEmailField && formData.email) {
+                await sendConfirmationEmail({
+                    email: formData.email,
+                    message: 'Thank you for your application!',
                 });
             }
 
+            // Handle success
             setSubmitStatus({
                 success: true,
-                message: 'Application submitted successfully! A confirmation has been sent to your email.',
+                message: 'Application submitted successfully! A confirmation has been sent to your email.'
+                  
             });
 
+            // Reset form
+            resetFormFields(form.fields);
 
-            const resetData: Record<string, any> = {};
-            form.fields.forEach((field: FormField) => {
-                resetData[field.name] = field.type === 'checkbox' ? false : '';
-            });
-            setFormData(resetData);
         } catch (error) {
             console.error('Submission error:', error);
             setSubmitStatus({
                 success: false,
-                message: 'Error submitting application. Please try again.',
+                message: error instanceof Error
+                    ? error.message
+                    : 'Error submitting application. Please try again.',
             });
         } finally {
             setIsSubmitting(false);
         }
+    };
+
+    // Helper function for sending email
+    const sendConfirmationEmail = async (emailData: {
+        email: string;
+        message: string;
+    }) => {
+        try {
+            console.log('Sending confirmation email to:', emailData.email);
+            const response = await fetch('/api/send-email', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(emailData),
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.error || 'Failed to send email');
+            }
+            console.log('response', response);
+
+            return await response.json();
+        } catch (error) {
+            console.error('Email sending error:', error);
+            throw error; // Re-throw to be caught in the main handler
+        }
+    };
+
+    // Helper function to reset form fields
+    const resetFormFields = (fields: FormField[]) => {
+        const resetData: Record<string, any> = {};
+        fields.forEach((field: FormField) => {
+            resetData[field.name] = field.type === 'checkbox' ? false : '';
+        });
+        setFormData(resetData);
     };
 
     if (!form) {
@@ -326,7 +361,7 @@ const JobApplicationForm = ({ jobId, jobSlug, formId }: { jobId: string; jobSlug
                     {groupedFields.map((fieldPair, pairIndex) => (
                         <div key={pairIndex} className={`mdinc-form-field ${fieldPair[0]?.type === 'textarea' ? 'full-width-textarea' : ''}`}>
                             {fieldPair.map((field) => (
-                                <div key={field.name}
+                                <div key={field.name + pairIndex}
                                     className={`${field.type === 'checkbox' || field.type === 'textarea'
                                         ? 'cust-wrapper'
                                         : 'mdinc-form-field-wrapper-container'
