@@ -1,27 +1,13 @@
 import JobApplicationForm from "../Form";
 import Image from "next/image";
-
-type JobType = {
-    _id: string;
-    _type: "job";
-    title?: string;
-    slug?: { current: string };
-    location?: string;
-};
-
-type CareerFormProps = {
-    _type: "formType";
-    title?: string;
-    chooseForm?: { _type: "reference"; _ref: string };
-    enablesidebar?: boolean;
-    currentopenings?: boolean;
-    showquote?: boolean;
-    quote?: string;
-    quoteauthor?: string;
-    jobs?: JobType[];
-};
+import { PAGE_QUERYResult } from "@/sanity/types";
 
 
+type CareerFormProps = Extract<
+    NonNullable<NonNullable<PAGE_QUERYResult>["content"]>[number],
+    { _type: "formType" }
+    
+>;
 
 export function CareerForm({ title, chooseForm, enablesidebar, currentopenings, showquote, quote, quoteauthor, jobs }: CareerFormProps) {
 

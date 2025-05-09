@@ -30,13 +30,13 @@ export default async function JobDetailPage({ params }: JobDetailPageProps) {
         },
         block: {
             left: ({ children }: { children?: React.ReactNode }) => (
-                <div style={{ textAlign: 'left', marginBottom: '20px' }}>{children}</div>
+                <p style={{ textAlign: 'left', marginBottom: '20px' }}>{children}</p>
             ),
             right: ({ children }: { children?: React.ReactNode }) => (
-                <div style={{ textAlign: 'right', marginBottom: '20px' }}>{children}</div>
+                <p style={{ textAlign: 'right', marginBottom: '20px' }}>{children}</p>
             ),
             center: ({ children }: { children?: React.ReactNode }) => (
-                <div style={{ textAlign: 'center', marginBottom: '20px' }}>{children}</div>
+                <p style={{ textAlign: 'center', marginBottom: '20px' }}>{children}</p>
             ),
             normal: ({ children }: { children?: React.ReactNode }) => <p>{children}</p>,
             h1: ({ children }: { children?: React.ReactNode }) => (

@@ -7,7 +7,7 @@ import { urlFor } from "@/sanity/lib/image";
 
 type ImagProps = Extract<
     NonNullable<NonNullable<PAGE_QUERYResult>["content"]>[number],
-    { _type: "imageType" }
+    { _type: "imageBlock" }
 >;
 
 export function ImageType({ heading, image, buttonText, buttonUrl }: ImagProps) {

@@ -38,7 +38,7 @@ export const careerSubmission = defineType({
             submittedAt: 'submittedAt',
             applicant: 'submittedDetails'
         },
-        prepare({ formName, submittedAt, applicant }: { formName: string; submittedAt: string; applicant: string }) {
+        prepare({ formName, submittedAt, applicant }) {
             // Extract the first line that looks like "Name: ..." for the subtitle
             const nameLine = applicant.split('\n').find((line: string) => line.toLowerCase().includes('name:'));
             const applicantName = nameLine ? nameLine.split(':')[1].trim() : 'Unknown applicant';

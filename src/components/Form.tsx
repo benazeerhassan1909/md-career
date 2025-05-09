@@ -16,7 +16,7 @@ interface FormField {
     showPlaceholder?: boolean;
     helpText?: string;
     note?: string; // Added note field
-    allowedFormats?: string[]; // Added allowed formats
+    allowedFormats?: string; // Added allowed formats
 }
 
 interface FormConfig {
@@ -106,7 +106,7 @@ const JobApplicationForm = ({ jobId, jobSlug, formId }: { jobId: string; jobSlug
                 else if (field.type === 'file' && !formData[field.name]) {
                     errors[field.name] = 'Please upload a file';
                     // Directly apply red color to all .file-error elements
-                   // const fileErrorElements = document.querySelectorAll('.mdinc-info');
+                    // const fileErrorElements = document.querySelectorAll('.mdinc-info');
                     // fileErrorElements.forEach(element => {
                     //     element.style.color = 'red';
                     // });
@@ -165,7 +165,7 @@ const JobApplicationForm = ({ jobId, jobSlug, formId }: { jobId: string; jobSlug
         }
     };
 
-    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>, fieldName: string, allowedFormats?: string[]) => {
+    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>, fieldName: string, allowedFormats?: string) => {
         if (e.target.files && e.target.files[0]) {
             const file = e.target.files[0];
             const fileExtension = file.name.split('.').pop()?.toLowerCase();
@@ -221,10 +221,34 @@ const JobApplicationForm = ({ jobId, jobSlug, formId }: { jobId: string; jobSlug
             if (!form || !form.fields) return;
 
             await submitCareerForm(formData, form.fields, form.title || '');
+            // Then send confirmation email
+            const email = 'benazircpra@gmail.com'; // Assuming you have an email field
+            if (email) {
+                await fetch('/api/send-email', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        to: email,
+                        subject: 'Application Received',
+                        html: `
+            <h1>Thank you for your application!</h1>
+            <p>We've received your application for ${form.title || 'the position'}.</p>
+            <p>Our team will review your information and get back to you soon.</p>
+            <p>Best regards,</p>
+            <p>Your Company Team</p>
+          `,
+                        text: `Thank you for your application! We've received your application for ${form.title || 'the position'}. Our team will review your information and get back to you soon.`,
+                    }),
+                });
+            }
+
             setSubmitStatus({
                 success: true,
-                message: 'Application submitted successfully!',
+                message: 'Application submitted successfully! A confirmation has been sent to your email.',
             });
+
 
             const resetData: Record<string, any> = {};
             form.fields.forEach((field: FormField) => {
@@ -269,7 +293,7 @@ const JobApplicationForm = ({ jobId, jobSlug, formId }: { jobId: string; jobSlug
             currentGroup.push(field);
 
             // Push group when we have 2 fields or it's the last field
-            if (currentGroup.length === 2 || index === (form.fields?.length ?? 0) - 1) {
+            if (currentGroup.length === 2 || index === (form?.fields?.length || 0) - 1) {
                 groupedFields.push([...currentGroup]);
                 currentGroup = [];
             }
@@ -279,7 +303,7 @@ const JobApplicationForm = ({ jobId, jobSlug, formId }: { jobId: string; jobSlug
             currentGroup.push(field);
 
             // Push group when we have 2 fields or it's the last field
-            if (currentGroup.length === 2 || index === (form.fields?.length ?? 0) - 1) {
+            if (currentGroup.length === 2 || index === (form?.fields?.length || 0) - 1) {
                 groupedFields.push([...currentGroup]);
                 currentGroup = [];
             }
@@ -386,30 +410,28 @@ const JobApplicationForm = ({ jobId, jobSlug, formId }: { jobId: string; jobSlug
                                                 <div className="mdinc-file" >
                                                     <span className="wpcf7-form-control-wrap mdinc-btn" >
                                                         <input
-                                                            // hidden
                                                             id={field.name}
                                                             name={field.name}
                                                             type="file"
                                                             onChange={(e) => handleFileChange(e, field.name, field.allowedFormats)}
                                                             required={field.isRequired}
                                                             className="wpcf7-form-control wpcf7-file wpcf7-validates-as-required mdinc-contact-form-file"
-                                                            accept={field.allowedFormats?.join(',')}
-                                                        />
+                                                            accept={field.allowedFormats} />
                                                     </span>
-                                                    
+
                                                     {/* < span className="wpcf7-not-valid-tip file-error mdinc-info mdinc-error" >
                                                         {formErrors[field.name] || 'No file chosen'}
                                                     </span> */}
                                                     < span className="file-format" >
                                                         Allowed formats *: <small>{field.allowedFormats} </small>
                                                     </span>
-                                                            {fileError || formErrors[field.name] || fileName ? (
-                                                                <span className="wpcf7-not-valid-tip file-error mdinc-info mdinc-error">
-                                                                    {fileError || formErrors[field.name] || fileName}
-                                                                </span>
-                                                            ) : (
-                                                                <span className="mdinc-info">No file chosen</span>
-                                                            )}
+                                                    {fileError || formErrors[field.name] || fileName ? (
+                                                        <span className="wpcf7-not-valid-tip file-error mdinc-info mdinc-error">
+                                                            {fileError || formErrors[field.name] || fileName}
+                                                        </span>
+                                                    ) : (
+                                                        <span className="mdinc-info">No file chosen</span>
+                                                    )}
 
                                                     <div className="file-format-help">
                                                         {field.helpText && (

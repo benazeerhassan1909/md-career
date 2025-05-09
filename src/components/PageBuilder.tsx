@@ -12,17 +12,17 @@ import { client } from "@/sanity/lib/client";
 import { createDataAttribute } from "next-sanity";
 import { useOptimistic } from "next-sanity/hooks";
 import { PAGE_QUERYResult } from "@/sanity/types";
-// import { TestimonialSlider } from "@/components/blocks/TestimonialSlider";
-// import { TabSection } from "@/components/blocks/tabSection";
-// import { ImageTextSection } from "@/components/blocks/imageTextSection";
+import { TestimonialSlider } from "@/components/blocks/TestimonialSlider";
+import { TabSection } from "@/components/blocks/tabSection";
+import { ImageTextSection } from "@/components/blocks/imageTextSection";
 import { CardSection } from "@/components/blocks/CardSection";
 import { Banner } from "@/components/blocks/Banner";
-// import { ImageType } from "@/components/blocks/Image";
 import { FAQs } from "@/components/blocks/FAQs";
 import { ThreeColBox } from "@/components/blocks/ThreeColBox";
 import { Quote } from "@/components/blocks/Quote";
 import { List } from "@/components/blocks/List";
-// import { CareerForm } from "./blocks/CareerForm";
+import { CareerForm } from "./blocks/CareerForm";
+import { ImageType } from "@/components/blocks/Image";
 
 
 type PageBuilderProps = {
@@ -126,24 +126,24 @@ export function PageBuilder({
                             </DragHandle>
                         );
 
-                    // case "testimonialSlider":
-                    //     return (
-                    //         <DragHandle key={block._key}>
-                    //             <TestimonialSlider {...block} />
-                    //         </DragHandle>
-                    //     );
-                    // case "tabSection":
-                    //     return (
-                    //         <DragHandle key={block._key}>
-                    //             <TabSection {...block} />
-                    //         </DragHandle>
-                    //     );
-                    // case "imageTextSection":
-                    //     return (
-                    //         <DragHandle key={block._key}>
-                    //             <ImageTextSection {...block} />
-                    //         </DragHandle>
-                    //     );
+                    case "testimonialSlider":
+                        return (
+                            <DragHandle key={block._key}>
+                                <TestimonialSlider {...block} />
+                            </DragHandle>
+                        );
+                    case "tabSection":
+                        return (
+                            <DragHandle key={block._key}>
+                                <TabSection {...block} />
+                            </DragHandle>
+                        );
+                    case "imageTextSection":
+                        return (
+                            <DragHandle key={block._key}>
+                                <ImageTextSection {...block} />
+                            </DragHandle>
+                        );
                     case "cardSection":
                         return (
                             <DragHandle key={block._key}>
@@ -156,18 +156,18 @@ export function PageBuilder({
                                 <Banner {...block} />
                             </DragHandle>
                         );
-                    // case "formType":
-                    //     return (
-                    //         <DragHandle key={block._key}>
-                    //             <CareerForm {...block}  />
-                    //         </DragHandle>
-                    //     );
-                    // case "imageBlock":
-                    //     return (
-                    //         <DragHandle key={block._key}>
-                    //             <ImageType {...block} />
-                    //         </DragHandle>
-                    //     );
+                    case "formType":
+                        return (
+                            <DragHandle key={block._key}>
+                                <CareerForm {...block} />
+                            </DragHandle>
+                        );
+                    case "imageBlock":
+                        return (
+                            <DragHandle key={block._key}>
+                                <ImageType {...block} />
+                            </DragHandle>
+                        );
                     case "faqs":
                         return (
                             <DragHandle key={block._key}>
@@ -194,7 +194,7 @@ export function PageBuilder({
                         );
                     default:
                         // This is a fallback for when we don't have a block type
-                        return <div key={block._key}>Block not found: {block._type}</div>;
+                        return <div>Block not found</div>;
                 }
             })}
         </main>

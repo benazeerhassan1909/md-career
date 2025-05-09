@@ -1,15 +1,12 @@
 import Image from 'next/image'
 import { urlFor } from '@/sanity/lib/image'
 import { PortableText } from '@portabletext/react'
+import { PAGE_QUERYResult } from '@/sanity/types'
 
-type ImageTextSectionProps = {
-    title?: string
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    description?: any
-    mainImage?: never
-    backgroundImage?: never
-    imagePosition?: 'left' | 'right'
-}
+type ImageTextSectionProps = Extract<
+    NonNullable<NonNullable<PAGE_QUERYResult>["content"]>[number],
+    { _type: "imageTextSection" }
+>;
 
 export function ImageTextSection({
     title,

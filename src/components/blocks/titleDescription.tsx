@@ -20,13 +20,13 @@ export function TitleDescription({ title, description }: TitleDescriptionProps) 
         },
         block: {
             left: ({ children }: { children?: React.ReactNode }) => (
-                <div style={{ textAlign: 'left', marginBottom: '20px' }}>{children}</div>
+                <p style={{ textAlign: 'left', marginBottom: '20px' }}>{children}</p>
             ),
             right: ({ children }: { children?: React.ReactNode }) => (
-                <div style={{ textAlign: 'right', marginBottom: '20px' }}>{children}</div>
+                <p style={{ textAlign: 'right', marginBottom: '20px' }}>{children}</p>
             ),
             center: ({ children }: { children?: React.ReactNode }) => (
-                <div style={{ textAlign: 'center', marginBottom: '20px' }}>{children}</div>
+                <p style={{ textAlign: 'center', marginBottom: '20px' }}>{children}</p>
             ),
             normal: ({ children }: { children?: React.ReactNode }) => <p>{children}</p>,
             h1: ({ children }: { children?: React.ReactNode }) => (
@@ -54,16 +54,8 @@ export function TitleDescription({ title, description }: TitleDescriptionProps) 
                     {title}
                 </h2>
             )}
-            {description && (
-                <PortableText
-                    value={description}
-                    components={components}
-                    onMissingComponent={(message, options) => {
-                        console.warn(message, options);
-                        return null;
-                    }}
-                />
-            )}
+            {description ? <PortableText value={description} components={components} /> : null}
+
         </div>
     );
 }

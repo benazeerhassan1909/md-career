@@ -1,5 +1,5 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 
+import { PAGE_QUERYResult } from "@/sanity/types";
 import Slider from 'react-slick'
 import Image from 'next/image'
 import { urlFor } from '@/sanity/lib/image' // assuming you have a `urlFor` utility
@@ -7,31 +7,11 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
 
-type Testimonial = {
-    _key: string;
-    quote: string;
-    author: string;
-    role?: string;
-    image?: any; // Replace with proper type if you use a specific Sanity image schema
-    backgroundColor?: {
-        hex?: string;
-    };
-};
+type TestimonialsProps = Extract<
+    NonNullable<NonNullable<PAGE_QUERYResult>["content"]>[number],
+    { _type: "testimonialSlider" }
+>;
 
-type Review = {
-    _key: string;
-    alt?: string;
-    width?: number;
-    height?: number;
-    asset?: any; // Assuming it's a Sanity image
-};
-
-type TestimonialsProps = {
-    _type: "TestimonialSlider";
-    title?: string;
-    testimonials: Testimonial[];
-    reviews?: Review[];
-};
 export function TestimonialSlider({ title, testimonials, reviews }: TestimonialsProps) {
     const settings = {
         dots: true,
@@ -87,8 +67,7 @@ export function TestimonialSlider({ title, testimonials, reviews }: Testimonials
 
                 <div className="mdc-peple-say-blk-outer addSlider slick-initialized slick-slider" role="toolbar">
                     <Slider {...settings}>
-                        {testimonials.map((t) => (
-                            console.log(t.backgroundColor?.hex),
+                        {testimonials?.map((t) => (
                             <>
                                 <div key={t._key}
                                     className="mdc-peple-say-blk slick-slide slick-cloned"
@@ -106,7 +85,7 @@ export function TestimonialSlider({ title, testimonials, reviews }: Testimonials
                                                 {t.image && (
                                                     <Image
                                                         src={urlFor(t.image).width(60).height(60).url()}
-                                                        alt={t.author}
+                                                        alt={t.author || ''}
                                                         width={60}
                                                         height={60}
                                                         loading="lazy"

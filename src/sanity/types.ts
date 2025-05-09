@@ -643,6 +643,28 @@ export type ImageBlock = {
   buttonUrl?: string;
 };
 
+export type CareerSubmission = {
+  _id: string;
+  _type: "careerSubmission";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  formName?: string;
+  submittedDetails?: string;
+  resume?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.fileAsset";
+    };
+    media?: unknown;
+    _type: "file";
+  };
+  submittedAt?: string;
+  rawData?: string;
+};
+
 export type ImageTextSection = {
   _type: "imageTextSection";
   title?: string;
@@ -1288,7 +1310,7 @@ export type Slug = {
   source?: string;
 };
 
-export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | Geopoint | Quote | Faq | Faqs | CardSection | TestimonialSlider | ClientList | LogoList | TitleDescription | SplitImage | Hero | Features | Jobs | List | FormType | ThreeColBox | ImageBlock | ImageTextSection | TabSection | Job | CareerForm | PageBuilder | Banner | SiteSettings | Page | SanityFileAsset | BlockContent | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Color | RgbaColor | HsvaColor | HslaColor | Table | TableRow | MediaTag | Slug;
+export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | Geopoint | Quote | Faq | Faqs | CardSection | TestimonialSlider | ClientList | LogoList | TitleDescription | SplitImage | Hero | Features | Jobs | List | FormType | ThreeColBox | ImageBlock | CareerSubmission | ImageTextSection | TabSection | Job | CareerForm | PageBuilder | Banner | SiteSettings | Page | SanityFileAsset | BlockContent | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Color | RgbaColor | HsvaColor | HslaColor | Table | TableRow | MediaTag | Slug;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./src/sanity/lib/queries.ts
 // Variable: POSTS_QUERY
@@ -2896,7 +2918,7 @@ export type JOBS_QUERYResult = Array<{
   text: string;
 }>;
 // Variable: JOB_QUERY
-// Query: *[_type == "job" && slug.current == $slug][0] {  _id,  slug,  heroimage,  title,  body,  location,  jobdescription,  skills[] {    _key,    _type,    title,    "text": pt::text(title),    skilllist  },  benefits,  experiences,  benefitsheading,  btntext,  btnurl,  chooseForm}
+// Query: *[_type == "job" && slug.current == $slug][0] {  _id,  slug,  heroimage,  title,  body,  location,  jobdescription,  skills[],  benefits,  experiences,  benefitsheading,  btntext,  btnurl,  chooseForm}
 export type JOB_QUERYResult = {
   _id: string;
   slug: Slug | null;
@@ -2949,11 +2971,10 @@ export type JOB_QUERYResult = {
   location: string | null;
   jobdescription: null;
   skills: Array<{
-    _key: string;
+    title?: string;
+    skilllist?: Array<string>;
     _type: "skill";
-    title: string | null;
-    text: string;
-    skilllist: Array<string> | null;
+    _key: string;
   }> | null;
   benefits: Array<string> | null;
   experiences: null;
@@ -2990,7 +3011,7 @@ declare module "@sanity/client" {
     "\n  *[_id == $id][0]{\n    title,\n    \"image\": mainImage.asset->{\n      url,\n      metadata {\n        palette\n      }\n    }\n  }    \n": OG_IMAGE_QUERYResult;
     "\n*[_type in [\"page\", \"post\"] && defined(slug.current)] {\n    \"href\": select(\n      _type == \"page\" => \"/\" + slug.current,\n      _type == \"post\" => \"/posts/\" + slug.current,\n      slug.current\n    ),\n    _updatedAt\n}\n": SITEMAP_QUERYResult;
     "\n*[_type == \"job\"]{\n  _id,\n  slug,\n  title,\n  body,\n  location,\n  \"text\": pt::text(body)\n}\n": JOBS_QUERYResult;
-    "\n*[_type == \"job\" && slug.current == $slug][0] {\n  _id,\n  slug,\n  heroimage,\n  title,\n  body,\n  location,\n  jobdescription,\n  skills[] {\n    _key,\n    _type,\n    title,\n    \"text\": pt::text(title),\n    skilllist\n  },\n  benefits,\n  experiences,\n  benefitsheading,\n  btntext,\n  btnurl,\n  chooseForm\n}\n": JOB_QUERYResult;
+    "\n*[_type == \"job\" && slug.current == $slug][0] {\n  _id,\n  slug,\n  heroimage,\n  title,\n  body,\n  location,\n  jobdescription,\n  skills[],\n  benefits,\n  experiences,\n  benefitsheading,\n  btntext,\n  btnurl,\n  chooseForm\n}\n": JOB_QUERYResult;
     "*[_type == \"siteSettings\" && _id == \"siteSettings\"][0]{\n    jobCTASettings {\n      title,\n      text,\n      btnText,\n      btnurl\n    }\n  }": JOB_SETTINGS_QUERYResult;
   }
 }

@@ -5,17 +5,12 @@ import { useState } from 'react'
 import { urlFor } from '@/sanity/lib/image'
 import Image from 'next/image'
 import { PortableText } from 'next-sanity'
+import { PAGE_QUERYResult } from '@/sanity/types'
 
-type TabSectionProps = {
-    heading?: string
-    title?: string
-    text?: any
-    tabs: {
-        _key: string
-        title: string
-        image: any
-    }[]
-}
+type TabSectionProps = Extract<
+    NonNullable<NonNullable<PAGE_QUERYResult>["content"]>[number],
+    { _type: "tabSection" }
+>;
 
 export function TabSection({ title, text, tabs }: TabSectionProps) {
     const [activeIndex, setActiveIndex] = useState(0)
@@ -43,7 +38,7 @@ export function TabSection({ title, text, tabs }: TabSectionProps) {
             <section className="mdcareer-homepage-tab-slider slick-initialized slick-slider">
                 <div aria-live="polite" className="slick-list draggable">
                     <div className="slick-track" style={{ opacity: 1, width: 2910, left: 0 }} role="listbox">
-                        {tabs[activeIndex]?.image && (
+                        {tabs &&tabs[activeIndex]?.image && (
                             <div data-title="Global Team"
                                 className="slick-slide slick-current slick-active"
                                 data-slick-index="0"
@@ -53,7 +48,7 @@ export function TabSection({ title, text, tabs }: TabSectionProps) {
                                 aria-describedby="slick-slide10">
                                 <Image
                                     src={urlFor(tabs[activeIndex].image).url()}
-                                    alt={tabs[activeIndex].title}
+                                    alt={tabs[activeIndex].title || ''}
                                     width={tabs[activeIndex].image?.width || 970}  // Fallback to 600 if undefined
                                     height={tabs[activeIndex].image?.height || 430} // Fallback to 400 if undefined
                                     loading="lazy"
@@ -66,7 +61,7 @@ export function TabSection({ title, text, tabs }: TabSectionProps) {
                     </div>
                 </div>
                 <ul className="slick-dott" role="tablist">
-                    {tabs.map((tab, index) => (
+                    {tabs &&tabs.map((tab, index) => (
                         <li
                             aria-hidden="true" 
                             role="presentation"

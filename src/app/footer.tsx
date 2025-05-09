@@ -133,7 +133,7 @@ export default async function Footer() {
                                                                             {subMenuItem.title}
                                                                         </a>
                                                                     ) : (
-                                                                            <a href={`/${subMenuItem.link}`} className="wp-block-navigation-item__content">
+                                                                            <a href={`/${subMenuItem.title.toLowerCase().replace(/\s+/g, '-')}`} className="wp-block-navigation-item__content">
                                                                             <span className="wp-block-navigation-item__label">
                                                                                 {subMenuItem.title}
                                                                             </span>
