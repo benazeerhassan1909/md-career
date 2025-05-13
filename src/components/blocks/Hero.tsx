@@ -29,7 +29,8 @@ export function Hero({ title, text, image }: HeroProps) {
               src={urlFor(image).auto("format").url()}
               width={1920}
               height={397}
-              alt=""
+              alt="Banner Image"
+              quality={75} // Reduce from default 85
               priority
             />
           ) : null}
