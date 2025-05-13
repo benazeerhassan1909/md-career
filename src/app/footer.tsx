@@ -45,7 +45,6 @@ export default async function Footer() {
                                                 priority
                                                 className="custom-logo perfmatters-lazy"
                                                 decoding="async"
-                                                data-src="https://careers.multidots.com/wp-content/uploads/sites/2/2024/08/Multidots-Inc.gif"
                                             />
                                         )}
 
