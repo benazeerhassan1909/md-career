@@ -78,7 +78,7 @@ export const careerForm = {
                         {
                             name: 'fullWidth',
                             type: 'boolean',
-                            title: 'Full Width',
+                            title: 'Half Width',
                             initialValue: false,
                         },
 
