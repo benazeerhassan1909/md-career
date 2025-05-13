@@ -18,13 +18,7 @@ export default async function FrontendLayout({
     <>
 
       <Head>
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-          integrity="sha512-SOME_HASH_HERE"
-          crossOrigin="anonymous"
-          referrerPolicy="no-referrer"
-        />
+        <meta name="robots" content="noindex, nofollow" />
       </Head>
 
 
