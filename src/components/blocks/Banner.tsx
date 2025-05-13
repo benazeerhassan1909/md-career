@@ -32,8 +32,7 @@ export function Banner({ title, icon, btntext, btnurl, text }: BannerProps) {
                                 src={icon ? urlFor(icon).url() : ''} alt="Anil Gupta"
                                 className="wp-image-58038 perfmatters-lazy loaded"
                                 style={{ objectFit: 'cover', width: '280px', height: '280px' }}
-
-                                loading="lazy"
+                                priority
                                 sizes="(max-width: 519px) 100vw, 519px"
                                 data-was-processed="true"
                             />

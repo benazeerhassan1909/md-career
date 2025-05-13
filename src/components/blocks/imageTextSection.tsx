@@ -60,7 +60,6 @@ export function ImageTextSection({
                                         height={100}
                                         decoding="async"
                                         className="wp-image-58567 perfmatters-lazy loaded"
-                                        loading="lazy"
                                     />
                                 </div>
                             )}

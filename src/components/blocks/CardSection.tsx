@@ -22,7 +22,6 @@ export function CardSection({ title, icon, btntext, btnurl, title2, text, btntex
                                     className="wp-image-57014 perfmatters-lazy loaded"
                                     width={412}
                                     height={342}
-                                    loading="lazy"
                                 />
                                 <noscript>
                                     <Image
@@ -61,7 +60,6 @@ export function CardSection({ title, icon, btntext, btnurl, title2, text, btntex
                             {icon2 ?
                                 <>
                                     <Image
-                                        loading="lazy"
                                         decoding="async"
                                         width="519"
                                         height="519"
@@ -73,7 +71,6 @@ export function CardSection({ title, icon, btntext, btnurl, title2, text, btntex
                                     />
                                     <noscript>
                                         <Image
-                                            loading="lazy"
                                             decoding="async"
                                             width="519"
                                             height="519"

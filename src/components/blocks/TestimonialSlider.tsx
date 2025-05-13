@@ -88,7 +88,6 @@ export function TestimonialSlider({ title, testimonials, reviews }: Testimonials
                                                         alt={t.author || ''}
                                                         width={60}
                                                         height={60}
-                                                        loading="lazy"
                                                         decoding="async"
                                                         className="perfmatters-lazy"
                                                         data-src="https://careers.multidots.com/wp-content/uploads/sites/2/2021/07/Harsh-1.jpg?quality=90?w=400"

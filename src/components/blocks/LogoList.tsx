@@ -47,7 +47,6 @@ export function LogoList({ title, text, logos, backgroundColor }: LogoListProps)
                                 width={logo.width || 162}
                                 height={logo.height || 30}
                                 className=" perfmatters-lazy loaded "
-                                loading="lazy"
                                 decoding="async"
                                 style={{
                                     width: logo.width, height: logo.height }}

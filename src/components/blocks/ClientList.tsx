@@ -54,7 +54,6 @@ export function ClientList({ title, text, logos, backgroundColor }: ClientListPr
                                         width={logo.width || 162}
                                         height={logo.height || 46}
                                         className=" perfmatters-lazy loaded "
-                                        loading="lazy"
                                         decoding="async"
 
                                     />

@@ -56,7 +56,6 @@ export default async function Jobs() {
                                     data-src="https://careers.multidots.com/wp-content/uploads/sites/2/2022/07/current-opening-banner.webp?w=1024"
                                     data-srcset="https://careers.multidots.com/wp-content/uploads/sites/2/2022/07/current-opening-banner.webp 3840w, https://careers.multidots.com/wp-content/uploads/sites/2/2022/07/current-opening-banner.webp?resize=300,94 300w, https://careers.multidots.com/wp-content/uploads/sites/2/2022/07/current-opening-banner.webp?resize=768,240 768w, https://careers.multidots.com/wp-content/uploads/sites/2/2022/07/current-opening-banner.webp?resize=1024,320 1024w, https://careers.multidots.com/wp-content/uploads/sites/2/2022/07/current-opening-banner.webp?resize=1536,480 1536w, https://careers.multidots.com/wp-content/uploads/sites/2/2022/07/current-opening-banner.webp?resize=2048,640 2048w"
                                     data-sizes="(max-width: 3840px) 100vw, 3840px"
-                                    loading="lazy"
                                     sizes="(max-width: 3840px) 100vw, 3840px"
                                     srcSet="https://careers.multidots.com/wp-content/uploads/sites/2/2022/07/current-opening-banner.webp 3840w, https://careers.multidots.com/wp-content/uploads/sites/2/2022/07/current-opening-banner.webp?resize=300,94 300w, https://careers.multidots.com/wp-content/uploads/sites/2/2022/07/current-opening-banner.webp?resize=768,240 768w, https://careers.multidots.com/wp-content/uploads/sites/2/2022/07/current-opening-banner.webp?resize=1024,320 1024w, https://careers.multidots.com/wp-content/uploads/sites/2/2022/07/current-opening-banner.webp?resize=1536,480 1536w, https://careers.multidots.com/wp-content/uploads/sites/2/2022/07/current-opening-banner.webp?resize=2048,640 2048w"
                                     data-was-processed="true"
@@ -87,7 +86,6 @@ export default async function Jobs() {
                                     data-src="https://careers.multidots.com/wp-content/uploads/sites/2/2023/06/current-opening-mob.png?quality=90"
                                     data-srcset="https://careers.multidots.com/wp-content/uploads/sites/2/2023/06/current-opening-mob.png 1024w, https://careers.multidots.com/wp-content/uploads/sites/2/2023/06/current-opening-mob.png?resize=300,94 300w, https://careers.multidots.com/wp-content/uploads/sites/2/2023/06/current-opening-mob.png?resize=768,240 768w"
                                     data-sizes="(max-width: 1024px) 100vw, 1024px"
-                                    loading="lazy"
                                 />
                                 <noscript>
                                     <img
@@ -166,7 +164,6 @@ export default async function Jobs() {
                                             data-src="https://careers.multidots.com/wp-content/uploads/sites/2/2024/06/anil_gupta.png?quality=90?w=519"
                                             data-srcset="https://careers.multidots.com/wp-content/uploads/sites/2/2024/06/anil_gupta.png 519w, https://careers.multidots.com/wp-content/uploads/sites/2/2024/06/anil_gupta.png?resize=150,150 150w, https://careers.multidots.com/wp-content/uploads/sites/2/2024/06/anil_gupta.png?resize=300,300 300w"
                                             data-sizes="(max-width: 519px) 100vw, 519px"
-                                            loading="lazy"
                                             sizes="(max-width: 519px) 100vw, 519px"
                                             srcSet="https://careers.multidots.com/wp-content/uploads/sites/2/2024/06/anil_gupta.png 519w, https://careers.multidots.com/wp-content/uploads/sites/2/2024/06/anil_gupta.png?resize=150,150 150w, https://careers.multidots.com/wp-content/uploads/sites/2/2024/06/anil_gupta.png?resize=300,300 300w"
                                             data-was-processed="true"

@@ -51,7 +51,6 @@ export function TabSection({ title, text, tabs }: TabSectionProps) {
                                     alt={tabs[activeIndex].title || ''}
                                     width={tabs[activeIndex].image?.width || 970}  // Fallback to 600 if undefined
                                     height={tabs[activeIndex].image?.height || 430} // Fallback to 400 if undefined
-                                    loading="lazy"
                                     decoding="async"
                                     className="perfmatters-lazy loaded"
 

@@ -46,7 +46,6 @@ export function Quote({ quoteText, author, quoteImage, backgroundColor }: QuoteP
                           height={900}
                           decoding="async"
                           className="wp-image-59915 perfmatters-lazy loaded"
-                          loading="lazy"
                           style={{ objectFit: 'cover' }}
 
                       />

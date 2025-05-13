@@ -29,7 +29,6 @@ export function ImageType({ heading, image, buttonText, buttonUrl }: ImagProps) 
                         height={900}
                         decoding="async"
                         className="wp-image-59914 perfmatters-lazy loaded"
-                        loading="lazy"
                         style={{ objectFit: 'cover' }}
 
                     />

@@ -81,7 +81,6 @@ export function SplitImage({ title, image, orientation, description, authorimage
                                             width={authorimage.width || 80}
                                             height={authorimage.height || 80}
                                             alt=""
-                                            loading="lazy"
                                             decoding="async"
                                             className="wp-image-39940 perfmatters-lazy loaded"
                                             style={{ width: "80px", height: "80px" }}
@@ -127,18 +126,7 @@ export function SplitImage({ title, image, orientation, description, authorimage
                         style={{
                             flexBasis: "47.7%", backgroundColor: backgroundColor?.hex }}
                     >
-                        <figure className="wp-block-image aligncenter size-full is-resized animated-md-logo">
-                            {/* <img
-                                loading="lazy"
-                                decoding="async"
-                                width="600"
-                                height="607"
-                                src="https://careers.multidots.com/wp-content/uploads/sites/2/2023/08/04-GIF-only-logo-without-background.gif"
-                                alt=""
-                                className="wp-image-45953 perfmatters-lazy loaded"
-                                style={{ objectFit: "cover", width: "44px", height: "44px" }}
-                            /> */}
-                        </figure>
+                       
 
                         <figure className="wp-block-image size-full">
 
@@ -147,7 +135,6 @@ export function SplitImage({ title, image, orientation, description, authorimage
                                     src={urlFor(image).url()}
                                     width={image.width || 438}
                                     height={image.height || 497}
-                                    loading="lazy"
                                     decoding="async"
                                     alt="Core Values"
                                     className="wp-image-45951 perfmatters-lazy loaded"

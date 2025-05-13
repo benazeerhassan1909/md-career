@@ -43,7 +43,6 @@ export default async function Footer() {
                                                 width={logo?.width || 191}
                                                 height={logo?.height || 40}
                                                 priority
-                                                // loading="lazy"
                                                 className="custom-logo perfmatters-lazy"
                                                 decoding="async"
                                                 data-src="https://careers.multidots.com/wp-content/uploads/sites/2/2024/08/Multidots-Inc.gif"
@@ -58,7 +57,6 @@ export default async function Footer() {
                                                 width={logo?.width || 800}
                                                 height={logo?.height || 600}
                                                 priority
-                                                // loading="lazy"
                                                 decoding="async"
                                                 className="custom-logo"
                                             />
@@ -76,7 +74,6 @@ export default async function Footer() {
                                                 className="wp-image-59999 perfmatters-lazy"
                                                 style={{ objectFit: 'cover' }}
                                                 data-src="https://careers.multidots.com/wp-content/uploads/sites/2/2024/12/footer-location-icon.svg"
-                                                loading="lazy"
                                             />
 
                                         </figure>
@@ -91,7 +88,6 @@ export default async function Footer() {
                                                 alt=""
                                                 className="wp-image-60000 perfmatters-lazy"
                                                 data-src="https://careers.multidots.com/wp-content/uploads/sites/2/2024/12/footer-phone-icon.svg"
-                                                loading="lazy"
                                             />
                                         </figure>
                                         <p className="mdFooter-location-detail-section-content" style={{ marginTop: 0 }}>

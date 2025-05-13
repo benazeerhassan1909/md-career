@@ -92,8 +92,6 @@ export function Features({ features, title }: FeaturesProps) {
                                                                     width={feature?.icon?.width || 60} 
                                                                     height={feature?.icon?.height || 60}
                                                                     className="wp-image-xxxx perfmatters-lazy loaded"
-                                                                    // data-src={urlFor(feature.icon).width(1024).url()}
-                                                                    loading="lazy"
                                                                 />
 
                                                             </>
