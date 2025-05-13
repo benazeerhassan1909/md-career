@@ -26,10 +26,11 @@ export function Hero({ title, text, image }: HeroProps) {
           {image ? (
             <Image
               className=""
-              src={urlFor(image).url()}
+              src={urlFor(image).auto("format").url()}
               width={1920}
               height={397}
               alt=""
+              priority
             />
           ) : null}
         </div>
