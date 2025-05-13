@@ -1,5 +1,4 @@
 // schemas/form.js
-
 export const careerForm = {
     name: 'careerForm',
     type: 'document',
@@ -11,12 +10,35 @@ export const careerForm = {
             title: 'Form Title',
         },
         {
+            name: 'showtitle',
+            type: 'boolean',
+            title: 'Show Title',
+            initialValue: false,
+        },
+        {
+            name: 'showtitleonform',
+            type: 'boolean',
+            title: 'Show Title on Form',
+            initialValue: false,
+        },
+        {
             name: 'id',
-            type:'string',
+            type: 'string',
             title: 'ID',
             options: {
                 source: 'title',
             },
+        },
+        {
+            name: 'class',
+            type: 'string',
+            title: 'Class',
+        },
+
+        {
+            name: 'note',
+            type: 'text',
+            title: 'Note',
         },
         {
             name: 'fields',
@@ -47,17 +69,48 @@ export const careerForm = {
                                     { title: 'URL', value: 'url' },
                                     { title: 'File Upload', value: 'file' },
                                     { title: 'Checkbox', value: 'checkbox' },
+                                    { title: 'Select Dropdown', value: 'select' },
                                 ],
                                 layout: 'dropdown',
                             },
                         },
-                        // add allowedFormats if choosen field is file
+                        //FUll width
+                        {
+                            name: 'fullWidth',
+                            type: 'boolean',
+                            title: 'Full Width',
+                            initialValue: false,
+                        },
+
+                        // File-specific settings
                         {
                             name: 'allowedFormats',
                             type: 'string',
                             title: 'Allowed File Formats',
-                            description: 'Comma-separated list of allowed file formats (e.g., .jpg, .png)',
+                            description: 'Comma-separated list (e.g., .pdf,.docx,.jpg)',
                             hidden: ({ parent }: { parent: { type?: string } }) => parent?.type !== 'file'
+                        },
+                        // Select-specific settings
+                        {
+                            name: 'selectOptions',
+                            type: 'array',
+                            title: 'Dropdown Options',
+                            of: [{ type: 'string' }],
+                            description: 'Add all available options for selection',
+                            hidden: ({ parent }: { parent?: { type?: string } }) => parent?.type !== 'select',
+                            validation: (Rule: { custom: (callback: (options: string[] | undefined, context: { parent?: { type?: string } }) => true | string) => void }) => Rule.custom((options: string[] | undefined, context: { parent?: { type?: string } }) => {
+                                if (context.parent?.type === 'select' && (!options || options.length === 0)) {
+                                    return 'At least one option is required for select fields'
+                                }
+                                return true
+                            })
+                        },
+                        {
+                            name: 'isMultiSelect',
+                            type: 'boolean',
+                            title: 'Allow multiple selections?',
+                            initialValue: false,
+                            hidden: ({ parent }: { parent?: { type?: string } }) => parent?.type !== 'select'
                         },
                         {
                             name: 'placeholder',

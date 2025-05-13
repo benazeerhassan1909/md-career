@@ -7186,7 +7186,7 @@ div[role=form] form textarea {
 }
 
 .mdcareer-submit-form .mdinc-error {
-    color: #f44336;
+    color: #f44336!important;
     font-size: 12px;
     margin-top: 5px;
     font-family: 'Noto Sans', sans-serif;
@@ -11319,10 +11319,12 @@ ul.mdinc-custom-list>li a:hover {
 }
 
 .mdcareer-submit-form .mdinc-form-field .cust-wrapper {
-    flex-basis: 100%
+    flex-basis: 100%;
+    flex-direction: row;
+
 }
 
-.singleopening-contact-form .note-text p {
+.singleopening-contact-form .note-text p, .mdinc-form-field-wrapper-container .note-text p {
     font-size: 12px !important;
     line-height: 18px !important;
     margin-top: 8px !important;
@@ -11508,3 +11510,47 @@ ul.mdinc-custom-list>li a:hover {
         visibility: hidden;
     }
 }
+
+.full-width-field {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.full-width-field>div {
+    /* width: 100%; */
+}
+
+ /* Full width field styling */
+ .mdinc-form-field.full-width-field {
+     width: 100%;
+ }
+
+ .mdinc-form-field.full-width-field>div {
+     /* width: 100%; */
+ }
+
+ /* Regular two-column layout */
+ .mdinc-form-field:not(.full-width-field) {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 20px;
+ }
+
+ .mdinc-form-field:not(.full-width-field)>div {
+     flex: 1;
+     min-width: calc(50% - 10px);
+ }
+
+ /* Responsive adjustments */
+ /* @media (max-width: 768px) {
+     .mdinc-form-field:not(.full-width-field)>div {
+         min-width: 100%;
+     }
+ } */
+
+ /* Full width specific elements */
+ .full-width-field .mdinc-form-field-wrapper-container,
+ .full-width-field .cust-wrapper {
+     width: 100%;
+ }

@@ -17,6 +17,8 @@ interface FormField {
     helpText?: string;
     note?: string; // Added note field
     allowedFormats?: string; // Added allowed formats
+    selectOptions?: string[]; // Added selectOptions for dropdown fields
+    fullWidth?: boolean; // Added fullWidth field
 }
 
 interface FormConfig {
@@ -24,6 +26,10 @@ interface FormConfig {
     submitButtonText?: string;
     id?: string;
     fields?: FormField[];
+    class?: string;
+    note?: string;
+    showtitle?: boolean;
+    showtitleonform?: boolean;
 }
 
 const JobApplicationForm = ({ jobId, jobSlug, formId }: { jobId: string; jobSlug?: string, formId?: string }) => {
@@ -42,6 +48,7 @@ const JobApplicationForm = ({ jobId, jobSlug, formId }: { jobId: string; jobSlug
     }>({});
     const [focusedFields, setFocusedFields] = useState<Record<string, boolean>>({});
     const [fileError, setFileError] = useState<string>('');
+    const [touchedFields, setTouchedFields] = useState<Record<string, boolean>>({});
 
     useEffect(() => {
         const fetchData = async () => {
@@ -103,7 +110,7 @@ const JobApplicationForm = ({ jobId, jobSlug, formId }: { jobId: string; jobSlug
         setFocusedFields(prev => ({ ...prev, [fieldName]: false }));
     };
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value, type } = e.target;
         const checked = (e.target as HTMLInputElement).checked;
 
@@ -123,8 +130,6 @@ const JobApplicationForm = ({ jobId, jobSlug, formId }: { jobId: string; jobSlug
     };
 
     const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>, fieldName: string, allowedFormats?: string) => {
-        // Prevent default behavior that might cause refresh
-        e.preventDefault();
 
         if (e.target.files && e.target.files[0]) {
             const file = e.target.files[0];
@@ -346,9 +351,11 @@ const JobApplicationForm = ({ jobId, jobSlug, formId }: { jobId: string; jobSlug
     });
 
     return (
-        <section className="singleopening-contact-form">
-            <h2>{form.title || 'Apply Now'}</h2>
-            <div id={form.id} className="contact-form-block">
+        <section className={form.class}>
+            {form.showtitle && form.showtitleonform == false && (
+                <h2>{form.title || 'Apply Now'}</h2>
+            )}
+            <div id={form.id} className={`contact-form-block ${form.class}`}>
                 <form onSubmit={handleSubmit} method="post"
                     className="wpcf7-form tttt mdcareer-submit-form mdinc-section-bottom-margin"
                     encType="multipart/form-data"
@@ -357,15 +364,36 @@ const JobApplicationForm = ({ jobId, jobSlug, formId }: { jobId: string; jobSlug
                     <div style={{ display: 'none' }}>
                         <input type="hidden" name="form_name" value={form.title} />
                     </div>
+                    {form.showtitle && form.showtitleonform && (
+                        <h3>{form.title}</h3>
+                    )}
+                    {form.note && (
+                        <div className="councelling-form-notes">
+                            <h6>Important Note:</h6>
+                            <p>{form.note}</p>
+                        </div>
+                    )}
 
                     {groupedFields.map((fieldPair, pairIndex) => (
-                        <div key={pairIndex} className={`mdinc-form-field ${fieldPair[0]?.type === 'textarea' ? 'full-width-textarea' : ''}`}>
+                        <div
+                            key={pairIndex}
+                            className={`
+                        mdinc-form-field 
+                        ${fieldPair[0]?.type === 'textarea' ? 'full-width-field' : ''}
+                        ${fieldPair.some(field => field.fullWidth) ? 'full-width-field' : ''}
+                    `}
+                        >
                             {fieldPair.map((field) => (
-                                <div key={field.name + pairIndex}
-                                    className={`${field.type === 'checkbox' || field.type === 'textarea'
-                                        ? 'cust-wrapper'
-                                        : 'mdinc-form-field-wrapper-container'
-                                        } ${formErrors[field.name] ? 'has-error' : ''}`}
+                                <div
+                                    key={field.name + pairIndex}
+                                    className={`
+                                ${field.type === 'checkbox' || field.type === 'textarea'
+                                            ? 'cust-wrapper'
+                                            : 'mdinc-form-field-wrapper-container'
+                                        } 
+                                ${formErrors[field.name] ? 'has-error' : ''}
+                                ${field.fullWidth ? 'full-width-field' : ''}
+                            `}
                                 >
                                     {field.type !== 'checkbox' && !field.showPlaceholder && (
                                         <label htmlFor={field.name} className="form-label">
@@ -405,161 +433,177 @@ const JobApplicationForm = ({ jobId, jobSlug, formId }: { jobId: string; jobSlug
                                                 </div>
                                             )}
                                         </>
-                                    ) : field.type === 'checkbox' ? (
-                                        <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 md-career-custom-checkbox">
-                                            <span className="wpcf7-form-control-wrap">
-                                                <span className="wpcf7-form-control wpcf7-checkbox">
-                                                    <span className="wpcf7-list-item">
-                                                        <input
-                                                            id={field.name}
+                                    ) :
+                                        field.type === 'select' ? (
+                                            <div className={`mdinc-form-field ${field.fullWidth ? 'full-width-field' : ''}`}>
+                                                <div className={`mdinc-form-field-wrapper-container ${field.fullWidth ? 'full-width-field' : ''}`}>
+                                                    <div className={`mdinc-selectBox ${touchedFields[field.name] ? 'mdinc-selectBox-active' : ''}`}
+                                                        onClick={() => setTouchedFields(prev => ({ ...prev, [field.name]: !prev[field.name] }))}>
+                                                        <select
+                                                            id={`mdinc-carrer-form-${field.name}`}
+                                                            className="mdinc-carrer-form-field"
                                                             name={field.name}
-                                                            type="checkbox"
-                                                            checked={!!formData[field.name]}
-                                                            onChange={handleChange}
-                                                            className="privcy"
-                                                        />
-                                                        <span className="wpcf7-list-item-label"></span>
-                                                    </span>
-                                                </span>
-                                            </span>
-                                            <span className="mdinc-checkbox-content">
-                                                <label htmlFor={field.name}>
-                                                    {field.label}
-                                                    {field.isRequired && <span className="required-asterisk">*</span>}
-                                                </label>
-                                            </span>
-                                            {field.helpText && (
-                                                <div className="help-tip">
-                                                    <p>{field.helpText}</p>
-                                                </div>
-                                            )}
-                                            {field.note && (
-                                                <div className="note-text">
-                                                    <p>{field.note}</p>
-                                                </div>
-                                            )}
-                                        </div>
-                                    ) : field.type === 'file' ? (
-                                        <>
-                                            <div className="mdinc-source-fileUpload" >
-                                                <div className="mdinc-file" >
-                                                    <span className="wpcf7-form-control-wrap mdinc-btn" >
-                                                        <input
-                                                            id={field.name}
-                                                            name={field.name}
-                                                            type="file"
-                                                            onChange={(e) => handleFileChange(e, field.name, field.allowedFormats)}
+                                                            value={formData[field.name] || ''}
+                                                            onChange={(e) => {
+                                                                handleChange(e);
+                                                                setTouchedFields(prev => ({
+                                                                    ...prev,
+                                                                    [field.name]: false,
+                                                                }));
+                                                            }}
+                                                            onFocus={() => handleFocus(field.name)}
+                                                            onBlur={() => handleBlur(field.name)}
                                                             required={field.isRequired}
-                                                            className="wpcf7-form-control wpcf7-file wpcf7-validates-as-required mdinc-contact-form-file"
-                                                            accept={field.allowedFormats} />
-                                                    </span>
+                                                        >
+                                                            <option value="">{field.placeholder}</option>
+                                                            {field.selectOptions?.map((option) => (
+                                                                <option key={option} value={option}>
+                                                                    {option}
+                                                                </option>
+                                                            ))}
+                                                        </select>
 
-                                                    {/* < span className="wpcf7-not-valid-tip file-error mdinc-info mdinc-error" >
-                                                        {formErrors[field.name] || 'No file chosen'}
-                                                    </span> */}
-                                                    < span className="file-format" >
-                                                        Allowed formats *: <small>{field.allowedFormats} </small>
-                                                    </span>
-                                                    {fileError || formErrors[field.name] || fileName ? (
-                                                        <span className="wpcf7-not-valid-tip file-error mdinc-info mdinc-error">
-                                                            {fileError || formErrors[field.name] || fileName}
-                                                        </span>
-                                                    ) : (
-                                                        <span className="mdinc-info">No file chosen</span>
-                                                    )}
-
-                                                    <div className="file-format-help">
-                                                        {field.helpText && (
-                                                            <div className="help-tip">
-                                                                <p>{field.helpText}</p>
+                                                        <div className="mdcareer-contact-select-wrapper">
+                                                            <label className="source-left-title">
+                                                                {field.label}
+                                                                {field.isRequired && '*'}
+                                                            </label>
+                                                            <div className={`mdcareer-contact-selectlabel ${field.name}`}>
+                                                                {formData[field.name] || field.placeholder}
                                                             </div>
-                                                        )}
-                                                        {field.note && (
-                                                            <div className="note-text">
-                                                                <p>{field.note}</p>
-                                                            </div>
-                                                        )}
-
+                                                            <ul
+                                                                className={`mdcareer-contact-selectbox ${field.name}`}
+                                                                style={{ display: touchedFields[field.name] ? 'block' : 'none' }}
+                                                            >
+                                                                {field.selectOptions?.map((option) => (
+                                                                    <li
+                                                                        key={option}
+                                                                        data-value={option}
+                                                                        onClick={() => {
+                                                                            setFormData(prev => ({
+                                                                                ...prev,
+                                                                                [field.name]: option,
+                                                                            }));
+                                                                            setTouchedFields(prev => ({
+                                                                                ...prev,
+                                                                                [field.name]: false,
+                                                                            }));
+                                                                        }}
+                                                                    >
+                                                                        {option}
+                                                                    </li>
+                                                                ))}
+                                                            </ul>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            {/* <div className="mdinc-source-fileUpload">
-                                                <div className="mdinc-file">
-                                                    <span className="wpcf7-form-control-wrap mdinc-btn">
-                                                        <input
-                                                            hidden
-                                                            id={field.name}
-                                                            name={field.name}
-                                                            type="file"
-                                                            onChange={(e) => handleFileChange(e, field.name, field.allowedFormats)}
-                                                            required={field.isRequired}
-                                                            className="wpcf7-form-control wpcf7-file wpcf7-validates-as-required mdinc-contact-form-file"
-                                                            accept={field.allowedFormats?.join(',')}
-                                                        />
-                                                        <label htmlFor={field.name} className="file-upload-label">
-                                                            Choose File
-                                                        </label>
-                                                        <span className="file-name">
-                                                            {formData[field.name]?.name || 'No file chosen'}
+                                        ) : field.type === 'checkbox' ? (
+                                            <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 md-career-custom-checkbox">
+                                                <span className="wpcf7-form-control-wrap">
+                                                    <span className="wpcf7-form-control wpcf7-checkbox">
+                                                        <span className="wpcf7-list-item">
+                                                            <input
+                                                                id={field.name}
+                                                                name={field.name}
+                                                                type="checkbox"
+                                                                checked={!!formData[field.name]}
+                                                                onChange={handleChange}
+                                                                className="privcy"
+                                                            />
+                                                            <span className="wpcf7-list-item-label"></span>
                                                         </span>
                                                     </span>
-                                                    {(fileError || formErrors[field.name]) && (
-                                                        <span className="wpcf7-not-valid-tip file-error mdinc-info mdinc-error">
-                                                            {fileError || formErrors[field.name]}
+                                                </span>
+                                                <span className="mdinc-checkbox-content">
+                                                    <label htmlFor={field.name}>
+                                                        {field.label}
+                                                        {field.isRequired && <span className="required-asterisk">*</span>}
+                                                    </label>
+                                                </span>
+                                                {field.helpText && (
+                                                    <div className="help-tip">
+                                                        <p>{field.helpText}</p>
+                                                    </div>
+                                                )}
+                                                {field.note && (
+                                                    <div className="note-text">
+                                                        <p>{field.note}</p>
+                                                    </div>
+                                                )}
+                                            </div>
+                                        ) : field.type === 'file' ? (
+                                            <>
+                                                        <div className={`mdinc-source-fileUpload ${field.fullWidth ? 'full-width-field' : ''}`} >
+                                                    <div className="mdinc-file" >
+                                                        <span className="wpcf7-form-control-wrap mdinc-btn" >
+                                                            <input
+                                                                id={field.name}
+                                                                name={field.name}
+                                                                type="file"
+                                                                onChange={(e) => handleFileChange(e, field.name, field.allowedFormats)}
+                                                                required={field.isRequired}
+                                                                className="wpcf7-form-control wpcf7-file wpcf7-validates-as-required mdinc-contact-form-file"
+                                                                accept={field.allowedFormats} />
                                                         </span>
-                                                    )}
-                                                    <div className="file-format-help">
-                                                        {field.helpText && (
-                                                            <div className="help-tip">
-                                                                <p>{field.helpText}</p>
-                                                            </div>
-                                                        )}
-                                                        {field.note && (
-                                                            <div className="note-text">
-                                                                <p>{field.note}</p>
-                                                            </div>
-                                                        )}
-                                                        <span className="file-format">
-                                                            Allowed formats: {field.allowedFormats?.join(', ') || '.pdf, .doc'}
+                                                        < span className="file-format" >
+                                                            Allowed formats *: <small>{field.allowedFormats} </small>
                                                         </span>
+                                                        {fileError || formErrors[field.name] || fileName ? (
+                                                            <span className="wpcf7-not-valid-tip file-error mdinc-info mdinc-error">
+                                                                {fileError || formErrors[field.name] || fileName}
+                                                            </span>
+                                                        ) : (
+                                                            <span className="mdinc-info">No file chosen</span>
+                                                        )}
+
+                                                        <div className="file-format-help">
+                                                            {field.helpText && (
+                                                                <div className="help-tip">
+                                                                    <p>{field.helpText}</p>
+                                                                </div>
+                                                            )}
+                                                            {field.note && (
+                                                                <div className="note-text">
+                                                                    <p>{field.note}</p>
+                                                                </div>
+                                                            )}
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div> */}
-                                        </>
-
-                                    ) : (
-                                        <>
-                                            <span className="wpcf7-form-control-wrap mdinc-form-field-wrapper">
-                                                <input
-                                                    id={field.name}
-                                                    name={field.name}
-                                                    type={field.type}
-                                                    value={formData[field.name] || ''}
-                                                    onChange={handleChange}
-                                                    onFocus={() => handleFocus(field.name)}
-                                                    onBlur={() => handleBlur(field.name)}
-                                                    placeholder={field.showPlaceholder && field.isRequired ? field.label + ' *' : field.showPlaceholder && !field.isRequired ? field.label : field.placeholder}
-                                                    required={field.isRequired}
-                                                    className={`wpcf7-form-control wpcf7-text ${field.isRequired ? 'wpcf7-validates-as-required' : ''
-                                                        }`}
-                                                    style={{
-                                                        borderBottomColor: focusedFields[field.name] ? '#fd5636' : '',
-                                                        transition: 'border-bottom-color 0.3s ease'
-                                                    }}
-                                                />
-                                            </span>
-                                            {field.helpText && (
-                                                <div className="help-tip">
-                                                    <p>{field.helpText}</p>
-                                                </div>
-                                            )}
-                                            {field.note && (
-                                                <div className="note-text">
-                                                    <p>{field.note}</p>
-                                                </div>
-                                            )}
-                                        </>
-                                    )}
+                                            </>
+                                        ) : (
+                                            <>
+                                                <span className="wpcf7-form-control-wrap mdinc-form-field-wrapper">
+                                                    <input
+                                                        id={field.name}
+                                                        name={field.name}
+                                                        type={field.type}
+                                                        value={formData[field.name] || ''}
+                                                        onChange={handleChange}
+                                                        onFocus={() => handleFocus(field.name)}
+                                                        onBlur={() => handleBlur(field.name)}
+                                                        placeholder={field.showPlaceholder && field.isRequired ? field.label + ' *' : field.showPlaceholder && !field.isRequired ? field.label : field.placeholder}
+                                                        required={field.isRequired}
+                                                        className={`wpcf7-form-control wpcf7-text ${field.isRequired ? 'wpcf7-validates-as-required' : ''}`}
+                                                        style={{
+                                                            borderBottomColor: focusedFields[field.name] ? '#fd5636' : '',
+                                                            transition: 'border-bottom-color 0.3s ease'
+                                                        }}
+                                                    />
+                                                </span>
+                                                {field.helpText && (
+                                                    <div className="help-tip">
+                                                        <p>{field.helpText}</p>
+                                                    </div>
+                                                )}
+                                                {field.note && (
+                                                    <div className="note-text">
+                                                        <p>{field.note}</p>
+                                                    </div>
+                                                )}
+                                            </>
+                                        )}
                                     {formErrors[field.name] && field.type !== 'file' && (
                                         <span className={`wpcf7-not-valid-tip ${field.name}-error mdinc-error`}>
                                             {formErrors[field.name]}
@@ -569,10 +613,6 @@ const JobApplicationForm = ({ jobId, jobSlug, formId }: { jobId: string; jobSlug
                             ))}
                         </div>
                     ))}
-                    {/* <ReCAPTCHA
-                        sitekey={process.env.RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'}
-                        onChange={setToken}
-                    /> */}
 
                     <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-submit">
                         <input
@@ -585,8 +625,7 @@ const JobApplicationForm = ({ jobId, jobSlug, formId }: { jobId: string; jobSlug
                     </div>
 
                     {submitStatus.message && (
-                        <div className={`wpcf7-response-output wpcf7-validation-errors ${submitStatus.success ? 'resume-submit-success' : 'general-error-form'
-                            }`} role="alert">
+                        <div className={`wpcf7-response-output wpcf7-validation-errors ${submitStatus.success ? 'resume-submit-success' : 'general-error-form'}`} role="alert">
                             {submitStatus.message}
                             <div className="mdinc-loaderOuter">
                                 <span className="mdinc-loader"></span>
@@ -595,11 +634,6 @@ const JobApplicationForm = ({ jobId, jobSlug, formId }: { jobId: string; jobSlug
                     )}
                 </form>
             </div>
-
-            <style jsx>{`
-                
-                
-            `}</style>
         </section>
     );
 };

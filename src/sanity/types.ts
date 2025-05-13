@@ -865,12 +865,19 @@ export type CareerForm = {
   _updatedAt: string;
   _rev: string;
   title?: string;
+  showtitle?: boolean;
+  showtitleonform?: boolean;
   id?: string;
+  class?: string;
+  note?: string;
   fields?: Array<{
     label?: string;
     name?: string;
-    type?: "text" | "email" | "tel" | "textarea" | "url" | "file" | "checkbox";
+    type?: "text" | "email" | "tel" | "textarea" | "url" | "file" | "checkbox" | "select";
+    fullWidth?: boolean;
     allowedFormats?: string;
+    selectOptions?: Array<string>;
+    isMultiSelect?: boolean;
     placeholder?: string;
     helpText?: string;
     note?: string;
