@@ -11554,3 +11554,7 @@ ul.mdinc-custom-list>li a:hover {
  .full-width-field .cust-wrapper {
      width: 100%;
  }
+ input[type="checkbox"].has-error-border {
+     outline: 1px solid red;
+     outline-offset: 1px;
+ }

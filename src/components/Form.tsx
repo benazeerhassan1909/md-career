@@ -509,7 +509,7 @@ const JobApplicationForm = ({ jobId, jobSlug, formId }: { jobId: string; jobSlug
                                                                 type="checkbox"
                                                                 checked={!!formData[field.name]}
                                                                 onChange={handleChange}
-                                                                className="privcy"
+                                                                className={`privcy ${formErrors[field.name] ? 'has-error-border' : ''}`}
                                                             />
                                                             <span className="wpcf7-list-item-label"></span>
                                                         </span>
@@ -604,7 +604,7 @@ const JobApplicationForm = ({ jobId, jobSlug, formId }: { jobId: string; jobSlug
                                                 )}
                                             </>
                                         )}
-                                    {formErrors[field.name] && field.type !== 'file' && (
+                                    {formErrors[field.name] && field.type !== 'file' && field.type !== 'checkbox' && (
                                         <span className={`wpcf7-not-valid-tip ${field.name}-error mdinc-error`}>
                                             {formErrors[field.name]}
                                         </span>
