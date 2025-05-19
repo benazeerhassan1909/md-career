@@ -124,11 +124,12 @@ export default async function Footer() {
                                                             {menuItem.subMenu.map((subMenuItem: { title: string; url: string}) => (
                                                                 <li key={subMenuItem.title} className="wp-block-navigation-item wp-block-navigation-link">
                                                                     {subMenuItem.url ? (
-                                                                        <a href={`${subMenuItem.url}`} className="wp-block-navigation-item__content">
+
+                                                                        <a href={`${subMenuItem.url}`} className="wp-block-navigation-item__content" target="_blank" rel="noreferrer noopener">
                                                                             {subMenuItem.title}
                                                                         </a>
                                                                     ) : (
-                                                                            <a href={`/${subMenuItem.title.toLowerCase().replace(/\s+/g, '-')}`} className="wp-block-navigation-item__content">
+                                                                            <a href={`/${subMenuItem.title.toLowerCase().replace(/\s+/g, '-')}`} className="wp-block-navigation-item__content" target="_blank" rel="noreferrer noopener">
                                                                             <span className="wp-block-navigation-item__label">
                                                                                 {subMenuItem.title}
                                                                             </span>
