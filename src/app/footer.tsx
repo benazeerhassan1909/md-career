@@ -98,7 +98,7 @@ export default async function Footer() {
                                 <div className="mdFooter-social-section">
                                     {footer?.socialLinks?.map((socialLink: { url: string; name: string, icon: string }) => (
                                         <li key={socialLink.url}>
-                                            <Link href={`/${socialLink.url}`}>
+                                            <Link href={`${socialLink.url}`} target="_blank" rel="noreferrer noopener">
                                                 <i className={socialLink.icon}></i>
                                             </Link>
                                         </li>
@@ -124,7 +124,7 @@ export default async function Footer() {
                                                             {menuItem.subMenu.map((subMenuItem: { title: string; url: string}) => (
                                                                 <li key={subMenuItem.title} className="wp-block-navigation-item wp-block-navigation-link">
                                                                     {subMenuItem.url ? (
-                                                                        <a href={`/${subMenuItem.url}`} className="wp-block-navigation-item__content">
+                                                                        <a href={`${subMenuItem.url}`} className="wp-block-navigation-item__content">
                                                                             {subMenuItem.title}
                                                                         </a>
                                                                     ) : (
