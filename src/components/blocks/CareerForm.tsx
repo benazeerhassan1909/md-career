@@ -50,12 +50,12 @@ export function CareerForm({ title, chooseForm, enablesidebar, currentopenings, 
                                             job && job._id && (  // Check if job is properly dereferenced
                                                 <div className="job-data-warpper" key={job._id}>
                                                     <h3>
-                                                        <a href={`/careers/${job.slug?.current}`}>
+                                                        <a href={`/job/${job.slug?.current}`}>
                                                             {job.title}
                                                         </a>
                                                     </h3>
                                                     <a
-                                                        href={`/careers/${job.slug?.current}`}
+                                                        href={`/job/${job.slug?.current}`}
                                                         className="read-more"
                                                     >
                                                         <Image
