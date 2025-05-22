@@ -10,7 +10,7 @@ import { presentationTool } from 'sanity/presentation'
 import { resolve } from '@/sanity/presentation/resolve'
 import { colorInput } from '@sanity/color-input';
 import { table } from '@sanity/table'
-
+import { assist } from '@sanity/assist'
 
 
 import {
@@ -87,6 +87,7 @@ export default defineConfig({
     },
   },
   plugins: [
+    assist(),
     structureTool({ structure }),
     visionTool({ defaultApiVersion: apiVersion }),
     presentationTool({
