@@ -59,7 +59,7 @@ export default async function Page({ params }: RouteProps) {
         <PageBuilder
             documentId={page._id}
             documentType={page._type}
-            content={page.content}
+            content={page.content || []}
             />
         </>
     ) : null;
