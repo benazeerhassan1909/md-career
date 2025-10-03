@@ -19,6 +19,10 @@ export const pageType = defineType({
             },
         }),
         defineField({
+            name: "tabBlock",
+            type: "tabBlock",
+        }),
+        defineField({
             name: "content",
             type: "pageBuilder",
         }),

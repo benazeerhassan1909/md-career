@@ -1129,6 +1129,7 @@ export type Page = {
   _rev: string;
   title?: string;
   slug?: Slug;
+  tabBlock?: TabBlock;
   content?: PageBuilder;
   mainImage?: {
     asset?: {
@@ -1257,15 +1258,6 @@ export type SanityImageMetadata = {
   isOpaque?: boolean;
 };
 
-export type Color = {
-  _type: "color";
-  hex?: string;
-  alpha?: number;
-  hsl?: HslaColor;
-  hsv?: HsvaColor;
-  rgb?: RgbaColor;
-};
-
 export type RgbaColor = {
   _type: "rgbaColor";
   r?: number;
@@ -1317,7 +1309,179 @@ export type Slug = {
   source?: string;
 };
 
-export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | Geopoint | Quote | Faq | Faqs | CardSection | TestimonialSlider | ClientList | LogoList | TitleDescription | SplitImage | Hero | Features | Jobs | List | FormType | ThreeColBox | ImageBlock | CareerSubmission | ImageTextSection | TabSection | Job | CareerForm | PageBuilder | Banner | SiteSettings | Page | SanityFileAsset | BlockContent | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Color | RgbaColor | HsvaColor | HslaColor | Table | TableRow | MediaTag | Slug;
+export type TabBlock = {
+  _type: "tabBlock";
+  title?: string;
+  tabs?: Array<{
+    tabTitle?: string;
+    content?: Array<{
+      children?: Array<{
+        marks?: Array<string>;
+        text?: string;
+        _type: "span";
+        _key: string;
+      }>;
+      style?: "normal" | "h1" | "h2" | "h3" | "h4" | "blockquote";
+      listItem?: "bullet" | "number";
+      markDefs?: Array<{
+        href?: string;
+        _type: "link";
+        _key: string;
+      }>;
+      level?: number;
+      _type: "block";
+      _key: string;
+    }>;
+    _type: "tab";
+    _key: string;
+  }>;
+  layout?: "horizontal" | "vertical";
+  titleAlignment?: "left" | "center" | "right";
+  tabTitleAlignment?: "left" | "center" | "right";
+  tabTitleVerticalAlignment?: "start" | "center" | "end";
+  tabContentAlignment?: "left" | "center" | "right";
+  titleColor?: Color;
+  tabTitleColor?: Color;
+  activeTabTitleColor?: Color;
+  tabTitleHoverColor?: Color;
+  activeTabBorderColor?: Color;
+  tabBackgroundColor?: Color;
+  activeTabBackgroundColor?: Color;
+  tabContentColor?: Color;
+  tabContentBackgroundColor?: Color;
+};
+
+export type Color = {
+  _type: "color";
+  hex?: string;
+  alpha?: number;
+  hsl?: HslaColor;
+  hsv?: HsvaColor;
+  rgb?: RgbaColor;
+};
+
+export type SanityAssistInstructionTask = {
+  _type: "sanity.assist.instructionTask";
+  path?: string;
+  instructionKey?: string;
+  started?: string;
+  updated?: string;
+  info?: string;
+};
+
+export type SanityAssistTaskStatus = {
+  _type: "sanity.assist.task.status";
+  tasks?: Array<{
+    _key: string;
+  } & SanityAssistInstructionTask>;
+};
+
+export type SanityAssistSchemaTypeAnnotations = {
+  _type: "sanity.assist.schemaType.annotations";
+  title?: string;
+  fields?: Array<{
+    _key: string;
+  } & SanityAssistSchemaTypeField>;
+};
+
+export type SanityAssistOutputType = {
+  _type: "sanity.assist.output.type";
+  type?: string;
+};
+
+export type SanityAssistOutputField = {
+  _type: "sanity.assist.output.field";
+  path?: string;
+};
+
+export type SanityAssistInstructionContext = {
+  _type: "sanity.assist.instruction.context";
+  reference?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "assist.instruction.context";
+  };
+};
+
+export type AssistInstructionContext = {
+  _id: string;
+  _type: "assist.instruction.context";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  context?: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "normal";
+    listItem?: never;
+    markDefs?: null;
+    level?: number;
+    _type: "block";
+    _key: string;
+  }>;
+};
+
+export type SanityAssistInstructionUserInput = {
+  _type: "sanity.assist.instruction.userInput";
+  message?: string;
+  description?: string;
+};
+
+export type SanityAssistInstructionPrompt = Array<{
+  children?: Array<{
+    marks?: Array<string>;
+    text?: string;
+    _type: "span";
+    _key: string;
+  } | {
+    _key: string;
+  } & SanityAssistInstructionFieldRef | {
+    _key: string;
+  } & SanityAssistInstructionContext | {
+    _key: string;
+  } & SanityAssistInstructionUserInput>;
+  style?: "normal";
+  listItem?: never;
+  markDefs?: null;
+  level?: number;
+  _type: "block";
+  _key: string;
+}>;
+
+export type SanityAssistInstructionFieldRef = {
+  _type: "sanity.assist.instruction.fieldRef";
+  path?: string;
+};
+
+export type SanityAssistInstruction = {
+  _type: "sanity.assist.instruction";
+  prompt?: SanityAssistInstructionPrompt;
+  icon?: string;
+  title?: string;
+  userId?: string;
+  createdById?: string;
+  output?: Array<{
+    _key: string;
+  } & SanityAssistOutputField | {
+    _key: string;
+  } & SanityAssistOutputType>;
+};
+
+export type SanityAssistSchemaTypeField = {
+  _type: "sanity.assist.schemaType.field";
+  path?: string;
+  instructions?: Array<{
+    _key: string;
+  } & SanityAssistInstruction>;
+};
+
+export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | Geopoint | Quote | Faq | Faqs | CardSection | TestimonialSlider | ClientList | LogoList | TitleDescription | SplitImage | Hero | Features | Jobs | List | FormType | ThreeColBox | ImageBlock | CareerSubmission | ImageTextSection | TabSection | Job | CareerForm | PageBuilder | Banner | SiteSettings | Page | SanityFileAsset | BlockContent | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | RgbaColor | HsvaColor | HslaColor | Table | TableRow | MediaTag | Slug | TabBlock | Color | SanityAssistInstructionTask | SanityAssistTaskStatus | SanityAssistSchemaTypeAnnotations | SanityAssistOutputType | SanityAssistOutputField | SanityAssistInstructionContext | AssistInstructionContext | SanityAssistInstructionUserInput | SanityAssistInstructionPrompt | SanityAssistInstructionFieldRef | SanityAssistInstruction | SanityAssistSchemaTypeField;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./src/sanity/lib/queries.ts
 // Variable: POSTS_QUERY
@@ -1327,7 +1491,7 @@ export type POSTS_QUERYResult = Array<never>;
 // Query: *[_type == "post" && slug.current == $slug][0]{  _id,  title,  body,  mainImage,  publishedAt,  "categories": coalesce(    categories[]->{      _id,      slug,      title    },    []  ),  "seo": {    "title": coalesce(seo.title, title, ""),     "description": coalesce(seo.description,  ""),    "image": seo.image,    "noIndex": seo.noIndex == true  },  author->{    name,    image  },  relatedPosts[]{    _key, // required for drag and drop    ...@->{_id, title, slug} // get fields from the referenced post  }}
 export type POST_QUERYResult = null;
 // Variable: PAGE_QUERY
-// Query: *[_type == "page" && slug.current == $slug][0]{     ...,  "seo": {    "title": coalesce(seo.title, title, ""),     "description": coalesce(seo.description,  ""),    "image": seo.image,    "noIndex": seo.noIndex == true  },  content[] {    ...,        // Handle the 'jobs' content block    _type == "jobs" => {      ...,      jobs[]->{        _id,        title,        body,        location,        slug,        "text": pt::text(body)      }    },    _type == "faqs" => {      ...,      faqs[]->{        _id,        title,        body,        "text": pt::text(body)      }    },     _type == "formType" => {      ...,      jobs[]-> {  // Add this arrow to dereference        _id,        title,        slug,        location      }    },    // Handle the 'splitImage' content block    _type == "splitImage" => {      ...,      "video": {        "url": video.asset->url,        "assetId": video.asset->_id      }    }  }}
+// Query: *[_type == "page" && slug.current == $slug][0]{     ...,  "seo": {    "title": coalesce(seo.title, title, ""),     "description": coalesce(seo.description,  ""),    "image": seo.image,    "noIndex": seo.noIndex == true  },  content[] {    ...,    tabBlock,        // Handle the 'jobs' content block    _type == "jobs" => {      ...,      jobs[]->{        _id,        title,        body,        location,        slug,        "text": pt::text(body)      }    },    _type == "faqs" => {      ...,      faqs[]->{        _id,        title,        body,        "text": pt::text(body)      }    },     _type == "formType" => {      ...,      jobs[]-> {  // Add this arrow to dereference        _id,        title,        slug,        location      }    },    // Handle the 'splitImage' content block    _type == "splitImage" => {      ...,      "video": {        "url": video.asset->url,        "assetId": video.asset->_id      }    }  }}
 export type PAGE_QUERYResult = {
   _id: string;
   _type: "page";
@@ -1336,6 +1500,7 @@ export type PAGE_QUERYResult = {
   _rev: string;
   title?: string;
   slug?: Slug;
+  tabBlock?: TabBlock;
   content: Array<{
     _key: string;
     _type: "banner";
@@ -1355,6 +1520,7 @@ export type PAGE_QUERYResult = {
     };
     btntext?: string;
     btnurl?: string;
+    tabBlock: null;
   } | {
     _key: string;
     _type: "cardSection";
@@ -1402,6 +1568,7 @@ export type PAGE_QUERYResult = {
       crop?: SanityImageCrop;
       _type: "image";
     };
+    tabBlock: null;
   } | {
     _key: string;
     _type: "clientList";
@@ -1456,6 +1623,7 @@ export type PAGE_QUERYResult = {
       _type: "logo";
       _key: string;
     }>;
+    tabBlock: null;
   } | {
     _key: string;
     _type: "faqs";
@@ -1498,6 +1666,7 @@ export type PAGE_QUERYResult = {
       }> | null;
       text: string;
     }> | null;
+    tabBlock: null;
   } | {
     _key: string;
     _type: "features";
@@ -1524,6 +1693,7 @@ export type PAGE_QUERYResult = {
       _type: "feature";
       _key: string;
     }>;
+    tabBlock: null;
   } | {
     title?: string;
     slug?: Slug;
@@ -1546,6 +1716,7 @@ export type PAGE_QUERYResult = {
     quoteauthor?: string;
     _type: "formType";
     _key: string;
+    tabBlock: null;
   } | {
     _key: string;
     _type: "hero";
@@ -1595,6 +1766,7 @@ export type PAGE_QUERYResult = {
       crop?: SanityImageCrop;
       _type: "image";
     };
+    tabBlock: null;
   } | {
     heading?: string;
     image?: {
@@ -1613,6 +1785,7 @@ export type PAGE_QUERYResult = {
     buttonUrl?: string;
     _type: "imageBlock";
     _key: string;
+    tabBlock: null;
   } | {
     _key: string;
     _type: "imageTextSection";
@@ -1675,6 +1848,7 @@ export type PAGE_QUERYResult = {
       _type: "image";
     };
     imagePosition?: "left" | "right";
+    tabBlock: null;
   } | {
     _key: string;
     _type: "jobs";
@@ -1754,11 +1928,13 @@ export type PAGE_QUERYResult = {
     }> | null;
     btntext?: string;
     btnurl?: string;
+    tabBlock: null;
   } | {
     listtitle?: string;
     lists?: Array<string>;
     _type: "List";
     _key: string;
+    tabBlock: null;
   } | {
     _key: string;
     _type: "logoList";
@@ -1814,6 +1990,7 @@ export type PAGE_QUERYResult = {
       _type: "logo";
       _key: string;
     }>;
+    tabBlock: null;
   } | {
     quoteText?: string;
     author?: string;
@@ -1832,6 +2009,7 @@ export type PAGE_QUERYResult = {
     backgroundColor?: Color;
     _type: "Quote";
     _key: string;
+    tabBlock: null;
   } | {
     _key: string;
     _type: "splitImage";
@@ -1909,6 +2087,7 @@ export type PAGE_QUERYResult = {
       url: string | null;
       assetId: string | null;
     };
+    tabBlock: null;
   } | {
     _key: string;
     _type: "tabSection";
@@ -1966,6 +2145,7 @@ export type PAGE_QUERYResult = {
       _type: "tab";
       _key: string;
     }>;
+    tabBlock: null;
   } | {
     _key: string;
     _type: "testimonialSlider";
@@ -2006,6 +2186,7 @@ export type PAGE_QUERYResult = {
       _type: "testimonial";
       _key: string;
     }>;
+    tabBlock: null;
   } | {
     _key: string;
     _type: "threeColBox";
@@ -2018,6 +2199,7 @@ export type PAGE_QUERYResult = {
       _type: "box";
       _key: string;
     }>;
+    tabBlock: null;
   } | {
     _key: string;
     _type: "titleDescription";
@@ -2055,6 +2237,7 @@ export type PAGE_QUERYResult = {
       _type: "image";
       _key: string;
     }>;
+    tabBlock: null;
   }> | null;
   mainImage?: {
     asset?: {
@@ -2088,6 +2271,7 @@ export type HOME_PAGE_QUERYResult = {
     _rev: string;
     title?: string;
     slug?: Slug;
+    tabBlock?: TabBlock;
     content: Array<{
       _key: string;
       _type: "banner";
@@ -3012,7 +3196,7 @@ declare module "@sanity/client" {
   interface SanityQueries {
     "*[_type == \"post\" && defined(slug.current)][0...12]{\n  _id, title, slug\n}": POSTS_QUERYResult;
     "*[_type == \"post\" && slug.current == $slug][0]{\n  _id,\n  title,\n  body,\n  mainImage,\n  publishedAt,\n  \"categories\": coalesce(\n    categories[]->{\n      _id,\n      slug,\n      title\n    },\n    []\n  ),\n  \"seo\": {\n    \"title\": coalesce(seo.title, title, \"\"),\n     \"description\": coalesce(seo.description,  \"\"),\n    \"image\": seo.image,\n    \"noIndex\": seo.noIndex == true\n  },\n  author->{\n    name,\n    image\n  },\n  relatedPosts[]{\n    _key, // required for drag and drop\n    ...@->{_id, title, slug} // get fields from the referenced post\n  }\n}": POST_QUERYResult;
-    "*[_type == \"page\" && slug.current == $slug][0]{\n     ...,\n  \"seo\": {\n    \"title\": coalesce(seo.title, title, \"\"),\n     \"description\": coalesce(seo.description,  \"\"),\n    \"image\": seo.image,\n    \"noIndex\": seo.noIndex == true\n  },\n  content[] {\n    ...,\n    \n    // Handle the 'jobs' content block\n    _type == \"jobs\" => {\n      ...,\n      jobs[]->{\n        _id,\n        title,\n        body,\n        location,\n        slug,\n        \"text\": pt::text(body)\n      }\n    },\n    _type == \"faqs\" => {\n      ...,\n      faqs[]->{\n        _id,\n        title,\n        body,\n        \"text\": pt::text(body)\n      }\n    },\n     _type == \"formType\" => {\n      ...,\n      jobs[]-> {  // Add this arrow to dereference\n        _id,\n        title,\n        slug,\n        location\n      }\n    },\n    // Handle the 'splitImage' content block\n    _type == \"splitImage\" => {\n      ...,\n      \"video\": {\n        \"url\": video.asset->url,\n        \"assetId\": video.asset->_id\n      }\n    }\n  }\n}\n": PAGE_QUERYResult;
+    "*[_type == \"page\" && slug.current == $slug][0]{\n     ...,\n  \"seo\": {\n    \"title\": coalesce(seo.title, title, \"\"),\n     \"description\": coalesce(seo.description,  \"\"),\n    \"image\": seo.image,\n    \"noIndex\": seo.noIndex == true\n  },\n  content[] {\n    ...,\n    tabBlock,\n    \n    // Handle the 'jobs' content block\n    _type == \"jobs\" => {\n      ...,\n      jobs[]->{\n        _id,\n        title,\n        body,\n        location,\n        slug,\n        \"text\": pt::text(body)\n      }\n    },\n    _type == \"faqs\" => {\n      ...,\n      faqs[]->{\n        _id,\n        title,\n        body,\n        \"text\": pt::text(body)\n      }\n    },\n     _type == \"formType\" => {\n      ...,\n      jobs[]-> {  // Add this arrow to dereference\n        _id,\n        title,\n        slug,\n        location\n      }\n    },\n    // Handle the 'splitImage' content block\n    _type == \"splitImage\" => {\n      ...,\n      \"video\": {\n        \"url\": video.asset->url,\n        \"assetId\": video.asset->_id\n      }\n    }\n  }\n}\n": PAGE_QUERYResult;
     "*[_id == \"siteSettings\"][0]{\n    homePage->{\n      ...,\n      content[]{\n        ...,\n        _type == \"jobs\" => {\n          ...,\n          jobs[]->\n        },\n        _type == \"faqs\" => {\n          ...,\n          faqs[]->\n        },\n         _type == \"formType\" => {\n      ...,\n      jobs[]-> {  // Add this arrow to dereference\n        _id,\n        title,\n        slug,\n        location\n      }\n    },\n         // Handle the 'splitImage' content block\n    _type == \"splitImage\" => {\n      ...,\n      \"video\": {\n        \"url\": video.asset->url,\n        \"assetId\": video.asset->_id\n      }\n    }\n      }      \n    }\n  }": HOME_PAGE_QUERYResult;
     "\n  *[_type == \"redirect\" && isEnabled == true] {\n      source,\n      destination,\n      permanent\n  }\n": REDIRECTS_QUERYResult;
     "\n  *[_id == $id][0]{\n    title,\n    \"image\": mainImage.asset->{\n      url,\n      metadata {\n        palette\n      }\n    }\n  }    \n": OG_IMAGE_QUERYResult;

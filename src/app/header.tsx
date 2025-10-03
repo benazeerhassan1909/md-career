@@ -5,9 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { urlFor } from "@/sanity/lib/image";
 
-
 const HEADER_QUERY = `*[_type == "siteSettings" && _id == "siteSettings"][0]{ siteTitle, logo, header }`;
-
 
 export default async function Header() {
 
@@ -19,10 +17,7 @@ export default async function Header() {
         header?: { menuItems?: { title: string; url: string; subMenu?: { title: string; link: string }[] }[] };
     } = siteSettings;
     return (
-
-
             <header className="wp-block-template-part">
-
                 <div
                     id="masthead"
                     className="wp-block-group mdinc-site-header has-contrast-color has-base-background-color has-text-color has-background has-link-color wp-elements-d96ba67c5c04ae0b26da58efc078dd89 has-global-padding is-layout-constrained wp-container-core-group-is-layout-639b5052 wp-block-group-is-layout-constrained"

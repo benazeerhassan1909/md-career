@@ -11,6 +11,8 @@ import { resolve } from '@/sanity/presentation/resolve'
 import { colorInput } from '@sanity/color-input';
 import { table } from '@sanity/table'
 import { assist } from '@sanity/assist'
+import { tabBlockPlugin } from '@multidots/sanity-plugin-tab-block'
+
 
 
 import {
@@ -88,6 +90,7 @@ export default defineConfig({
   },
   plugins: [
     assist(),
+    tabBlockPlugin(),
     structureTool({ structure }),
     visionTool({ defaultApiVersion: apiVersion }),
     presentationTool({

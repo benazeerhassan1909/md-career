@@ -3,6 +3,8 @@ import { PageBuilder } from "@/components/PageBuilder";
 import { sanityFetch } from "@/sanity/lib/live";
 import { PAGE_QUERY } from "@/sanity/lib/queries";
 import { urlFor } from "@/sanity/lib/image";
+import { TabBlockData } from '@multidots/sanity-plugin-tab-block';
+import Tab from '@/components/blocks/Tab'
 
 type RouteProps = {
     params: Promise<{ slug: string }>;
@@ -49,11 +51,16 @@ export async function generateMetadata({
 export default async function Page({ params }: RouteProps) {
     const { data: page } = await getPage(params);
 
-    return page?.content ? (
+    return page?.content || page?.tabBlock ? (
+        <>
+            {page?.tabBlock && (
+                <Tab tab={page?.tabBlock as TabBlockData} />
+            )}
         <PageBuilder
             documentId={page._id}
             documentType={page._type}
             content={page.content}
-        />
+            />
+        </>
     ) : null;
 }

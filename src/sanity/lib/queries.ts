@@ -45,6 +45,7 @@ export const PAGE_QUERY =
   },
   content[] {
     ...,
+    tabBlock,
     
     // Handle the 'jobs' content block
     _type == "jobs" => {

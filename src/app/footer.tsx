@@ -16,7 +16,7 @@ export default async function Footer() {
     const { siteTitle, footer, logo }: {
         siteTitle?: string;
         footer?: {
-            socialLinks?: { url: string; name: string, icon: string }[],
+            socialLinks?: { _key: string; url: string; name: string; icon: string }[],
             footermenuItems?: { title: string; url: string; subMenu?: { title: string; url: string }[] }[]
         };
         logo?: { asset?: { _ref: string }; url?: string; alt?: string; width?: number; height?: number };
@@ -96,8 +96,8 @@ export default async function Footer() {
                                 </div>
 
                                 <div className="mdFooter-social-section">
-                                    {footer?.socialLinks?.map((socialLink: { url: string; name: string, icon: string }) => (
-                                        <li key={socialLink.url}>
+                                    {footer?.socialLinks?.map((socialLink: {_key: string; url: string; name: string, icon: string }) => (
+                                        <li key={socialLink._key}>
                                             <Link href={`${socialLink.url}`} target="_blank" rel="noreferrer noopener">
                                                 <i className={socialLink.icon}></i>
                                             </Link>

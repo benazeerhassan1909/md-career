@@ -31,3 +31,4 @@
 # Next.js build output
 /.next
 .next/
+src/sanity/plugins
